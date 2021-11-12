@@ -351,6 +351,10 @@ template {
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 :root {
   --primary-color: hsl(208, 58%, 14%);
   --secondary-color: hsl(201, 53%, 40%);
