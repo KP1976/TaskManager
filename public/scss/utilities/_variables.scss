@@ -4,7 +4,8 @@
   --primary-color: hsl(208, 58%, 14%);
   --secondary-color: hsl(201, 53%, 40%);
   --secondary-color-dark: hsla(201, 53%, 40%, 30%);
-  --gray: hsl(0, 0%, 77%);
+  --transparent-black: hsla(0, 0%, 0%, 20%);
+  --gray: hsl(0, 0%, 70%);
   --blue-gray: hsl(201, 31%, 56%);
   --shadow: 0 5px 10px hsl(201, 53%, 40%, 40%);
   --category-recreation-color: hsl(36, 81%, 50%);
@@ -16,8 +17,11 @@
   --font-family: Roboto;
   --font-primary-color: white;
   --font-size-title: 2rem;
+  --font-size-category-number: 1.5rem;
   --font-size-date: 0.75rem;
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
+
+  --progress: calc(75 - (75 * 63) / 100);
 }
