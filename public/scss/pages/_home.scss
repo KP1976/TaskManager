@@ -1,0 +1,8 @@
+.header {
+  background-image: url('../images/mountains.jpg');
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 59.44% 40.56%;
+}
+
+@import '../components/mobile-menu';

@@ -11,8 +11,8 @@
   --category-personal-color: hsl(0, 78%, 57%);
   --category-food-color: hsl(130, 78%, 57%);
   /* FONTS */
-  --font-family: Roboto
-; }
+  --font-family: Roboto;
+  --main-font-color: white; }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -321,7 +321,32 @@ template {
   box-sizing: border-box; }
 
 body {
-  font-family: var(--font-family); }
+  background-color: var(--primary-color);
+  color: var(--main-font-color);
+  display: grid;
+  font-family: var(--font-family);
+  min-height: 100vh; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0; }
+
+.header {
+  background-image: url("../images/mountains.jpg");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 59.44% 40.56%; }
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 0.875rem;
+  margin: 1.5em 0 0 1.5rem;
+  width: 1.5rem; }
+  .mobile-menu__bar {
+    background-color: white;
+    border-radius: 0.0625rem;
+    height: 0.125rem;
+    width: 100%; }
+    .mobile-menu__bar--short {
+      width: 75%; }

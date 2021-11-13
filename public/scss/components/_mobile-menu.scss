@@ -1,0 +1,19 @@
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 0.875rem;
+  margin: 1.5em 0 0 1.5rem;
+  width: 1.5rem;
+
+  &__bar {
+    background-color: white;
+    border-radius: 0.0625rem;
+    height: 0.125rem;
+    width: 100%;
+
+    &--short {
+      width: 75%;
+    }
+  }
+}
