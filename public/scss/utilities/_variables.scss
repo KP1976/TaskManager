@@ -1,4 +1,6 @@
 :root {
+  /* COLORS */
+
   --primary-color: hsl(208, 58%, 14%);
   --secondary-color: hsl(201, 53%, 40%);
   --secondary-color-dark: hsla(201, 53%, 40%, 30%);
@@ -9,4 +11,7 @@
   --category-technology-color: hsl(65, 78%, 57%);
   --category-personal-color: hsl(0, 78%, 57%);
   --category-food-color: hsl(130, 78%, 57%);
+
+  /* FONTS */
+  --font-family: Roboto
 }
