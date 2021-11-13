@@ -13,7 +13,8 @@
   /* FONTS */
   --font-family: Roboto;
   --font-primary-color: white;
-  --font-size-big: 2rem;
+  --font-size-title: 2rem;
+  --font-size-date: 0.75rem;
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-bold: 700; }
@@ -338,12 +339,30 @@ h1, h2, h3, h4, h5, h6 {
   background-image: url("../images/mountains.jpg");
   background-size: cover;
   display: grid;
-  grid-template-columns: 59.44% 40.56%; }
+  grid-template-columns: 59.44% 40.56%;
+  height: 13rem; }
 
-.header-left__title {
-  font-size: var(--font-size-big);
-  font-weight: var(--font-weight-light);
-  margin: 1.75rem 0 0 1.5rem; }
+.header-left {
+  position: relative; }
+  .header-left__title {
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-light);
+    line-height: 1;
+    margin: 1.75rem 0 0 1.5rem; }
+  .header-left__date {
+    color: var(--gray);
+    display: block;
+    font-size: var(--font-size-date);
+    font-weight: var(--font-weight-normal);
+    margin: 2.3rem 0 0 1.5rem; }
+  .header-left__horizontal-line {
+    background-color: var(--secondary-color);
+    border: none;
+    bottom: 0;
+    height: 0.25rem;
+    margin: 0;
+    position: absolute;
+    width: 100%; }
 
 .mobile-menu {
   display: flex;
