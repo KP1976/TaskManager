@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postcss:watch": "postcss public/css/main.css -o public/css/style.css --watch"
+    "sass:watch": "node-sass -w public/scss -o public/css"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
 }
