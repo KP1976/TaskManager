@@ -5,4 +5,12 @@
   grid-template-columns: 59.44% 40.56%;
 }
 
-@import '../components/mobile-menu';
+.header-left {
+  &__title {
+    font-size: var(--font-size-big);
+    font-weight: var(--font-weight-light);
+    margin: 1.75rem 0 0 1.5rem;
+  }
+}
+
+
