@@ -16,12 +16,16 @@
   /* FONTS */
   --font-family: Roboto;
   --font-primary-color: white;
+  --font-size-add-button: 2.25rem;
   --font-size-title: 2rem;
   --font-size-category-number: 1.5rem;
+  --font-size-headers: 0.875rem;
   --font-size-date: 0.75rem;
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
   --progress: calc(75 - (75 * 63) / 100);
+  --svg-width-24px: 1.5rem;
+  --svg-width-19px: 1.1875rem;
 }
