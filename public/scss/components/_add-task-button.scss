@@ -1,0 +1,16 @@
+.add-task-button {
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 50%;
+  bottom: 1.75rem;
+  box-shadow: var(--shadow);
+  color: white;
+  font-size: var(--font-size-add-button);
+  font-weight: var(--font-weight-light);
+  height: 3rem;
+  padding: 0.25rem;
+  position: absolute;
+  right: 1.5rem;
+  text-align: center;
+  width: 3rem;
+}
