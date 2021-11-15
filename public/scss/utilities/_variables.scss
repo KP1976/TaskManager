@@ -1,5 +1,5 @@
 :root {
-  /* COLORS */
+  /* COLORS **/
 
   --primary-color: hsl(208, 58%, 14%);
   --secondary-color: hsl(201, 53%, 40%);
@@ -19,13 +19,13 @@
   --font-size-add-button: 2.25rem;
   --font-size-title: 2rem;
   --font-size-category-number: 1.5rem;
+  --font-size-add-task-title: 1rem;
   --font-size-headers: 0.875rem;
   --font-size-date: 0.75rem;
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
-  --progress: calc(75 - (75 * 63) / 100);
   --svg-width-24px: 1.5rem;
   --svg-width-19px: 1.1875rem;
 }

@@ -1,0 +1,62 @@
+.task {
+  border-bottom: 1px solid var(--blue-gray);
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: max-content;
+  grid-template-rows: repeat(2, max-content);
+  padding-bottom: 1rem;
+  margin-bottom: 0.75rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .task-logo {
+    border: 1px solid var(--blue-gray);
+    border-radius: 50%;
+    height: 3rem;
+    position: relative;
+    width: 3rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+
+    &__image {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      &--large {
+        width: var(--svg-width-24px);
+      }
+
+      &--small {
+        width: var(--svg-width-19px);
+      }
+    }
+  }
+
+  &__title {
+    font-size: var(--font-size-headers);
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-top: 0.375rem;
+  }
+
+  &__date, &__time {
+    color: var(--gray);
+    font-size: var(--font-size-date);
+  }
+
+  &__date {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  &__time {
+    justify-self: end;
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    margin-top: 0.375rem;
+  }
+}

@@ -1,0 +1,62 @@
+.add-task {
+  background-color: var(--primary-color);
+  padding: 1.5rem 2rem 0;
+
+  &__back-button {
+    background-color: transparent;
+    border: none;
+    height: 1rem;
+    padding: 0;
+    position: absolute;
+
+    img {
+      width: 0.875rem;
+    }
+  }
+
+  &__title {
+    font-size: var(--font-size-add-task-title);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__category-icon {
+    border: 1px solid var(--blue-gray);
+    border-radius: 50%;
+    height: 3rem;
+    margin: 2.5rem auto 0;
+    position: relative;
+    width: 3rem;
+
+    img {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1.5rem;
+    }
+  }
+
+  .categories-list {
+    margin-top: 4rem;
+    list-style: none;
+
+    @import '../components/category';
+  }
+
+  .form {
+
+    &__label {
+
+    }
+
+    &__input {
+
+    }
+
+    &__add-task-button {
+
+    }
+  }
+}
