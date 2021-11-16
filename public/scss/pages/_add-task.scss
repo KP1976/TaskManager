@@ -12,6 +12,10 @@
 
     img {
       width: 0.875rem;
+
+      @include for-phone {
+        width: 1rem;
+      }
     }
   }
 
@@ -20,6 +24,10 @@
     font-weight: var(--font-weight-bold);
     text-align: center;
     text-transform: uppercase;
+
+    @include for-phone {
+      font-size: var(--font-size-add-task-title-small-mobile);
+    }
   }
 
   &__category-icon {
@@ -30,18 +38,32 @@
     position: relative;
     width: 3rem;
 
+    @include for-phone {
+      height: 3.375rem;
+      margin: 3rem auto 0;
+      width: 3.375rem;
+    }
+
     img {
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
       width: 1.5rem;
+
+      @include for-phone {
+        width: 1.625rem;
+      }
     }
   }
 
   .categories-list {
     margin-top: 4rem;
     list-style: none;
+
+    @include for-phone {
+      margin-top: 4.5rem;
+    }
 
     @import '../components/category';
   }

@@ -23,6 +23,7 @@
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
+  --font-size-add-task-title-small-mobile: 1.125rem;
   --svg-width-24px: 1.5rem;
   --svg-width-19px: 1.1875rem; }
 
@@ -540,11 +541,17 @@ ul {
     position: absolute; }
     .add-task__back-button img {
       width: 0.875rem; }
+      @media (min-width: 414px) {
+        .add-task__back-button img {
+          width: 1rem; } }
   .add-task__title {
     font-size: var(--font-size-add-task-title);
     font-weight: var(--font-weight-bold);
     text-align: center;
     text-transform: uppercase; }
+    @media (min-width: 414px) {
+      .add-task__title {
+        font-size: var(--font-size-add-task-title-small-mobile); } }
   .add-task__category-icon {
     border: 1px solid var(--blue-gray);
     border-radius: 50%;
@@ -552,21 +559,36 @@ ul {
     margin: 2.5rem auto 0;
     position: relative;
     width: 3rem; }
+    @media (min-width: 414px) {
+      .add-task__category-icon {
+        height: 3.375rem;
+        margin: 3rem auto 0;
+        width: 3.375rem; } }
     .add-task__category-icon img {
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
       width: 1.5rem; }
+      @media (min-width: 414px) {
+        .add-task__category-icon img {
+          width: 1.625rem; } }
   .add-task .categories-list {
     margin-top: 4rem;
     list-style: none; }
+    @media (min-width: 414px) {
+      .add-task .categories-list {
+        margin-top: 4.5rem; } }
     .add-task .categories-list .category {
       align-items: center;
       border-bottom: 1px solid var(--blue-gray);
       display: flex;
       margin-bottom: 1.5rem;
       padding-bottom: 0.625rem; }
+      @media (min-width: 414px) {
+        .add-task .categories-list .category {
+          margin-bottom: 2rem;
+          padding-bottom: 0.875rem; } }
       .add-task .categories-list .category:last-child {
         margin-bottom: 0; }
       .add-task .categories-list .category__name {
@@ -615,6 +637,9 @@ ul {
     font-weight: var(--font-weight-normal);
     grid-template-rows: max-content;
     margin-top: 2rem; }
+    @media (min-width: 414px) {
+      .add-task .form {
+        margin-top: 4rem; } }
     .add-task .form__label {
       display: flex;
       flex-direction: column; }

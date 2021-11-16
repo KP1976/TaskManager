@@ -5,6 +5,11 @@
   margin-bottom: 1.5rem;
   padding-bottom: 0.625rem;
 
+  @include for-phone {
+    margin-bottom: 2rem;
+    padding-bottom: 0.875rem;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }

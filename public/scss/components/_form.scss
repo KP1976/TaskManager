@@ -5,6 +5,10 @@
   grid-template-rows: max-content;
   margin-top: 2rem;
 
+  @include for-phone {
+    margin-top: 4rem;
+  }
+
   &__label {
     display: flex;
     flex-direction: column;

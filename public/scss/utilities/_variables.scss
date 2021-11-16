@@ -14,6 +14,7 @@
   --category-food-color: hsl(130, 78%, 57%);
 
   /* FONTS */
+  // small mobile
   --font-family: Roboto;
   --font-primary-color: white;
   --font-size-add-button: 2.25rem;
@@ -25,6 +26,9 @@
   --font-weight-light: 300;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
+
+  // medium mobile
+  --font-size-add-task-title-small-mobile: 1.125rem;
 
   --svg-width-24px: 1.5rem;
   --svg-width-19px: 1.1875rem;
