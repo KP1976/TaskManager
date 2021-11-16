@@ -352,7 +352,7 @@ ul {
   background-size: cover;
   display: grid;
   grid-template-columns: 59.44% 40.56%;
-  height: 13rem; }
+  height: 32.5vh; }
   .header .header-left {
     position: relative; }
     .header .header-left .mobile-menu {
@@ -374,11 +374,13 @@ ul {
       font-weight: var(--font-weight-light);
       margin: 1.75rem 0 0 1.5rem; }
     .header .header-left__date {
+      bottom: 1.5rem;
       color: var(--gray);
       display: block;
       font-size: var(--font-size-date);
       font-weight: var(--font-weight-normal);
-      margin: 2.3rem 0 0 1.5rem; }
+      left: 1.5rem;
+      position: absolute; }
     .header .header-left__horizontal-line {
       background-color: var(--secondary-color);
       border: none;
@@ -388,13 +390,19 @@ ul {
       width: 100%; }
   .header .header-right {
     background-color: var(--transparent-black);
-    padding: 0 1.375rem; }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1.375rem;
+    position: relative; }
+    @media (min-width: 414px) {
+      .header .header-right {
+        padding: 0 1.8125rem; } }
     .header .header-right .categories {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      grid-row-gap: 0.75rem;
-      margin-top: 3.375rem; }
+      grid-row-gap: 0.75rem; }
       .header .header-right .categories .category {
         align-items: center;
         display: flex;
@@ -409,14 +417,15 @@ ul {
           font-weight: var(--font-weight-normal); }
     .header .header-right .percentage-of-done-tasks {
       align-items: center;
+      bottom: 1rem;
       display: flex;
       justify-content: space-between;
-      margin-top: 1.25rem;
-      width: 100%; }
+      position: absolute; }
       .header .header-right .percentage-of-done-tasks .pie-chart {
         background: conic-gradient(var(--secondary-color) 0% 64%, var(--secondary-color-dark) 64% 100%);
         border-radius: 50%;
         height: 1.5rem;
+        margin-right: 0.5rem;
         position: relative;
         width: 1.5rem; }
         .header .header-right .percentage-of-done-tasks .pie-chart::before {
@@ -435,6 +444,9 @@ ul {
 
 .main {
   padding: 0.875rem 1.5rem 1.75rem; }
+  @media (min-width: 414px) {
+    .main {
+      padding-top: 1.5rem; } }
   .main__title, .main .tasks-done__text {
     font-size: var(--font-size-headers);
     text-transform: uppercase; }
@@ -451,6 +463,10 @@ ul {
     grid-template-rows: repeat(2, max-content);
     padding-bottom: 1rem;
     margin-bottom: 0.75rem; }
+    @media (min-width: 414px) {
+      .main .task {
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem; } }
     .main .task:last-child {
       margin-bottom: 0; }
     .main .task .task-logo {
