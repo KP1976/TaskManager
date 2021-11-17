@@ -356,19 +356,19 @@ ul {
   height: 32.5vh; }
   .header .header-left {
     position: relative; }
-    .header .header-left .mobile-menu {
+    .header .header-left .mobile-hamburger-menu {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 0.875rem;
       margin: 1.5em 0 0 1.5rem;
       width: 1.5rem; }
-      .header .header-left .mobile-menu__bar {
+      .header .header-left .mobile-hamburger-menu__bar {
         background-color: white;
         border-radius: 0.0625rem;
         height: 0.125rem;
         width: 100%; }
-        .header .header-left .mobile-menu__bar--short {
+        .header .header-left .mobile-hamburger-menu__bar--short {
           width: 75%; }
     .header .header-left__title {
       font-size: var(--font-size-title);

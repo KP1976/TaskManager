@@ -8,7 +8,7 @@
   .header-left {
     position: relative;
 
-    @import '../components/mobile-menu';
+    @import '../components/mobile-hamburger-menu';
 
     &__title {
       font-size: var(--font-size-title);

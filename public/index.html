@@ -14,148 +14,202 @@
 </head>
 <body>
 
-<!--  <header class='header'>-->
-<!--    <div class='header-left'>-->
-<!--      <div class='mobile-menu'>-->
-<!--        <div class='mobile-menu__bar'></div>-->
-<!--        <div class='mobile-menu__bar mobile-menu__bar&#45;&#45;short'></div>-->
-<!--        <div class='mobile-menu__bar'></div>-->
-<!--      </div>-->
-<!--      <h1 class='header-left__title'>Zadania do&nbsp;zrobienia</h1>-->
-<!--      <span class='header-left__date'>18 listopada, 2021</span>-->
-<!--      <hr class='header-left__horizontal-line'>-->
-<!--    </div>-->
-<!--    <div class='header-right'>-->
-<!--      <div class='categories'>-->
-<!--        <div class='category'>-->
-<!--          <span class='category__number'>8</span>-->
-<!--          <span class='category__name'>rekreacja</span>-->
-<!--        </div>-->
-<!--        <div class='category'>-->
-<!--          <span class='category__number'>11</span>-->
-<!--          <span class='category__name'>tech</span>-->
-<!--        </div>-->
-<!--        <div class='category'>-->
-<!--          <span class='category__number'>12</span>-->
-<!--          <span class='category__name'>osobiste</span>-->
-<!--        </div>-->
-<!--        <div class='category'>-->
-<!--          <span class='category__number'>5</span>-->
-<!--          <span class='category__name'>jedzenie</span>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class='percentage-of-done-tasks'>-->
-<!--        <div class='pie-chart'></div>-->
-<!--        <span class='percentage-of-done-tasks__text'>63% zrobione</span>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </header>-->
-
-<!--  <main class='main'>-->
-<!--    <h2 class='main__title'>zadania</h2>-->
-
-<!--    <ul class='tasks-list'>-->
-<!--      <li class='task'>-->
-<!--        <div class='task-logo'>-->
-<!--          <img class='task-logo__image task-logo__image&#45;&#45;large'-->
-<!--            src='images/laptop-code-solid.svg'-->
-<!--            alt='laptop icon'>-->
-<!--        </div>-->
-<!--        <span class='task__title'>Dokończyć aplikację To-Do</span>-->
-<!--        <span class='task__date'>18 listopada, 2021</span>-->
-<!--        <span class='task__time'>11:20</span>-->
-<!--      </li>-->
-<!--      <li class='task'>-->
-<!--        <div class='task-logo'>-->
-<!--          <img class='task-logo__image task-logo__image&#45;&#45;small'-->
-<!--            src='images/running-solid.svg'-->
-<!--            alt='laptop icon'>-->
-<!--        </div>-->
-<!--        <span class='task__title'>Wyjść z psem na spacer</span>-->
-<!--        <span class='task__date'>19 listopada, 2021</span>-->
-<!--        <span class='task__time'>18:35</span>-->
-<!--      </li>-->
-<!--      <li class='task'>-->
-<!--        <div class='task-logo'>-->
-<!--          <img class='task-logo__image task-logo__image&#45;&#45;small' src='images/running-solid.svg'-->
-<!--            alt='laptop icon'>-->
-<!--        </div>-->
-<!--        <span class='task__title'>Zacząć regularnie biegać</span>-->
-<!--        <span class='task__date'>20 listopada, 2021</span>-->
-<!--        <span class='task__time'>12:34</span>-->
-<!--      </li>-->
-<!--      <li class='task'>-->
-<!--        <div class='task-logo'>-->
-<!--          <img class='task-logo__image task-logo__image&#45;&#45;large' src='images/pizza-slice-solid.svg'-->
-<!--            alt='laptop icon'>-->
-<!--        </div>-->
-<!--        <span class='task__title'>Zjeść obiad</span>-->
-<!--        <span class='task__date'>21 listopada, 2021</span>-->
-<!--        <span class='task__time'>09:05</span>-->
-<!--      </li>-->
-<!--    </ul>-->
-
-<!--    <div class='tasks-done'>-->
-<!--      <span class='tasks-done__text'>skończone</span>-->
-<!--      <span class='tasks-done__number'>36</span>-->
-<!--    </div>-->
-
-<!--    <button class='add-task-button'>+</button>-->
-<!--  </main>-->
-
-  <section class='add-task'>
-    <button class='add-task__back-button'><img src='images/arrow-left-solid.svg' alt='left arrow icon'></button>
-    <h2 class='add-task__title'>dodaj nowe zadanie</h2>
-    <div class='add-task__category-icon'>
-      <img src='images/laptop-code-solid.svg' alt='laptop icon'>
+  <header class='header'>
+    <div class='header-left'>
+      <div class='mobile-hamburger-menu'>
+        <div class='mobile-hamburger-menu__bar'></div>
+        <div class='mobile-hamburger-menu__bar mobile-hamburger-menu__bar--short'></div>
+        <div class='mobile-hamburger-menu__bar'></div>
+      </div>
+      <h1 class='header-left__title'>Zadania do&nbsp;zrobienia</h1>
+      <span class='header-left__date'>18 listopada, 2021</span>
+      <hr class='header-left__horizontal-line'>
     </div>
+    <div class='header-right'>
+      <div class='categories'>
+        <div class='category'>
+          <span class='category__number'>8</span>
+          <span class='category__name'>rekreacja</span>
+        </div>
+        <div class='category'>
+          <span class='category__number'>11</span>
+          <span class='category__name'>tech</span>
+        </div>
+        <div class='category'>
+          <span class='category__number'>12</span>
+          <span class='category__name'>osobiste</span>
+        </div>
+        <div class='category'>
+          <span class='category__number'>5</span>
+          <span class='category__name'>jedzenie</span>
+        </div>
+      </div>
+      <div class='percentage-of-done-tasks'>
+        <div class='pie-chart'></div>
+        <span class='percentage-of-done-tasks__text'>63% zrobione</span>
+      </div>
+    </div>
+  </header>
 
-    <ul class='categories-list'>
+  <section class='mobile-menu'>
+    <div class='mobile-hamburger-menu mobile-hamburger-menu--close'>
+      <div class='mobile-hamburger-menu__bar'></div>
+      <div class='mobile-hamburger-menu__bar'></div>
+    </div>
+    <img src='images/pencil-ruler-solid.svg' alt='pencil icon'
+        class='mobile-menu__title-icon'>
+    <h2 class='mobile-menu__title'>lista zadań</h2>
+
+    <ul class='category-list'>
       <li class='category'>
+        <span class='category__name'>Wszystkie</span>
+        <div class='category__pill'>36</div>
+      </li>
+      <li class='category'>
+        <div class='category__icon'></div>
         <span class='category__name'>Rekreacja</span>
-        <div class='category__color-dot category__color-dot--orange'></div>
-        <label class='category__label' for='radio-recreation'>
-          <input type='radio' class='category__radio-input'
-            name='task-category' id='radio-recreation'>
-        </label>
+        <div class='category__pill'>8</div>
       </li>
-
       <li class='category'>
+        <div class='category__icon'></div>
         <span class='category__name'>Technologia</span>
-        <div class='category__color-dot category__color-dot--yellow'></div>
-        <label class='category__label' for='radio-technology'>
-          <input type='radio' class='category__radio-input'
-            name='task-category' id='radio-technology'>
-        </label>
+        <div class='category__pill'>11</div>
       </li>
-
       <li class='category'>
+        <div class='category__icon'></div>
         <span class='category__name'>Osobiste</span>
-        <div class='category__color-dot category__color-dot--red'></div>
-        <label class='category__label' for='radio-personal'>
-          <input type='radio' class='category__radio-input' name='task-category' id='radio-personal'>
-        </label>
+        <div class='category__pill'>12</div>
       </li>
-
       <li class='category'>
+        <div class='category__icon'></div>
         <span class='category__name'>Jedzenie</span>
-        <div class='category__color-dot category__color-dot--green'></div>
-        <label class='category__label' for='radio-food'>
-          <input type='radio' class='category__radio-input' name='task-category' id='radio-food'>
-        </label>
+        <div class='category__pill'>5</div>
       </li>
     </ul>
 
-    <form class='form'>
-      <label class='form__label' for='task-name'>Nazwa zadania
-        <input
-          class='form__input'
-          name='task-name'
-          id='task-name'
-          alt='name of the task'>
-      </label>
-      <button class='form__add-task-button' type='submit'>dodaj zadanie</button>
-    </form>
+    <img src='images/calendar-check-solid.svg' alt='calendar icon'
+      class='mobile-menu__title-icon'>
+    <h2 class='mobile-menu__title'>kalendarz</h2>
+
+    <ul class='calendar-list'>
+      <li class='calendar-category__year'>
+        Rok: <span class='year'>2021</span>
+      </li>
+      <li class='calendar-category__month'>
+        Miesiąc: <span class='month'>listopad</span>
+      </li>
+      <li class='calendar-category__day'>
+        <span class='day'>18, </span>
+        <span class='day-of-wwek'>czwartek</span>
+      </li>
+    </ul>
   </section>
+
+  <main class='main'>
+    <h2 class='main__title'>zadania</h2>
+
+    <ul class='tasks-list'>
+      <li class='task'>
+        <div class='task-logo'>
+          <img class='task-logo__image task-logo__image--large'
+            src='images/laptop-code-solid.svg'
+            alt='laptop icon'>
+        </div>
+        <span class='task__title'>Dokończyć aplikację To-Do</span>
+        <span class='task__date'>18 listopada, 2021</span>
+        <span class='task__time'>11:20</span>
+      </li>
+      <li class='task'>
+        <div class='task-logo'>
+          <img class='task-logo__image task-logo__image--small'
+            src='images/running-solid.svg'
+            alt='running man icon'>
+        </div>
+        <span class='task__title'>Wyjść z psem na spacer</span>
+        <span class='task__date'>19 listopada, 2021</span>
+        <span class='task__time'>18:35</span>
+      </li>
+      <li class='task'>
+        <div class='task-logo'>
+          <img class='task-logo__image task-logo__image--small' src='images/running-solid.svg'
+            alt='running man icon'>
+        </div>
+        <span class='task__title'>Zacząć regularnie biegać</span>
+        <span class='task__date'>20 listopada, 2021</span>
+        <span class='task__time'>12:34</span>
+      </li>
+      <li class='task'>
+        <div class='task-logo'>
+          <img class='task-logo__image task-logo__image--large' src='images/pizza-slice-solid.svg'
+            alt='pizza slice icon'>
+        </div>
+        <span class='task__title'>Zjeść obiad</span>
+        <span class='task__date'>21 listopada, 2021</span>
+        <span class='task__time'>09:05</span>
+      </li>
+    </ul>
+
+    <div class='tasks-done'>
+      <span class='tasks-done__text'>skończone</span>
+      <span class='tasks-done__number'>36</span>
+    </div>
+
+    <button class='add-task-button'>+</button>
+  </main>
+
+<!--  <section class='add-task'>-->
+<!--    <button class='add-task__back-button'><img src='images/arrow-left-solid.svg' alt='left arrow icon'></button>-->
+<!--    <h2 class='add-task__title'>dodaj nowe zadanie</h2>-->
+<!--    <div class='add-task__category-icon'>-->
+<!--      <img src='images/laptop-code-solid.svg' alt='laptop icon'>-->
+<!--    </div>-->
+
+<!--    <ul class='categories-list'>-->
+<!--      <li class='category'>-->
+<!--        <span class='category__name'>Rekreacja</span>-->
+<!--        <div class='category__color-dot category__color-dot&#45;&#45;orange'></div>-->
+<!--        <label class='category__label' for='radio-recreation'>-->
+<!--          <input type='radio' class='category__radio-input'-->
+<!--            name='task-category' id='radio-recreation'>-->
+<!--        </label>-->
+<!--      </li>-->
+
+<!--      <li class='category'>-->
+<!--        <span class='category__name'>Technologia</span>-->
+<!--        <div class='category__color-dot category__color-dot&#45;&#45;yellow'></div>-->
+<!--        <label class='category__label' for='radio-technology'>-->
+<!--          <input type='radio' class='category__radio-input'-->
+<!--            name='task-category' id='radio-technology'>-->
+<!--        </label>-->
+<!--      </li>-->
+
+<!--      <li class='category'>-->
+<!--        <span class='category__name'>Osobiste</span>-->
+<!--        <div class='category__color-dot category__color-dot&#45;&#45;red'></div>-->
+<!--        <label class='category__label' for='radio-personal'>-->
+<!--          <input type='radio' class='category__radio-input' name='task-category' id='radio-personal'>-->
+<!--        </label>-->
+<!--      </li>-->
+
+<!--      <li class='category'>-->
+<!--        <span class='category__name'>Jedzenie</span>-->
+<!--        <div class='category__color-dot category__color-dot&#45;&#45;green'></div>-->
+<!--        <label class='category__label' for='radio-food'>-->
+<!--          <input type='radio' class='category__radio-input' name='task-category' id='radio-food'>-->
+<!--        </label>-->
+<!--      </li>-->
+<!--    </ul>-->
+
+<!--    <form class='form'>-->
+<!--      <label class='form__label' for='task-name'>Nazwa zadania-->
+<!--        <input-->
+<!--          class='form__input'-->
+<!--          name='task-name'-->
+<!--          id='task-name'-->
+<!--          alt='name of the task'>-->
+<!--      </label>-->
+<!--      <button class='form__add-task-button' type='submit'>dodaj zadanie</button>-->
+<!--    </form>-->
+<!--  </section>-->
 </body>
 </html>
