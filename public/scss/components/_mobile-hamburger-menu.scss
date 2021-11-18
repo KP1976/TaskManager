@@ -11,11 +11,21 @@
   width: 1.5rem;
   z-index: 1;
 
+  @include for-tablet-portrait-up {
+    height: 1.5rem;
+    width: 2rem;
+  }
+
   &__bar {
     background-color: white;
     border-radius: 0.0625rem;
     height: 0.125rem;
     width: 100%;
+
+    @include for-tablet-portrait-up {
+      border-radius: 0.25rem;
+      height: 0.25rem;
+    }
 
     &.rotate-right {
       transform-origin: left;
