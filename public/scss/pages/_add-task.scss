@@ -25,6 +25,11 @@
       @include for-phone {
         width: 1rem;
       }
+
+      @include for-tablet-portrait-up {
+        height: 1.5rem;
+        width: auto;
+      }
     }
   }
 
@@ -36,6 +41,10 @@
 
     @include for-phone {
       font-size: var(--font-size-add-task-title-small-mobile);
+    }
+
+    @include for-tablet-portrait-up {
+      font-size: var(--font-size-add-task-title-small-tablet);
     }
   }
 
@@ -53,6 +62,12 @@
       width: 3.375rem;
     }
 
+    @include for-tablet-portrait-up {
+      height: 4.5rem;
+      margin: 4rem auto 0;
+      width: 4.5rem;
+    }
+
     img {
       left: 50%;
       position: absolute;
@@ -63,6 +78,10 @@
       @include for-phone {
         width: 1.625rem;
       }
+
+      @include for-tablet-portrait-up {
+        width: 2.375rem;
+      }
     }
   }
 
@@ -71,7 +90,11 @@
     list-style: none;
 
     @include for-phone {
-      margin-top: 4.5rem;
+      margin-top: 4rem;
+    }
+
+    @include for-tablet-portrait-up {
+      padding: 0 1.5rem;
     }
 
     @import '../components/category';

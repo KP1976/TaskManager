@@ -1,28 +1,44 @@
 .form {
   display: grid;
-  font-size: var(--font-size-headers);
-  font-weight: var(--font-weight-normal);
   grid-template-rows: max-content;
   margin-top: 2rem;
+  padding: 0 1.125rem;
 
   @include for-phone {
     margin-top: 4rem;
   }
 
+  @include for-tablet-portrait-up {
+    margin-top: 3.5rem;
+  }
+
   &__label {
     display: flex;
     flex-direction: column;
+    font-size: var(--font-size-headers);
+    font-weight: var(--font-weight-normal);
+
+    @include for-tablet-portrait-up {
+      font-size: var(--font-size-headers-small-tablet);
+    }
   }
 
   &__input {
     background-color: var(--blue-gray);
     border: none;
     border-radius: 0.1875rem;
-    color: white;
+    color: var(--primary-color);
     font-size: var(--font-size-headers);
+    font-weight: var(--font-weight-bold);
     height: 2rem;
     margin-top: 0.625rem;
     padding: 0 1rem;
+
+    @include for-tablet-portrait-up {
+      font-size: var(--font-size-date-small-tablet);
+      height: 3rem;
+      margin-top: 1rem;
+    }
   }
 
   &__add-task-button {
@@ -34,5 +50,11 @@
     height: 4rem;
     margin-top: 4rem;
     text-transform: uppercase;
+
+    @include for-tablet-portrait-up {
+      height: 6rem;
+      font-size: var(--font-size-add-task-title-small-tablet);
+      margin-top: 3.5rem;
+    }
   }
 }
