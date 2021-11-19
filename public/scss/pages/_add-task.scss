@@ -8,6 +8,10 @@
   width: 100%;
   z-index: 2;
 
+  @include for-tablet-landscape-up {
+    padding: 2rem;
+  }
+
   &.open {
     transform: translateX(0);
   }
@@ -19,6 +23,8 @@
     padding: 0;
     position: absolute;
 
+
+
     img {
       width: 0.875rem;
 
@@ -28,7 +34,11 @@
 
       @include for-tablet-portrait-up {
         height: 1.5rem;
-        width: auto;
+        width: auto
+      }
+
+      @include for-tablet-landscape-up {
+        height: 2rem;
       }
     }
   }
@@ -45,6 +55,11 @@
 
     @include for-tablet-portrait-up {
       font-size: var(--font-size-add-task-title-small-tablet);
+    }
+
+    @include for-tablet-landscape-up {
+      font-size: var(--font-size-add-task-title-large-tablet);
+      margin-top: 2rem;
     }
   }
 
@@ -68,6 +83,13 @@
       width: 4.5rem;
     }
 
+    @include for-tablet-landscape-up {
+      border: 2px solid var(--blue-gray);
+      height: 7.5rem;
+      margin: 6rem auto 0;
+      width: 7.5rem;
+    }
+
     img {
       left: 50%;
       position: absolute;
@@ -82,6 +104,10 @@
       @include for-tablet-portrait-up {
         width: 2.375rem;
       }
+
+      @include for-tablet-landscape-up {
+        width: 3.75rem;
+      }
     }
   }
 
@@ -95,6 +121,11 @@
 
     @include for-tablet-portrait-up {
       padding: 0 1.5rem;
+    }
+
+    @include for-tablet-landscape-up {
+      margin-top: 6rem;
+      padding: 0 calc(150px - 2rem);
     }
 
     @import '../components/category';

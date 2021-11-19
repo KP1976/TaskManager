@@ -12,6 +12,11 @@
     margin-top: 3.5rem;
   }
 
+  @include for-tablet-landscape-up {
+    margin-top: 4.5rem;
+    padding: 0 calc(150px - 2rem);
+  }
+
   &__label {
     display: flex;
     flex-direction: column;
@@ -20,6 +25,10 @@
 
     @include for-tablet-portrait-up {
       font-size: var(--font-size-headers-small-tablet);
+    }
+
+    @include for-tablet-landscape-up {
+      font-size: var(--font-size-headers-large-tablet);
     }
   }
 
@@ -39,6 +48,13 @@
       height: 3rem;
       margin-top: 1rem;
     }
+
+    @include for-tablet-landscape-up {
+      border-radius: 0.375rem;
+      font-size: var(--font-size-headers-small-tablet);
+      height: 4rem;
+      margin-top: 1.125rem;
+    }
   }
 
   &__add-task-button {
@@ -52,9 +68,17 @@
     text-transform: uppercase;
 
     @include for-tablet-portrait-up {
+      border-radius: 0.375rem;
       height: 6rem;
       font-size: var(--font-size-add-task-title-small-tablet);
       margin-top: 3.5rem;
+    }
+
+    @include for-tablet-landscape-up {
+      border-radius: 0.625rem;
+      height: 8rem;
+      font-size: var(--font-size-category-number-small-tablet);
+      margin-top: 4.875rem;
     }
   }
 }

@@ -40,6 +40,7 @@
   --font-size-category-number-large-tablet: 3rem;
   --font-size-date-large-tablet: 1.5rem;
   --font-size-headers-large-tablet: 1.75rem;
+  --font-size-add-task-title-large-tablet: 2.375rem;
   --svg-width-large-large-tablet: 2.5rem;
   --svg-width-small-large-tablet: 1.9375rem; }
 
@@ -875,6 +876,9 @@ ul {
   transition: transform 0.25s ease-in-out;
   width: 100%;
   z-index: 2; }
+  @media (min-width: 900px) {
+    .add-task {
+      padding: 2rem; } }
   .add-task.open {
     transform: translateX(0); }
   .add-task__back-button {
@@ -892,6 +896,9 @@ ul {
         .add-task__back-button img {
           height: 1.5rem;
           width: auto; } }
+      @media (min-width: 900px) {
+        .add-task__back-button img {
+          height: 2rem; } }
   .add-task__title {
     font-size: var(--font-size-add-task-title);
     font-weight: var(--font-weight-bold);
@@ -903,6 +910,10 @@ ul {
     @media (min-width: 600px) {
       .add-task__title {
         font-size: var(--font-size-add-task-title-small-tablet); } }
+    @media (min-width: 900px) {
+      .add-task__title {
+        font-size: var(--font-size-add-task-title-large-tablet);
+        margin-top: 2rem; } }
   .add-task__category-icon {
     border: 1px solid var(--blue-gray);
     border-radius: 50%;
@@ -920,6 +931,12 @@ ul {
         height: 4.5rem;
         margin: 4rem auto 0;
         width: 4.5rem; } }
+    @media (min-width: 900px) {
+      .add-task__category-icon {
+        border: 2px solid var(--blue-gray);
+        height: 7.5rem;
+        margin: 6rem auto 0;
+        width: 7.5rem; } }
     .add-task__category-icon img {
       left: 50%;
       position: absolute;
@@ -932,6 +949,9 @@ ul {
       @media (min-width: 600px) {
         .add-task__category-icon img {
           width: 2.375rem; } }
+      @media (min-width: 900px) {
+        .add-task__category-icon img {
+          width: 3.75rem; } }
   .add-task .categories-list {
     margin-top: 4rem;
     list-style: none; }
@@ -941,6 +961,10 @@ ul {
     @media (min-width: 600px) {
       .add-task .categories-list {
         padding: 0 1.5rem; } }
+    @media (min-width: 900px) {
+      .add-task .categories-list {
+        margin-top: 6rem;
+        padding: 0 calc(150px - 2rem); } }
     .add-task .categories-list .category {
       align-items: center;
       border-bottom: 1px solid var(--blue-gray);
@@ -955,6 +979,10 @@ ul {
         .add-task .categories-list .category {
           border-bottom: 2px solid var(--blue-gray);
           padding-bottom: calc(1.125rem - 2px); } }
+      @media (min-width: 900px) {
+        .add-task .categories-list .category {
+          margin-bottom: 3rem;
+          padding-bottom: calc(1.5rem - 2px); } }
       .add-task .categories-list .category:last-child {
         margin-bottom: 0; }
       .add-task .categories-list .category__name {
@@ -965,6 +993,9 @@ ul {
           .add-task .categories-list .category__name {
             font-size: var(--font-size-headers-small-tablet);
             margin-right: 1rem; } }
+        @media (min-width: 900px) {
+          .add-task .categories-list .category__name {
+            font-size: var(--font-size-headers-large-tablet); } }
       .add-task .categories-list .category__color-dot {
         border-radius: 50%;
         height: 0.375rem;
@@ -973,6 +1004,10 @@ ul {
           .add-task .categories-list .category__color-dot {
             height: 0.5rem;
             width: 0.5rem; } }
+        @media (min-width: 900px) {
+          .add-task .categories-list .category__color-dot {
+            height: 0.75rem;
+            width: 0.75rem; } }
         .add-task .categories-list .category__color-dot--orange {
           background-color: var(--category-recreation-color); }
         .add-task .categories-list .category__color-dot--yellow {
@@ -989,6 +1024,10 @@ ul {
           .add-task .categories-list .category__label {
             height: 1rem;
             width: 1rem; } }
+        @media (min-width: 900px) {
+          .add-task .categories-list .category__label {
+            height: 1.5rem;
+            width: 1.5rem; } }
       .add-task .categories-list .category__radio-input {
         appearance: none;
         border: 1px solid white;
@@ -1011,6 +1050,11 @@ ul {
             .add-task .categories-list .category__radio-input::before {
               height: 0.5rem;
               width: 0.5rem; } }
+          @media (min-width: 900px) {
+            .add-task .categories-list .category__radio-input::before {
+              height: 0.75rem;
+              width: 0.75rem;
+              box-shadow: inset 0.75rem 0.75rem var(--blue-gray); } }
         .add-task .categories-list .category__radio-input:checked::before {
           transform: scale(1); }
   .add-task .form {
@@ -1024,6 +1068,10 @@ ul {
     @media (min-width: 600px) {
       .add-task .form {
         margin-top: 3.5rem; } }
+    @media (min-width: 900px) {
+      .add-task .form {
+        margin-top: 4.5rem;
+        padding: 0 calc(150px - 2rem); } }
     .add-task .form__label {
       display: flex;
       flex-direction: column;
@@ -1032,6 +1080,9 @@ ul {
       @media (min-width: 600px) {
         .add-task .form__label {
           font-size: var(--font-size-headers-small-tablet); } }
+      @media (min-width: 900px) {
+        .add-task .form__label {
+          font-size: var(--font-size-headers-large-tablet); } }
     .add-task .form__input {
       background-color: var(--blue-gray);
       border: none;
@@ -1047,6 +1098,12 @@ ul {
           font-size: var(--font-size-date-small-tablet);
           height: 3rem;
           margin-top: 1rem; } }
+      @media (min-width: 900px) {
+        .add-task .form__input {
+          border-radius: 0.375rem;
+          font-size: var(--font-size-headers-small-tablet);
+          height: 4rem;
+          margin-top: 1.125rem; } }
     .add-task .form__add-task-button {
       background-color: var(--secondary-color);
       border: none;
@@ -1058,6 +1115,13 @@ ul {
       text-transform: uppercase; }
       @media (min-width: 600px) {
         .add-task .form__add-task-button {
+          border-radius: 0.375rem;
           height: 6rem;
           font-size: var(--font-size-add-task-title-small-tablet);
           margin-top: 3.5rem; } }
+      @media (min-width: 900px) {
+        .add-task .form__add-task-button {
+          border-radius: 0.625rem;
+          height: 8rem;
+          font-size: var(--font-size-category-number-small-tablet);
+          margin-top: 4.875rem; } }
