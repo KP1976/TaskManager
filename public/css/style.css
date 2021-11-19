@@ -395,9 +395,15 @@ ul {
         .header .header-left .mobile-hamburger-menu__bar.rotate-right {
           transform-origin: left;
           transform: rotate(45deg) translate(3px, -1px); }
+          @media (min-width: 600px) {
+            .header .header-left .mobile-hamburger-menu__bar.rotate-right {
+              transform: rotate(45deg) translate(0px, -1px); } }
         .header .header-left .mobile-hamburger-menu__bar.rotate-left {
           transform-origin: left;
           transform: rotate(-45deg) translate(-2px, 6px); }
+          @media (min-width: 600px) {
+            .header .header-left .mobile-hamburger-menu__bar.rotate-left {
+              transform: rotate(-45deg) translate(-1px, 2px); } }
         .header .header-left .mobile-hamburger-menu__bar--short {
           width: 75%; }
           .header .header-left .mobile-hamburger-menu__bar--short.not-visible {
@@ -663,6 +669,9 @@ ul {
   transform: translateX(-100%);
   transition: transform 0.25s ease-in-out;
   width: 74%; }
+  @media (min-width: 600px) {
+    .mobile-menu {
+      padding: 6.125rem 4.875rem; } }
   .mobile-menu.menu-open {
     transform: translateX(0); }
   .mobile-menu .subtitle-wrapper {
@@ -673,19 +682,33 @@ ul {
       height: 1.5rem;
       margin-right: 0.875rem;
       width: 1.5rem; }
+      @media (min-width: 600px) {
+        .mobile-menu .subtitle-wrapper__icon {
+          height: 2rem;
+          margin-right: 1rem;
+          width: auto; } }
     .mobile-menu .subtitle-wrapper__text {
       font-size: var(--font-size-add-task-title);
       text-transform: uppercase;
       margin-top: 1px; }
+      @media (min-width: 600px) {
+        .mobile-menu .subtitle-wrapper__text {
+          font-size: var(--font-size-add-task-title-small-tablet); } }
   .mobile-menu .category-list {
     display: flex;
     flex-direction: column;
     list-style: none;
     margin: 2rem 0 4rem; }
+    @media (min-width: 600px) {
+      .mobile-menu .category-list {
+        margin: 2rem 0 3rem; } }
     .mobile-menu .category-list .category {
       align-items: center;
       display: flex;
       margin-bottom: 1rem; }
+      @media (min-width: 600px) {
+        .mobile-menu .category-list .category {
+          margin-bottom: 1.125rem; } }
       .mobile-menu .category-list .category:first-child {
         color: var(--blue-gray);
         margin-left: 1.125rem; }
@@ -696,6 +719,10 @@ ul {
         height: 0.375rem;
         margin-right: 0.75rem;
         width: 0.375rem; }
+        @media (min-width: 600px) {
+          .mobile-menu .category-list .category__icon {
+            height: 0.5rem;
+            width: 0.5rem; } }
         .mobile-menu .category-list .category__icon--orange {
           background-color: var(--category-recreation-color); }
         .mobile-menu .category-list .category__icon--yellow {
@@ -707,6 +734,9 @@ ul {
       .mobile-menu .category-list .category__name {
         font-size: var(--font-size-headers);
         font-weight: var(--font-weight-normal); }
+        @media (min-width: 600px) {
+          .mobile-menu .category-list .category__name {
+            font-size: var(--font-size-headers-small-tablet); } }
       .mobile-menu .category-list .category__pill {
         background-color: var(--gray);
         border-radius: 0.875rem;
@@ -718,6 +748,12 @@ ul {
         margin-left: auto;
         text-align: center;
         width: 2.5rem; }
+        @media (min-width: 600px) {
+          .mobile-menu .category-list .category__pill {
+            font-size: var(--font-size-date-small-tablet);
+            height: 1.25rem;
+            line-height: 1.4;
+            width: 2.5rem; } }
   .mobile-menu .calendar-category-list {
     margin: 2rem auto 0;
     list-style: none; }
@@ -725,6 +761,10 @@ ul {
       font-size: var(--font-size-headers);
       font-weight: var(--font-weight-normal);
       margin-bottom: 1rem; }
+      @media (min-width: 600px) {
+        .mobile-menu .calendar-category-list__year, .mobile-menu .calendar-category-list__month, .mobile-menu .calendar-category-list__day {
+          font-size: var(--font-size-headers-small-tablet);
+          margin-bottom: 1.125rem; } }
     .mobile-menu .calendar-category-list .year, .mobile-menu .calendar-category-list .month, .mobile-menu .calendar-category-list .day, .mobile-menu .calendar-category-list .day-of-week {
       color: var(--blue-gray);
       font-weight: var(--font-weight-bold); }
