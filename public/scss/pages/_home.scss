@@ -223,6 +223,10 @@
     padding-top: 1.5rem;
   }
 
+  @include for-tablet-landscape-up {
+    padding: 3rem;
+  }
+
   &__title, .tasks-done__text {
     font-size: var(--font-size-headers);
     text-transform: uppercase;
@@ -230,16 +234,24 @@
     @include for-tablet-portrait-up {
       font-size: var(--font-size-headers-small-tablet);
     }
+
+    @include for-tablet-landscape-up {
+      font-size: var(--font-size-headers-large-tablet);
+    }
   }
 
   .tasks-list {
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin: 1.25rem 0 1.75rem 0;
+    margin: 1.25rem 0 1.75rem;
 
     @include for-tablet-portrait-up {
-      margin: 1.5rem 0 1.5rem 0;
+      margin: 1.5rem 0 1.5rem;
+    }
+
+    @include for-tablet-landscape-up {
+      margin: 2.5rem 0 3rem;
     }
   }
 
@@ -254,6 +266,10 @@
 
       @include for-tablet-portrait-up {
         margin-right: 1rem;
+      }
+
+      @include for-tablet-landscape-up {
+        margin-right: 1.625rem;
       }
     }
 
@@ -272,6 +288,13 @@
         height: 2rem;
         padding-top: 0.55rem;
         width: 2rem;
+      }
+
+      @include for-tablet-landscape-up {
+        font-size: var(--font-size-date-large-tablet);
+        height: 3rem;
+        padding-top: 0.75rem;
+        width: 3rem;
       }
     }
   }

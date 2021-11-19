@@ -18,4 +18,12 @@
     height: 4rem;
     width: 4rem;
   }
+
+  @include for-tablet-landscape-up {
+    bottom: 3rem;
+    font-size: var(--font-size-title-large-tablet);
+    height: 6rem;
+    right: 3rem;
+    width: 6rem;
+  }
 }

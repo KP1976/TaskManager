@@ -38,7 +38,10 @@
   --svg-width-small-small-tablet: 1.583rem;
   --font-size-title-large-tablet: 4.5rem;
   --font-size-category-number-large-tablet: 3rem;
-  --font-size-date-large-tablet: 1.5rem; }
+  --font-size-date-large-tablet: 1.5rem;
+  --font-size-headers-large-tablet: 1.75rem;
+  --svg-width-large-large-tablet: 2.5rem;
+  --svg-width-small-large-tablet: 1.9375rem; }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -576,20 +579,29 @@ ul {
   @media (min-width: 414px) {
     .main {
       padding-top: 1.5rem; } }
+  @media (min-width: 900px) {
+    .main {
+      padding: 3rem; } }
   .main__title, .main .tasks-done__text {
     font-size: var(--font-size-headers);
     text-transform: uppercase; }
     @media (min-width: 600px) {
       .main__title, .main .tasks-done__text {
         font-size: var(--font-size-headers-small-tablet); } }
+    @media (min-width: 900px) {
+      .main__title, .main .tasks-done__text {
+        font-size: var(--font-size-headers-large-tablet); } }
   .main .tasks-list {
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin: 1.25rem 0 1.75rem 0; }
+    margin: 1.25rem 0 1.75rem; }
     @media (min-width: 600px) {
       .main .tasks-list {
-        margin: 1.5rem 0 1.5rem 0; } }
+        margin: 1.5rem 0 1.5rem; } }
+    @media (min-width: 900px) {
+      .main .tasks-list {
+        margin: 2.5rem 0 3rem; } }
   .main .task {
     border-bottom: 1px solid var(--blue-gray);
     display: grid;
@@ -605,8 +617,14 @@ ul {
     @media (min-width: 600px) {
       .main .task {
         border-bottom: 2px solid var(--blue-gray);
+        grid-column-gap: 7.25rem;
+        grid-row-gap: 1rem;
         margin-bottom: 1.5rem;
         padding-bottom: 1.375rem; } }
+    @media (min-width: 900px) {
+      .main .task {
+        margin-bottom: 3rem;
+        padding-bottom: calc(1.625rem - 2px); } }
     .main .task:last-child {
       margin-bottom: 0; }
     .main .task .task-logo {
@@ -622,6 +640,10 @@ ul {
         .main .task .task-logo {
           height: 3.625rem;
           width: 3.625rem; } }
+      @media (min-width: 900px) {
+        .main .task .task-logo {
+          height: 5rem;
+          width: 5rem; } }
       .main .task .task-logo__image {
         left: 50%;
         position: absolute;
@@ -632,11 +654,17 @@ ul {
           @media (min-width: 600px) {
             .main .task .task-logo__image--large {
               width: var(--svg-width-large-small-tablet); } }
+          @media (min-width: 900px) {
+            .main .task .task-logo__image--large {
+              width: var(--svg-width-large-large-tablet); } }
         .main .task .task-logo__image--small {
           width: var(--svg-width-small); }
           @media (min-width: 600px) {
             .main .task .task-logo__image--small {
               width: var(--svg-width-small-small-tablet); } }
+          @media (min-width: 900px) {
+            .main .task .task-logo__image--small {
+              width: var(--svg-width-small-large-tablet); } }
     .main .task__title {
       font-size: var(--font-size-headers);
       grid-column: 2 / 3;
@@ -645,12 +673,18 @@ ul {
       @media (min-width: 600px) {
         .main .task__title {
           font-size: var(--font-size-headers-small-tablet); } }
+      @media (min-width: 900px) {
+        .main .task__title {
+          font-size: var(--font-size-headers-large-tablet); } }
     .main .task__date, .main .task__time {
       color: var(--gray);
       font-size: var(--font-size-date); }
       @media (min-width: 600px) {
         .main .task__date, .main .task__time {
           font-size: var(--font-size-date-small-tablet); } }
+      @media (min-width: 900px) {
+        .main .task__date, .main .task__time {
+          font-size: var(--font-size-date-large-tablet); } }
     .main .task__date {
       grid-column: 2 / 3;
       grid-row: 2 / 3; }
@@ -667,6 +701,9 @@ ul {
       @media (min-width: 600px) {
         .main .tasks-done__text {
           margin-right: 1rem; } }
+      @media (min-width: 900px) {
+        .main .tasks-done__text {
+          margin-right: 1.625rem; } }
     .main .tasks-done__number {
       background-color: var(--secondary-color);
       border-radius: 50%;
@@ -682,6 +719,12 @@ ul {
           height: 2rem;
           padding-top: 0.55rem;
           width: 2rem; } }
+      @media (min-width: 900px) {
+        .main .tasks-done__number {
+          font-size: var(--font-size-date-large-tablet);
+          height: 3rem;
+          padding-top: 0.75rem;
+          width: 3rem; } }
   .main .add-task-button {
     background-color: var(--secondary-color);
     border: none;
@@ -701,6 +744,13 @@ ul {
         font-size: var(--font-size-add-button-small-tablet);
         height: 4rem;
         width: 4rem; } }
+    @media (min-width: 900px) {
+      .main .add-task-button {
+        bottom: 3rem;
+        font-size: var(--font-size-title-large-tablet);
+        height: 6rem;
+        right: 3rem;
+        width: 6rem; } }
 
 .mobile-menu {
   backdrop-filter: blur(50px);
