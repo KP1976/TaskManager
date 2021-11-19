@@ -16,6 +16,10 @@
     width: 2rem;
   }
 
+  @include for-tablet-landscape-up {
+    margin: 2em 0 0 2rem;
+  }
+
   &__bar {
     background-color: white;
     border-radius: 0.0625rem;
