@@ -6,6 +6,10 @@
   grid-template-columns: 59.44% 40.56%;
   height: 32.5vh;
 
+  @include for-desktop-up {
+    display: none;
+  }
+
   .header-left {
     position: relative;
 
@@ -225,6 +229,11 @@
 
   @include for-tablet-landscape-up {
     padding: 3rem;
+  }
+
+  @include for-desktop-up {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0 2.75rem;
   }
 
   &__title, .tasks-done__text {

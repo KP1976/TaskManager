@@ -1,7 +1,7 @@
 const mmobileHamburgerMenuButton = document.querySelector(
   '.mobile-hamburger-menu'
 );
-const mobileMenu = document.querySelector('.mobile-menu');
+const mobileMenu = document.querySelector('.menu');
 const hamburgerMenuBars = document.querySelectorAll(
   '.mobile-hamburger-menu__bar'
 );
@@ -19,9 +19,9 @@ const toggleMobileMenu = () => {
   hamburgerMenuBars[2].classList.toggle('rotate-left');
 };
 
-const showAddTaskPage = () => addTaskPage.classList.add('open');
+// const showAddTaskPage = () => addTaskPage.classList.add('open');
 const hideAddTaskPage = () => addTaskPage.classList.remove('open');
 
 mmobileHamburgerMenuButton.addEventListener('click', toggleMobileMenu);
-addTaskButton.addEventListener('click', showAddTaskPage);
+// addTaskButton.addEventListener('click', showAddTaskPage);
 addTaskBackButton.addEventListener('click', hideAddTaskPage);

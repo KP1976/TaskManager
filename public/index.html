@@ -14,6 +14,14 @@
 </head>
 <body>
 
+<!--DESKTOP lAYOUT-->
+
+<div class='top-bar'>
+  <h1 class='top-bar__title'>Aplikacja do zarządzania zadaniami</h1>
+</div>
+
+<!--END DESKTOP LAYOUT-->
+
   <header class='header'>
     <div class='header-left'>
       <button class='mobile-hamburger-menu'>
@@ -52,7 +60,12 @@
     </div>
   </header>
 
-  <section class='mobile-menu'>
+  <section class='menu'>
+    <div class='title-wrapper'>
+      <img src='images/home-solid.svg' alt='home icon'
+        class='subtitle-wrapper__icon'>
+      <h2 class='title-wrapper__text'>menu główne</h2>
+    </div>
     <div class='subtitle-wrapper'>
       <img src='images/pencil-ruler-solid.svg' alt='pencil icon'
           class='subtitle-wrapper__icon'>
@@ -162,7 +175,7 @@
       <span class='tasks-done__number'>36</span>
     </div>
 
-    <button class='add-task-button'>+</button>
+    <button class='add-task-button'></button>
   </main>
 
   <section class='add-task'>

@@ -1,0 +1,18 @@
+.top-bar {
+  display: none;
+
+  @include for-desktop-up {
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 10px hsla(0, 0, 0, 0.15);
+    display: flex;
+    height: 7rem;
+    place-content: center;
+    place-items: center;
+    z-index: 3;
+
+    &__title {
+      font-size: var(--font-size-title-small-desktop);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+}

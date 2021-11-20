@@ -10,4 +10,12 @@ body {
   grid-template-rows: max-content;
   line-height: 1;
   min-height: 100vh;
+  overflow: hidden;
+
+  @include for-desktop-up {
+    background-image: url('../images/mountains.jpg');
+    background-position: -870px -630px;
+    background-repeat: no-repeat;
+    background-size: 2970px;
+  }
 }
