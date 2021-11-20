@@ -152,6 +152,11 @@
         margin: 0;
       }
 
+      @include for-desktop-up {
+        flex-direction: row;
+        margin-bottom: 1rem;
+      }
+
       &:first-child {
         color: var(--blue-gray);
         margin-left: 1.125rem;
@@ -163,6 +168,10 @@
           grid-column: 2 / 4;
           grid-row: 1 / 2;
           margin-left: 0;
+        }
+
+        @include for-desktop-up {
+          margin-left: 1.125rem;
         }
 
         .category__name {
@@ -183,6 +192,10 @@
           display: block;
           height: 2.5rem;
         }
+
+        @include for-desktop-up {
+          display: none;
+        }
       }
 
       &__dot {
@@ -198,6 +211,10 @@
 
         @include for-tablet-landscape-up {
           display: none;
+        }
+
+        @include for-desktop-up {
+          display: block;
         }
 
         &--orange {
@@ -230,6 +247,11 @@
           margin-bottom: 0.75rem;
           margin-top: 1rem;
         }
+
+        @include for-desktop-up {
+          font-size: var(--font-size-date-small-tablet);
+          margin: 0;
+        }
       }
 
       &__pill {
@@ -259,6 +281,14 @@
           line-height: 1.4;
           width: 3.75rem;
         }
+
+        @include for-desktop-up {
+          font-size: var(--font-size-headers);
+          height: 1.125rem;
+          line-height: 1.4;
+          margin-left: auto;
+          width: 2.55rem;
+        }
       }
     }
   }
@@ -281,6 +311,12 @@
       font-size: var(--font-size-headers);
       font-weight: var(--font-weight-normal);
       margin-bottom: 1rem;
+
+      &:last-child {
+        @include for-desktop-up {
+          margin-bottom: 0;
+        }
+      }
 
       @include for-tablet-portrait-up {
         font-size: var(--font-size-headers-small-tablet);

@@ -936,6 +936,10 @@ ul {
           flex-direction: column;
           grid-row: 2 / 3;
           margin: 0; } }
+      @media (min-width: 1280px) {
+        .menu .category-list .category {
+          flex-direction: row;
+          margin-bottom: 1rem; } }
       .menu .category-list .category:first-child {
         color: var(--blue-gray);
         margin-left: 1.125rem; }
@@ -947,6 +951,9 @@ ul {
             grid-column: 2 / 4;
             grid-row: 1 / 2;
             margin-left: 0; } }
+        @media (min-width: 1280px) {
+          .menu .category-list .category:first-child {
+            margin-left: 1.125rem; } }
         @media (min-width: 900px) {
           .menu .category-list .category:first-child .category__name {
             margin: 0 1.25rem 0 0; } }
@@ -958,6 +965,9 @@ ul {
           .menu .category-list .category__icon {
             display: block;
             height: 2.5rem; } }
+        @media (min-width: 1280px) {
+          .menu .category-list .category__icon {
+            display: none; } }
       .menu .category-list .category__dot {
         border-radius: 50%;
         height: 0.375rem;
@@ -970,6 +980,9 @@ ul {
         @media (min-width: 900px) {
           .menu .category-list .category__dot {
             display: none; } }
+        @media (min-width: 1280px) {
+          .menu .category-list .category__dot {
+            display: block; } }
         .menu .category-list .category__dot--orange {
           background-color: var(--category-recreation-color); }
         .menu .category-list .category__dot--yellow {
@@ -989,6 +1002,10 @@ ul {
             font-size: var(--font-size-date-large-tablet);
             margin-bottom: 0.75rem;
             margin-top: 1rem; } }
+        @media (min-width: 1280px) {
+          .menu .category-list .category__name {
+            font-size: var(--font-size-date-small-tablet);
+            margin: 0; } }
       .menu .category-list .category__pill {
         background-color: var(--gray);
         border-radius: 0.875rem;
@@ -1014,6 +1031,13 @@ ul {
             height: 2rem;
             line-height: 1.4;
             width: 3.75rem; } }
+        @media (min-width: 1280px) {
+          .menu .category-list .category__pill {
+            font-size: var(--font-size-headers);
+            height: 1.125rem;
+            line-height: 1.4;
+            margin-left: auto;
+            width: 2.55rem; } }
   .menu .calendar-category-list {
     list-style: none;
     margin: 2rem auto 0; }
@@ -1029,6 +1053,9 @@ ul {
       font-size: var(--font-size-headers);
       font-weight: var(--font-weight-normal);
       margin-bottom: 1rem; }
+      @media (min-width: 1280px) {
+        .menu .calendar-category-list__year:last-child, .menu .calendar-category-list__month:last-child, .menu .calendar-category-list__day:last-child {
+          margin-bottom: 0; } }
       @media (min-width: 600px) {
         .menu .calendar-category-list__year, .menu .calendar-category-list__month, .menu .calendar-category-list__day {
           font-size: var(--font-size-headers-small-tablet);
