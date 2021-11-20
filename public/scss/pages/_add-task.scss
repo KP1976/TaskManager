@@ -12,6 +12,10 @@
     padding: 2rem;
   }
 
+  @include for-desktop-up {
+    display: none;
+  }
+
   &.open {
     transform: translateX(0);
   }

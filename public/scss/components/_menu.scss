@@ -25,6 +25,7 @@
     backdrop-filter: none;
     background-image: linear-gradient(to bottom,  var(--primary-color), transparent);
     display: flex;
+    grid-row: 2 / 4;
     margin-left: 2.75rem;
     padding: 0;
     position: relative;
@@ -177,6 +178,30 @@
     .year, .month, .day, .day-of-week {
       color: var(--blue-gray);
       font-weight: var(--font-weight-bold);
+    }
+  }
+
+  .desktop-add-task-button {
+    display: none;
+
+    @include for-desktop-up {
+      background-color: var(--blue-gray);
+      border: none;
+      border-radius: 0.5rem;
+      color: var(--primary-color);
+      cursor: pointer;
+      display: block;
+      font-weight: var(--font-weight-bold);
+      height: 3rem;
+      margin: 8rem auto 0;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in-out;
+      width: 13rem;
+    }
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--blue-gray);
     }
   }
 }

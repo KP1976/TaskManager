@@ -36,8 +36,8 @@
       content: 'DODAJ ZADANIE';
       font-size: var(--font-size-date-small-tablet);
       font-weight: var(--font-weight-bold);
-      top: 50%;
       left: 50%;
+      top: 50%;
       transform: translate(-50%, calc(-50% + 1px));
       width: 100%;
     }
@@ -67,7 +67,6 @@
     background-color: var(--blue-gray);
     border-radius: 0.5rem;
     box-shadow: none;
-    bottom: 12.3755rem;
     color: var(--primary-color);
     cursor: pointer;
     height: 3rem;

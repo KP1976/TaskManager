@@ -365,7 +365,10 @@ body {
       background-image: url("../images/mountains.jpg");
       background-position: -870px -630px;
       background-repeat: no-repeat;
-      background-size: 2970px; } }
+      background-size: 2970px;
+      column-gap: 2.5rem;
+      grid-template-columns: 19.75rem 1fr 1fr;
+      grid-template-rows: 7rem 2rem auto; } }
 
 h1, h2, h3, h4, h5, h6, hr, ul {
   margin: 0; }
@@ -596,8 +599,12 @@ ul {
       padding: 3rem; } }
   @media (min-width: 1280px) {
     .main {
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 0 2.75rem; } }
+      display: none; } }
+  .main__second-title {
+    display: none; }
+    @media (min-width: 1280px) {
+      .main__second-title {
+        display: block; } }
   .main__title, .main .tasks-done__text {
     font-size: var(--font-size-headers);
     text-transform: uppercase; }
@@ -776,8 +783,8 @@ ul {
           content: 'DODAJ ZADANIE';
           font-size: var(--font-size-date-small-tablet);
           font-weight: var(--font-weight-bold);
-          top: 50%;
           left: 50%;
+          top: 50%;
           transform: translate(-50%, calc(-50% + 1px));
           width: 100%; } }
     @media (min-width: 1280px) {
@@ -800,7 +807,6 @@ ul {
         background-color: var(--blue-gray);
         border-radius: 0.5rem;
         box-shadow: none;
-        bottom: 12.3755rem;
         color: var(--primary-color);
         cursor: pointer;
         height: 3rem;
@@ -833,6 +839,7 @@ ul {
       backdrop-filter: none;
       background-image: linear-gradient(to bottom, var(--primary-color), transparent);
       display: flex;
+      grid-row: 2 / 4;
       margin-left: 2.75rem;
       padding: 0;
       position: relative;
@@ -1069,6 +1076,25 @@ ul {
     .menu .calendar-category-list .year, .menu .calendar-category-list .month, .menu .calendar-category-list .day, .menu .calendar-category-list .day-of-week {
       color: var(--blue-gray);
       font-weight: var(--font-weight-bold); }
+  .menu .desktop-add-task-button {
+    display: none; }
+    @media (min-width: 1280px) {
+      .menu .desktop-add-task-button {
+        background-color: var(--blue-gray);
+        border: none;
+        border-radius: 0.5rem;
+        color: var(--primary-color);
+        cursor: pointer;
+        display: block;
+        font-weight: var(--font-weight-bold);
+        height: 3rem;
+        margin: 8rem auto 0;
+        text-transform: uppercase;
+        transition: all 0.2s ease-in-out;
+        width: 13rem; } }
+    .menu .desktop-add-task-button:hover {
+      background-color: var(--primary-color);
+      color: var(--blue-gray); }
 
 .add-task {
   background-color: var(--primary-color);
@@ -1082,6 +1108,9 @@ ul {
   @media (min-width: 900px) {
     .add-task {
       padding: 2rem; } }
+  @media (min-width: 1280px) {
+    .add-task {
+      display: none; } }
   .add-task.open {
     transform: translateX(0); }
   .add-task__back-button {
@@ -1359,17 +1388,30 @@ ul {
           font-size: var(--font-size-category-number-small-tablet);
           margin-top: 4.875rem; } }
 
-.top-bar {
+.desktop-top-bar {
   display: none; }
   @media (min-width: 1280px) {
-    .top-bar {
+    .desktop-top-bar {
       background-color: var(--primary-color);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       display: flex;
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
       height: 7rem;
       place-content: center;
       place-items: center;
-      z-index: 3; }
-      .top-bar__title {
+      z-index: 3;
+      width: 100%; }
+      .desktop-top-bar__title {
         font-size: var(--font-size-title-small-desktop);
         font-weight: var(--font-weight-bold); } }
+
+.desktop-title {
+  display: none; }
+  @media (min-width: 1280px) {
+    .desktop-title {
+      display: block;
+      font-size: var(--font-size-category-number-small-tablet);
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      margin-top: 3rem; } }

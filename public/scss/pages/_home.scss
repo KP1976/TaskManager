@@ -232,8 +232,15 @@
   }
 
   @include for-desktop-up {
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 0 2.75rem;
+    display: none;
+  }
+
+  &__second-title {
+    display: none;
+
+    @include for-desktop-up {
+      display: block;
+    }
   }
 
   &__title, .tasks-done__text {
