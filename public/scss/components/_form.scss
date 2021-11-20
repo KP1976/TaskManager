@@ -2,7 +2,6 @@
   display: grid;
   grid-template-rows: max-content;
   margin-top: 2rem;
-  padding: 0 1.125rem;
 
   @include for-phone {
     margin-top: 4rem;
@@ -10,6 +9,7 @@
 
   @include for-tablet-portrait-up {
     margin-top: 3.5rem;
+    padding: 0 1.5rem;
   }
 
   @include for-tablet-landscape-up {

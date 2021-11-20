@@ -19,9 +19,10 @@ const toggleMobileMenu = () => {
   hamburgerMenuBars[2].classList.toggle('rotate-left');
 };
 
-// const showAddTaskPage = () => addTaskPage.classList.add('open');
+const showAddTaskPage = () => addTaskPage.classList.add('open');
 const hideAddTaskPage = () => addTaskPage.classList.remove('open');
 
 mmobileHamburgerMenuButton.addEventListener('click', toggleMobileMenu);
-// addTaskButton.addEventListener('click', showAddTaskPage);
+
+if (addTaskButton) addTaskButton.addEventListener('click', showAddTaskPage);
 addTaskBackButton.addEventListener('click', hideAddTaskPage);
