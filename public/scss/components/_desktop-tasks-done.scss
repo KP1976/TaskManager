@@ -1,0 +1,19 @@
+.desktop-tasks-done {
+  background-image: linear-gradient(to bottom,  var(--secondary-color), transparent);
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  height: 21.5rem;
+  margin-top: -28px;
+  padding: 2rem;
+
+  &__title {
+    font-size: var(--font-size-title-tasks-small-desktop);
+    text-transform: uppercase;
+  }
+
+  .desktop-tasks-done-list {
+    margin-top: 2rem;
+  }
+
+  @import 'desktop-task-done';
+}

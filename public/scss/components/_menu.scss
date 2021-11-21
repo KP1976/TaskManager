@@ -23,7 +23,7 @@
 
   @include for-desktop-up {
     backdrop-filter: none;
-    background-image: linear-gradient(to bottom,  var(--primary-color), transparent);
+    background-image: linear-gradient(to bottom, var(--primary-color), transparent);
     display: flex;
     grid-row: 2 / 4;
     margin-left: 2.75rem;
@@ -115,7 +115,6 @@
   .category-list {
     display: flex;
     flex-direction: column;
-    list-style: none;
     margin: 2rem 0 4rem;
 
     @include for-tablet-portrait-up {
@@ -294,7 +293,6 @@
   }
 
   .calendar-category-list {
-    list-style: none;
     margin: 2rem auto 0;
 
     @include for-tablet-landscape-up {

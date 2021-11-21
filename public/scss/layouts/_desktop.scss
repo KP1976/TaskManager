@@ -33,29 +33,56 @@
 }
 
 .desktop-main {
-  display: grid;
-  grid-column-gap: 2.5rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: min-content 1fr;
-  padding: 3rem 2.75rem 0 0;
+  display: none;
 
-  &__title {
-    font-size: var(--font-size-title2-small-desktop);
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
+  @include for-desktop-up {
+    display: grid;
+    grid-column-gap: 2.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
+    padding: 3rem 2.75rem 0 0;
+
+    &__title {
+      font-size: var(--font-size-title2-small-desktop);
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .desktop-tasks-todo-and-done {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      margin-top: 1.75rem;
+
+      .desktop-task-logo {
+        background-color: white;
+        border-radius: 50%;
+        height: 2rem;
+        margin-right: 0.75rem;
+        position: relative;
+        width: 2rem;
+
+        &__image {
+          //https://codepen.io/sosuke/pen/Pjoqqp
+          filter: invert(44%) sepia(10%) saturate(2640%) hue-rotate(156deg) brightness(91%) contrast(89%);
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 0.875rem;
+        }
+      }
+
+      .task__title {
+        font-size: var(--font-size-add-task-title);
+      }
+
+      @import '../components/desktop-tasks-todo';
+      @import '../components/desktop-tasks-done';
+    }
+
+    @import '../components/desktop-task-details';
   }
-
-  .desktop-tasks-todo-and-done {
-    display: flex;
-    flex-direction: column;
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    margin-top: 1.75rem;
-
-    @import '../components/desktop-tasks-todo';
-    @import '../components/desktop-tasks-done';
-  }
-
-  @import '../components/desktop-task-details';
 }
 
