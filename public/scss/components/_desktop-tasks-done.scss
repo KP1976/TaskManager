@@ -3,10 +3,11 @@
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
   height: 21.5rem;
-  margin-top: -28px;
+  margin-top: 1.75rem;
   padding: 2rem;
 
   &__title {
+    color: var(--gray);
     font-size: var(--font-size-title-tasks-small-desktop);
     text-transform: uppercase;
   }

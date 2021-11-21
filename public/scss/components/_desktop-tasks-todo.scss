@@ -6,6 +6,7 @@
   padding: 2rem;
 
   &__title {
+    color: var(--gray);
     font-size: var(--font-size-title-tasks-small-desktop);
     text-transform: uppercase;
   }

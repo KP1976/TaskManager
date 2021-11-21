@@ -371,7 +371,7 @@ body {
       column-gap: 2.5rem;
       grid-template-columns: 19.75rem 1fr; } }
 
-h1, h2, h3, h4, h5, h6, hr, ul {
+h1, h2, h3, h4, h5, h6, hr, ul, p {
   margin: 0; }
 
 ul {
@@ -1087,7 +1087,7 @@ ul {
         transition: all 0.2s ease-in-out;
         width: 13rem; } }
     .menu .desktop-add-task-button:hover {
-      background-color: var(--primary-color);
+      background-color: transparent;
       border: 1px solid var(--blue-gray);
       color: var(--blue-gray); }
 
@@ -1431,6 +1431,7 @@ ul {
           height: 25.75rem;
           padding: 2rem; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-todo__title {
+            color: var(--gray);
             font-size: var(--font-size-title-tasks-small-desktop);
             text-transform: uppercase; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-todo .desktop-tasks-todo-list {
@@ -1451,9 +1452,10 @@ ul {
           border-top-left-radius: 1.25rem;
           border-top-right-radius: 1.25rem;
           height: 21.5rem;
-          margin-top: -28px;
+          margin-top: 1.75rem;
           padding: 2rem; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done__title {
+            color: var(--gray);
             font-size: var(--font-size-title-tasks-small-desktop);
             text-transform: uppercase; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-tasks-done-list {
@@ -1469,5 +1471,65 @@ ul {
             padding: 0.75rem 1rem;
             margin-bottom: 1.5rem; }
       .desktop-main .desktop-task-details {
+        background-image: linear-gradient(to bottom, var(--primary-color), transparent);
+        border-top-left-radius: 1.25rem;
+        border-top-right-radius: 1.25rem;
+        height: 45.5rem;
         grid-column: 2 / 3;
-        grid-row: 2 / 3; } }
+        grid-row: 2 / 3;
+        margin-top: 1.75rem;
+        padding: 2rem; }
+        .desktop-main .desktop-task-details__title {
+          color: var(--gray);
+          font-size: var(--font-size-title-tasks-small-desktop);
+          font-weight: var(--font-weight-bold);
+          text-decoration: underline; }
+        .desktop-main .desktop-task-details__subtitle {
+          color: var(--blue-gray);
+          font-size: var(--font-size-add-task-title-small-mobile);
+          font-weight: var(--font-weight-bold);
+          margin-top: 2.75rem; }
+        .desktop-main .desktop-task-details__task-title {
+          font-size: var(--font-size-title2-small-desktop);
+          font-weight: var(--font-weight-bold);
+          margin-top: 0.875rem; }
+        .desktop-main .desktop-task-details .dot {
+          background-color: var(--category-recreation-color);
+          border-radius: 50%;
+          grid-row: 2 / 3;
+          height: 0.625rem;
+          width: 0.625rem; }
+        .desktop-main .desktop-task-details .desktop-type-of-task {
+          align-items: center;
+          display: grid;
+          grid-template-columns: min-content max-content;
+          grid-template-rows: max-content max-content;
+          grid-column-gap: 0.5rem;
+          grid-row-gap: 0.75rem;
+          margin-top: 4.875rem; }
+          .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(5), .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(6) {
+            margin-top: 2.5rem; }
+          .desktop-main .desktop-task-details .desktop-type-of-task .desktop-task-details__subtitle {
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+            margin-top: 0; }
+          .desktop-main .desktop-task-details .desktop-type-of-task__text {
+            font-size: var(--font-size-add-task-title); }
+          .desktop-main .desktop-task-details .desktop-type-of-task__date, .desktop-main .desktop-task-details .desktop-type-of-task__time {
+            grid-column: 1 / -1; }
+        .desktop-main .desktop-task-details__modify-button {
+          background-color: var(--secondary-color);
+          border: none;
+          border-radius: 0.5rem;
+          color: white;
+          cursor: pointer;
+          font-weight: var(--font-weight-bold);
+          height: 3.5rem;
+          margin: 9.5rem auto 0;
+          text-transform: uppercase;
+          transition: all 0.2s ease-in-out;
+          width: 100%; }
+          .desktop-main .desktop-task-details__modify-button:hover {
+            background-color: transparent;
+            border: 1px solid var(--secondary-color);
+            color: var(--blue-gray); } }

@@ -13,3 +13,7 @@
 @mixin for-desktop-up {
   @media (min-width: 1280px) { @content; }
 }
+
+@mixin for-desktop-large {
+  @media (min-width: 1440px) { @content; }
+}
