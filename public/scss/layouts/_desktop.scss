@@ -18,6 +18,12 @@
       font-weight: var(--font-weight-bold);
     }
   }
+
+  //@include for-desktop-large {
+  //  position: absolute;
+  //  left: 0;
+  //  width: 100%;
+  //}
 }
 
 .desktop-title {
@@ -83,6 +89,10 @@
     }
 
     @import '../components/desktop-task-details';
+  }
+
+  @include for-desktop-large {
+    padding-right: 0;
   }
 }
 

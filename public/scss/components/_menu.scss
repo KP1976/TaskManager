@@ -33,6 +33,10 @@
     width: 17rem;
   }
 
+  @include for-desktop-large {
+    margin-left: 0;
+  }
+
   .title-wrapper {
     display: none;
 

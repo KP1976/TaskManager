@@ -370,6 +370,9 @@ body {
       background-size: 2970px;
       column-gap: 2.5rem;
       grid-template-columns: 19.75rem 1fr; } }
+  @media (min-width: 1440px) {
+    body {
+      padding: 0 calc(50vw - 720px); } }
 
 h1, h2, h3, h4, h5, h6, hr, ul, p {
   margin: 0; }
@@ -846,6 +849,9 @@ ul {
       position: relative;
       transform: translateX(0);
       width: 17rem; } }
+  @media (min-width: 1440px) {
+    .menu {
+      margin-left: 0; } }
   .menu .title-wrapper {
     display: none; }
     @media (min-width: 1280px) {
@@ -1533,3 +1539,6 @@ ul {
             background-color: transparent;
             border: 1px solid var(--secondary-color);
             color: var(--blue-gray); } }
+  @media (min-width: 1440px) {
+    .desktop-main {
+      padding-right: 0; } }
