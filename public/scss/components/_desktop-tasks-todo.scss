@@ -1,0 +1,18 @@
+.desktop-tasks-todo {
+  background-color: var(--primary-color);
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  height: 25.75rem;
+  padding: 2rem;
+
+  &__title {
+    font-size: var(--font-size-title-tasks-small-desktop);
+    text-transform: uppercase;
+  }
+
+  .desktop-tasks-todo-list {
+    margin-top: 2rem;
+  }
+
+  @import 'desktop-task';
+}

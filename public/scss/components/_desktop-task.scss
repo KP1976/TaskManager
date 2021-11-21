@@ -1,0 +1,33 @@
+.desktop-task-todo {
+  align-items: center;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  height: 3.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+
+  &:focus {
+    background-color: var(--secondary-color);
+  }
+
+  .desktop-task-logo {
+    background-color: white;
+    border-radius: 50%;
+    height: 2rem;
+    margin-right: 0.75rem;
+    position: relative;
+    width: 2rem;
+
+    &__image {
+      //https://codepen.io/sosuke/pen/Pjoqqp
+      filter: invert(44%) sepia(10%) saturate(2640%) hue-rotate(156deg) brightness(91%) contrast(89%);
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 0.875rem;
+    }
+  }
+}
