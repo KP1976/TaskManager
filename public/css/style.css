@@ -1398,7 +1398,7 @@ ul {
         flex-direction: column;
         grid-column: 1 / 2;
         transform: translateX(calc(50% + 1.125rem));
-        transition: transform 0.25s ease-in-out; }
+        transition: transform 0.25s ease-in-out 0.5s; }
         .desktop-main .desktop-tasks-todo-and-done .desktop-task-logo {
           background-color: white;
           border-radius: 50%;
@@ -1529,9 +1529,11 @@ ul {
       .desktop-main .desktop-add-task {
         transform: translateX(150%); }
       .desktop-main .show-details {
-        transform: translateY(0%); }
+        transform: translateY(0%);
+        transition: transform 0.25s ease-in-out 0.5s; }
       .desktop-main .show-add-task {
-        transform: translateX(0%); }
+        transform: translateX(0%);
+        transition: transform 0.25s ease-in-out 0.5s; }
       .desktop-main .desktop-add-task .desktop-form {
         margin: 2.875rem 0 12.25rem; }
         .desktop-main .desktop-add-task .desktop-form__label, .desktop-main .desktop-add-task .desktop-form .desktop-form-categories__task-type {

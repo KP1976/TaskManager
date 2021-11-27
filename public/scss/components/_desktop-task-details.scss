@@ -95,8 +95,10 @@
 
 .show-details {
   transform: translateY(0%);
+  transition: transform 0.25s ease-in-out 0.5s;
 }
 
 .show-add-task {
   transform: translateX(0%);
+  transition: transform 0.25s ease-in-out 0.5s;
 }

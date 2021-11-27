@@ -18,6 +18,10 @@ const desktopAddTaskComponent = document.querySelector('.desktop-add-task');
 const desktopTodoAndDoneTasks = document.querySelector(
   '.desktop-tasks-todo-and-done'
 );
+const desktopTasksTodo = document.querySelectorAll('.desktop-task-todo');
+const desktopTaskDetails = document.querySelector('.desktop-task-details');
+
+// LISTENERS FUNCTIONS
 
 const toggleMobileMenu = () => {
   mobileMenu.classList.toggle('menu-open');
@@ -30,9 +34,17 @@ const showAddTaskPage = () => addTaskPage.classList.add('open');
 const showDesktopAddTaskPage = () => {
   desktopAddTaskComponent.classList.add('show-add-task');
   desktopTodoAndDoneTasks.style.transform = 'translateX(0%)';
+  desktopTaskDetails.classList.remove('show-details');
+};
+const showTaskDetails = () => {
+  desktopTaskDetails.classList.add('show-details');
+  desktopTodoAndDoneTasks.style.transform = 'translateX(0%)';
+  desktopAddTaskComponent.classList.remove('show-add-task');
 };
 
 const hideAddTaskPage = () => addTaskPage.classList.remove('open');
+
+// LISTENERS
 
 mmobileHamburgerMenuButton.addEventListener('click', toggleMobileMenu);
 
@@ -40,3 +52,12 @@ if (addTaskButton) addTaskButton.addEventListener('click', showAddTaskPage);
 addTaskBackButton.addEventListener('click', hideAddTaskPage);
 
 desktopAddTaskButton.addEventListener('click', showDesktopAddTaskPage);
+
+desktopTasksTodo.forEach((task) => {
+  task.addEventListener('focusin', showTaskDetails);
+  task.addEventListener('focusout', () => {
+    desktopTaskDetails.classList.remove('show-details');
+    desktopTodoAndDoneTasks.style.transform =
+      'translateX(calc(50% + 1.125rem))';
+  });
+});
