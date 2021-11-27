@@ -1,6 +1,6 @@
 :root {
   /* COLORS **/
-  --primary-color: hsl(208, 58%, 14%);
+  --primary-color: hsla(208, 58%, 14%);
   --primary-color-menu: hsla(208, 58%, 14%, 25%);
   --secondary-color: hsl(201, 53%, 40%);
   --secondary-color-dark: hsla(201, 53%, 40%, 30%);
@@ -1398,7 +1398,7 @@ ul {
         flex-direction: column;
         grid-column: 1 / 2;
         transform: translateX(calc(50% + 1.125rem));
-        transition: transform 0.25s ease-in-out 0.5s; }
+        transition: transform 0.25s ease-in-out 0.3s; }
         .desktop-main .desktop-tasks-todo-and-done .desktop-task-logo {
           background-color: white;
           border-radius: 50%;
@@ -1444,11 +1444,42 @@ ul {
           border-top-right-radius: 1.25rem;
           height: 21.5rem;
           margin-top: -1.75rem;
-          padding: 2rem; }
+          padding: 2rem;
+          position: relative; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done__title {
             color: var(--gray);
             font-size: var(--font-size-title-tasks-small-desktop);
             text-transform: uppercase; }
+          .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-percentage-of-done-tasks {
+            align-items: center;
+            display: flex;
+            height: 3rem;
+            justify-content: space-between;
+            position: absolute;
+            right: 1.125rem;
+            top: 1.125rem;
+            width: 3rem; }
+            .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-percentage-of-done-tasks .desktop-pie-chart {
+              background: conic-gradient(var(--blue-gray) 0% 63%, rgba(15, 37, 56, 0.5) 63% 100%);
+              border-radius: 50%;
+              height: 3rem;
+              position: relative;
+              width: 3rem; }
+              .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-percentage-of-done-tasks .desktop-pie-chart::before {
+                background-color: var(--secondary-color);
+                border-radius: 50%;
+                content: '';
+                height: 2rem;
+                left: 0.5rem;
+                position: absolute;
+                top: 0.5rem;
+                width: 2rem; }
+            .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-percentage-of-done-tasks__text {
+              font-size: var(--font-size-date);
+              left: 50%;
+              position: absolute;
+              top: 50%;
+              transform: translate(-50%, -50%); }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-tasks-done-list {
             margin-top: 2rem; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-task-done {
@@ -1530,10 +1561,10 @@ ul {
         transform: translateX(150%); }
       .desktop-main .show-details {
         transform: translateY(0%);
-        transition: transform 0.25s ease-in-out 0.5s; }
+        transition: transform 0.25s ease-in-out 0.3s; }
       .desktop-main .show-add-task {
         transform: translateX(0%);
-        transition: transform 0.25s ease-in-out 0.5s; }
+        transition: transform 0.25s ease-in-out 0.3s; }
       .desktop-main .desktop-add-task .desktop-form {
         margin: 2.875rem 0 12.25rem; }
         .desktop-main .desktop-add-task .desktop-form__label, .desktop-main .desktop-add-task .desktop-form .desktop-form-categories__task-type {

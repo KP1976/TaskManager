@@ -5,11 +5,51 @@
   height: 21.5rem;
   margin-top: -1.75rem;
   padding: 2rem;
+  position: relative;
 
   &__title {
     color: var(--gray);
     font-size: var(--font-size-title-tasks-small-desktop);
     text-transform: uppercase;
+  }
+
+  .desktop-percentage-of-done-tasks {
+    align-items: center;
+    display: flex;
+    height: 3rem;
+    justify-content: space-between;
+    position: absolute;
+    right: 1.125rem;
+    top: 1.125rem;
+    width: 3rem;
+
+    .desktop-pie-chart {
+      background: conic-gradient(var(--blue-gray) 0% 63%,
+              rgba(15, 37, 56, 0.5) 63% 100%);
+      border-radius: 50%;
+      height: 3rem;
+      position: relative;
+      width: 3rem;
+
+      &::before {
+        background-color: var(--secondary-color);
+        border-radius: 50%;
+        content: '';
+        height: 2rem;
+        left: 0.5rem;
+        position: absolute;
+        top: 0.5rem;
+        width: 2rem;
+      }
+    }
+
+    &__text {
+      font-size: var(--font-size-date);
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .desktop-tasks-done-list {
