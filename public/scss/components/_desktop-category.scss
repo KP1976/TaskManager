@@ -1,0 +1,62 @@
+.desktop-form-category {
+  align-items: center;
+  display: flex;
+
+  &__color-dot {
+    border-radius: 50%;
+    height: 0.625rem;
+    margin-right: 0.5rem;
+    width: 0.625rem;
+
+    &--orange {
+      background-color: var(--category-recreation-color);
+    }
+
+    &--yellow {
+      background-color: var(--category-technology-color);
+    }
+
+    &--red {
+      background-color: var(--category-personal-color);
+    }
+
+    &--green {
+      background-color: var(--category-food-color);
+    }
+  }
+
+  &__name {
+    font-size: var(--font-size-add-task-title);
+  }
+
+  &__label {
+    line-height: 1.1;
+    margin-left: auto;
+  }
+
+  &__radio-input {
+    appearance: none;
+    border: 2px solid var(--blue-gray);
+    border-radius: 50%;
+    cursor: pointer;
+    display: grid;
+    height: 1.125rem;
+    margin: 0;
+    place-content: center;
+    width: 1.125rem;
+
+    &:checked::before {
+      transform: scale(1);
+    }
+
+    &::before {
+      box-shadow: inset 10px 10px var(--blue-gray);
+      border-radius: 50%;
+      content: "";
+      height: 0.5rem;
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      width: 0.5rem;
+    }
+  }
+}

@@ -1,12 +1,11 @@
-.desktop-task-details {
+.desktop-task-details, .desktop-add-task {
   background-image: linear-gradient(to bottom,  var(--primary-color), transparent);
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
   height: 45.5rem;
   grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  margin-top: 1.75rem;
-  padding: 2rem;
+  grid-row: 1 / 2;
+  padding: 1.625rem 2rem;
 
   &__title {
     color: var(--gray);
@@ -72,7 +71,7 @@
     cursor: pointer;
     font-weight: var(--font-weight-bold);
     height: 3.5rem;
-    margin: 9.5rem auto 0;
+    margin: 9.6875rem auto 0;
     text-transform: uppercase;
     transition: all 0.2s ease-in-out;
     width: 100%;

@@ -230,8 +230,6 @@
   </div>
 
   <section class='desktop-main'>
-    <h2 class='desktop-main__title'>Wszystkie</h2>
-
     <div class='desktop-tasks-todo-and-done'>
       <div class='desktop-tasks-todo'>
         <h3 class='desktop-tasks-todo__title'>zadania do zrobienia</h3>
@@ -284,101 +282,101 @@
       </div>
     </div>
 
-    <div class='desktop-task-details'>
-      <h3 class='desktop-task-details__title'>Szczegóły zadania</h3>
-      <h4 class='desktop-task-details__subtitle'>Nazwa zadania</h4>
-      <p class='desktop-task-details__task-title'>Wyjść z psem na spacer</p>
+<!--    <div class='desktop-task-details'>-->
+<!--      <h3 class='desktop-task-details__title'>Szczegóły zadania</h3>-->
+<!--      <h4 class='desktop-task-details__subtitle'>Nazwa zadania</h4>-->
+<!--      <p class='desktop-task-details__task-title'>Wyjść z psem na spacer</p>-->
 
-      <div class='desktop-type-of-task'>
-        <h4 class='desktop-task-details__subtitle'>Typ zadania</h4>
-        <div class='dot'></div>
-        <p class='desktop-type-of-task__text'>Rekreacja</p>
-      </div>
+<!--      <div class='desktop-type-of-task'>-->
+<!--        <h4 class='desktop-task-details__subtitle'>Typ zadania</h4>-->
+<!--        <div class='dot'></div>-->
+<!--        <p class='desktop-type-of-task__text'>Rekreacja</p>-->
+<!--      </div>-->
 
-      <div class='desktop-type-of-task'>
-        <h4 class='desktop-task-details__subtitle'>Data utworzenia zadania</h4>
-        <p class='desktop-type-of-task__date'>20 listopada 2021</p>
-      </div>
+<!--      <div class='desktop-type-of-task'>-->
+<!--        <h4 class='desktop-task-details__subtitle'>Data utworzenia zadania</h4>-->
+<!--        <p class='desktop-type-of-task__date'>20 listopada 2021</p>-->
+<!--      </div>-->
 
-      <div class='desktop-type-of-task'>
-        <h4 class='desktop-task-details__subtitle'>Godzina utworzenia zadania</h4>
-        <p class='desktop-type-of-task__time'>18:35</p>
-      </div>
+<!--      <div class='desktop-type-of-task'>-->
+<!--        <h4 class='desktop-task-details__subtitle'>Godzina utworzenia zadania</h4>-->
+<!--        <p class='desktop-type-of-task__time'>18:35</p>-->
+<!--      </div>-->
 
-      <button class='desktop-task-details__modify-button'>modyfikuj zadanie</button>
+<!--      <button class='desktop-task-details__modify-button'>modyfikuj zadanie</button>-->
+<!--    </div>-->
+
+    <div class='desktop-add-task'>
+      <h3 class='desktop-add-task__title'>Nowe zadanie</h3>
+
+      <form class='desktop-form'>
+        <label class='desktop-form__label' for='desktop-task-name'>Nazwa zadania
+          <input
+            class='desktop-form__input'
+            name='desktop-task-name'
+            id='desktop-task-name'
+            alt='name of the task'>
+        </label>
+
+        <div class='desktop-form__category-icon'>
+          <img src='images/laptop-code-solid.svg' alt='laptop icon'>
+        </div>
+
+        <div class='desktop-form-categories'>
+          <h4 class='desktop-form-categories__task-type'>Typ zadania</h4>
+          <ul class='desktop-form-categories-list'>
+            <li class='desktop-form-category'>
+              <div class='desktop-form-category__color-dot desktop-form-category__color-dot--orange'></div>
+              <span class='desktop-form-category__name'>Rekreacja</span>
+              <label class='desktop-form-category__label'
+                for='desktop-radio-recreation'>
+                <input type='radio' class='desktop-form-category__radio-input'
+                  name='task-category' id='desktop-radio-recreation'>
+              </label>
+            </li>
+
+            <li class='desktop-form-category'>
+              <div
+                class='desktop-form-category__color-dot desktop-form-category__color-dot--yellow'></div>
+              <span class='desktop-form-category__name'>Technologia</span>
+              <label class='desktop-form-category__label'
+                for='desktop-radio-technology'>
+                <input type='radio' class='desktop-form-category__radio-input'
+                  name='task-category' id='desktop-radio-technology'>
+              </label>
+            </li>
+
+            <li class='desktop-form-category'>
+              <div
+                class='desktop-form-category__color-dot desktop-form-category__color-dot--red'></div>
+              <span class='desktop-form-category__name'>Osobiste</span>
+              <label class='desktop-form-category__label'
+                for='desktop-radio-personal'>
+                <input type='radio' class='desktop-form-category__radio-input'
+                  name='task-category' id='desktop-radio-personal'>
+              </label>
+            </li>
+
+            <li class='desktop-form-category'>
+              <div
+                class='desktop-form-category__color-dot desktop-form-category__color-dot--green'></div>
+              <span class='desktop-form-category__name'>Jedzenie</span>
+              <label class='desktop-form-category__label'
+                for='desktop-radio-food'>
+                <input type='radio' class='desktop-form-category__radio-input'
+                  name='task-category' id='desktop-radio-food'>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <button class='desktop-form__add-task-button' type='submit'>zatwierdź
+        </button>
+      </form>
     </div>
   </section>
 
-  <section class='desktop-add-task'>
-    <h3 class='desktop-add-task__title'>Nowe zadanie</h3>
 
-    <form class='desktop-form'>
-      <label class='desktop-form__label' for='desktop-task-name'>Nazwa zadania
-        <input
-          class='desktop-form__input'
-          name='desktop-task-name'
-          id='desktop-task-name'
-          alt='name of the task'>
-      </label>
-
-      <div class='desktop-form__category-icon'>
-        <img src='images/laptop-code-solid.svg' alt='laptop icon'>
-      </div>
-
-      <div class='desktop-form-categories'>
-        <h4 class='desktop-form-categories__task-type'>Typ zadania</h4>
-        <ul class='desktop-form-categories-list'>
-          <li class='desktop-form-category'>
-            <span class='desktop-form-category__name'>Rekreacja</span>
-            <div class='desktop-form-category__color-dot desktop-form-category__color-dot--orange'></div>
-            <label class='desktop-form-category__label'
-              for='desktop-radio-recreation'>
-              <input type='radio' class='desktop-form-category__radio-input'
-                name='task-category' id='desktop-radio-recreation'>
-            </label>
-          </li>
-
-          <li class='desktop-form-category'>
-            <span class='desktop-form-category__name'>Technologia</span>
-            <div
-              class='desktop-form-category__color-dot desktop-form-category__color-dot--yellow'></div>
-            <label class='desktop-form-category__label'
-              for='desktop-radio-technology'>
-              <input type='radio' class='desktop-form-category__radio-input'
-                name='task-category' id='desktop-radio-technology'>
-            </label>
-          </li>
-
-          <li class='desktop-form-category'>
-            <span class='desktop-form-category__name'>Osobiste</span>
-            <div
-              class='desktop-form-category__color-dot desktop-form-category__color-dot--red'></div>
-            <label class='desktop-form-category__label'
-              for='desktop-radio-personal'>
-              <input type='radio' class='desktop-form-category__radio-input'
-                name='task-category' id='desktop-radio-personal'>
-            </label>
-          </li>
-
-          <li class='desktop-form-category'>
-            <span class='desktop-form-category__name'>Jedzenie</span>
-            <div
-              class='desktop-form-category__color-dot desktop-form-category__color-dot--green'></div>
-            <label class='desktop-form-category__label'
-              for='desktop-radio-food'>
-              <input type='radio' class='desktop-form-category__radio-input'
-                name='task-category' id='desktop-radio-food'>
-            </label>
-          </li>
-        </ul>
-
-        <button class='form__add-task-button' type='submit'>dodaj zadanie</button>
-      </div>
-
-      <button class='desktop-form__add-task-button' type='submit'>dodaj
-        zadanie</button>
-    </form>
-  </section>
 
 <script type='text/javascript' src='js/index.js'></script>
 </body>

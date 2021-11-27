@@ -1385,16 +1385,6 @@ ul {
         font-size: var(--font-size-title-small-desktop);
         font-weight: var(--font-weight-bold); } }
 
-.desktop-title {
-  display: none; }
-  @media (min-width: 1280px) {
-    .desktop-title {
-      display: block;
-      font-size: var(--font-size-category-number-small-tablet);
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
-      margin-top: 3rem; } }
-
 .desktop-main {
   display: none; }
   @media (min-width: 1280px) {
@@ -1402,18 +1392,11 @@ ul {
       display: grid;
       grid-column-gap: 2.5rem;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: min-content 1fr;
-      padding: 3rem 2.75rem 0 0; }
-      .desktop-main__title {
-        font-size: var(--font-size-title2-small-desktop);
-        grid-column: 1 / 2;
-        grid-row: 1 / 2; }
+      padding: 6.75rem 2.75rem 0 0; }
       .desktop-main .desktop-tasks-todo-and-done {
         display: flex;
         flex-direction: column;
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-        margin-top: 1.75rem; }
+        grid-column: 1 / 2; }
         .desktop-main .desktop-tasks-todo-and-done .desktop-task-logo {
           background-color: white;
           border-radius: 50%;
@@ -1435,7 +1418,7 @@ ul {
           border-top-left-radius: 1.25rem;
           border-top-right-radius: 1.25rem;
           height: 25.75rem;
-          padding: 2rem; }
+          padding: 1.625rem 2rem; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-todo__title {
             color: var(--gray);
             font-size: var(--font-size-title-tasks-small-desktop);
@@ -1458,7 +1441,7 @@ ul {
           border-top-left-radius: 1.25rem;
           border-top-right-radius: 1.25rem;
           height: 21.5rem;
-          margin-top: 1.75rem;
+          margin-top: -1.75rem;
           padding: 2rem; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done__title {
             color: var(--gray);
@@ -1476,36 +1459,35 @@ ul {
             opacity: 30%;
             padding: 0.75rem 1rem;
             margin-bottom: 1.5rem; }
-      .desktop-main .desktop-task-details {
+      .desktop-main .desktop-task-details, .desktop-main .desktop-add-task {
         background-image: linear-gradient(to bottom, var(--primary-color), transparent);
         border-top-left-radius: 1.25rem;
         border-top-right-radius: 1.25rem;
         height: 45.5rem;
         grid-column: 2 / 3;
-        grid-row: 2 / 3;
-        margin-top: 1.75rem;
-        padding: 2rem; }
-        .desktop-main .desktop-task-details__title {
+        grid-row: 1 / 2;
+        padding: 1.625rem 2rem; }
+        .desktop-main .desktop-task-details__title, .desktop-main .desktop-add-task__title {
           color: var(--gray);
           font-size: var(--font-size-title-tasks-small-desktop);
           font-weight: var(--font-weight-bold);
           text-decoration: underline; }
-        .desktop-main .desktop-task-details__subtitle {
+        .desktop-main .desktop-task-details__subtitle, .desktop-main .desktop-add-task__subtitle {
           color: var(--blue-gray);
           font-size: var(--font-size-add-task-title-small-mobile);
           font-weight: var(--font-weight-bold);
           margin-top: 2.75rem; }
-        .desktop-main .desktop-task-details__task-title {
+        .desktop-main .desktop-task-details__task-title, .desktop-main .desktop-add-task__task-title {
           font-size: var(--font-size-title2-small-desktop);
           font-weight: var(--font-weight-bold);
           margin-top: 0.875rem; }
-        .desktop-main .desktop-task-details .dot {
+        .desktop-main .desktop-task-details .dot, .desktop-main .desktop-add-task .dot {
           background-color: var(--category-recreation-color);
           border-radius: 50%;
           grid-row: 2 / 3;
           height: 0.625rem;
           width: 0.625rem; }
-        .desktop-main .desktop-task-details .desktop-type-of-task {
+        .desktop-main .desktop-task-details .desktop-type-of-task, .desktop-main .desktop-add-task .desktop-type-of-task {
           align-items: center;
           display: grid;
           grid-template-columns: min-content max-content;
@@ -1513,17 +1495,17 @@ ul {
           grid-column-gap: 0.5rem;
           grid-row-gap: 0.75rem;
           margin-top: 4.875rem; }
-          .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(5), .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(6) {
+          .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(5), .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(6), .desktop-main .desktop-add-task .desktop-type-of-task:nth-child(5), .desktop-main .desktop-add-task .desktop-type-of-task:nth-child(6) {
             margin-top: 2.5rem; }
-          .desktop-main .desktop-task-details .desktop-type-of-task .desktop-task-details__subtitle {
+          .desktop-main .desktop-task-details .desktop-type-of-task .desktop-task-details__subtitle, .desktop-main .desktop-add-task .desktop-type-of-task .desktop-task-details__subtitle {
             grid-column: 1 / -1;
             grid-row: 1 / 2;
             margin-top: 0; }
-          .desktop-main .desktop-task-details .desktop-type-of-task__text {
+          .desktop-main .desktop-task-details .desktop-type-of-task__text, .desktop-main .desktop-add-task .desktop-type-of-task__text {
             font-size: var(--font-size-add-task-title); }
-          .desktop-main .desktop-task-details .desktop-type-of-task__date, .desktop-main .desktop-task-details .desktop-type-of-task__time {
+          .desktop-main .desktop-task-details .desktop-type-of-task__date, .desktop-main .desktop-task-details .desktop-type-of-task__time, .desktop-main .desktop-add-task .desktop-type-of-task__date, .desktop-main .desktop-add-task .desktop-type-of-task__time {
             grid-column: 1 / -1; }
-        .desktop-main .desktop-task-details__modify-button {
+        .desktop-main .desktop-task-details__modify-button, .desktop-main .desktop-add-task__modify-button {
           background-color: var(--secondary-color);
           border: none;
           border-radius: 0.5rem;
@@ -1531,14 +1513,103 @@ ul {
           cursor: pointer;
           font-weight: var(--font-weight-bold);
           height: 3.5rem;
-          margin: 9.5rem auto 0;
+          margin: 9.6875rem auto 0;
           text-transform: uppercase;
           transition: all 0.2s ease-in-out;
           width: 100%; }
-          .desktop-main .desktop-task-details__modify-button:hover {
+          .desktop-main .desktop-task-details__modify-button:hover, .desktop-main .desktop-add-task__modify-button:hover {
             background-color: transparent;
             border: 1px solid var(--secondary-color);
-            color: var(--blue-gray); } }
+            color: var(--blue-gray); }
+      .desktop-main .desktop-add-task .desktop-form {
+        margin: 2.875rem 0 12.25rem; }
+        .desktop-main .desktop-add-task .desktop-form__label, .desktop-main .desktop-add-task .desktop-form .desktop-form-categories__task-type {
+          color: var(--blue-gray);
+          display: flex;
+          flex-direction: column;
+          font-size: var(--font-size-headers-small-tablet);
+          font-weight: var(--font-weight-bold); }
+        .desktop-main .desktop-add-task .desktop-form__input {
+          background-color: var(--blue-gray);
+          border: 0;
+          border-radius: 0.375rem;
+          font-size: var(--font-size-add-task-title);
+          height: 3.5rem;
+          margin-top: 0.75rem;
+          padding: 0.75rem 1rem; }
+        .desktop-main .desktop-add-task .desktop-form__category-icon {
+          border: 2px solid var(--blue-gray);
+          border-radius: 50%;
+          height: 4rem;
+          margin: 2.5rem auto;
+          position: relative;
+          width: 4rem; }
+          .desktop-main .desktop-add-task .desktop-form__category-icon img {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 1.75rem; }
+        .desktop-main .desktop-add-task .desktop-form .desktop-form-categories {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 12.25rem; }
+        .desktop-main .desktop-add-task .desktop-form .desktop-form-categories-list {
+          display: grid;
+          grid-column-gap: 5.875rem;
+          grid-row-gap: 0.875rem;
+          grid-template-columns: 1fr 1fr;
+          margin-top: 1.5rem; }
+        .desktop-main .desktop-add-task .desktop-form .desktop-form-category {
+          align-items: center;
+          display: flex; }
+          .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot {
+            border-radius: 50%;
+            height: 0.625rem;
+            margin-right: 0.5rem;
+            width: 0.625rem; }
+            .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot--orange {
+              background-color: var(--category-recreation-color); }
+            .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot--yellow {
+              background-color: var(--category-technology-color); }
+            .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot--red {
+              background-color: var(--category-personal-color); }
+            .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot--green {
+              background-color: var(--category-food-color); }
+          .desktop-main .desktop-add-task .desktop-form .desktop-form-category__name {
+            font-size: var(--font-size-add-task-title); }
+          .desktop-main .desktop-add-task .desktop-form .desktop-form-category__label {
+            line-height: 1.1;
+            margin-left: auto; }
+          .desktop-main .desktop-add-task .desktop-form .desktop-form-category__radio-input {
+            appearance: none;
+            border: 2px solid var(--blue-gray);
+            border-radius: 50%;
+            cursor: pointer;
+            display: grid;
+            height: 1.125rem;
+            margin: 0;
+            place-content: center;
+            width: 1.125rem; }
+            .desktop-main .desktop-add-task .desktop-form .desktop-form-category__radio-input:checked::before {
+              transform: scale(1); }
+            .desktop-main .desktop-add-task .desktop-form .desktop-form-category__radio-input::before {
+              box-shadow: inset 10px 10px var(--blue-gray);
+              border-radius: 50%;
+              content: "";
+              height: 0.5rem;
+              transform: scale(0);
+              transition: 120ms transform ease-in-out;
+              width: 0.5rem; }
+        .desktop-main .desktop-add-task .desktop-form__add-task-button {
+          background-color: var(--secondary-color);
+          border: none;
+          border-radius: 0.5rem;
+          color: white;
+          font-weight: var(--font-weight-bold);
+          height: 3.5rem;
+          text-transform: uppercase;
+          width: 100%; } }
   @media (min-width: 1440px) {
     .desktop-main {
       padding-right: 0; } }

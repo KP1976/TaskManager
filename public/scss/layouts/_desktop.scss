@@ -26,18 +26,6 @@
   //}
 }
 
-.desktop-title {
-  display: none;
-
-  @include for-desktop-up {
-    display: block;
-    font-size: var(--font-size-category-number-small-tablet);
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    margin-top: 3rem;
-  }
-}
-
 .desktop-main {
   display: none;
 
@@ -45,21 +33,12 @@
     display: grid;
     grid-column-gap: 2.5rem;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: min-content 1fr;
-    padding: 3rem 2.75rem 0 0;
-
-    &__title {
-      font-size: var(--font-size-title2-small-desktop);
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-    }
+    padding: 6.75rem 2.75rem 0 0;
 
     .desktop-tasks-todo-and-done {
       display: flex;
       flex-direction: column;
       grid-column: 1 / 2;
-      grid-row: 2 / 3;
-      margin-top: 1.75rem;
 
       .desktop-task-logo {
         background-color: white;
@@ -89,6 +68,7 @@
     }
 
     @import '../components/desktop-task-details';
+    @import '../components/desktop-add-task';
   }
 
   @include for-desktop-large {
