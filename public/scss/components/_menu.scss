@@ -34,7 +34,10 @@
   }
 
   @include for-desktop-large {
+    grid-row: 1;
     margin-left: 0;
+    padding-top: 11rem;
+    width: 100%;
   }
 
   .title-wrapper {
@@ -48,10 +51,22 @@
       width: 100%;
     }
 
+    @include for-desktop-large {
+      margin: 0;
+    }
+
     &__text {
       font-size: var(--font-size-headers-small-tablet);
       text-transform: uppercase;
       margin-top: 1px;
+
+      @include for-desktop-large {
+        margin: 0;
+      }
+
+      @include for-desktop-large {
+        font-size: var(--font-size-title-tasks-small-desktop);
+      }
     }
   }
 
@@ -72,6 +87,12 @@
       width: 100%;
     }
 
+    &:nth-child(4) {
+      @include for-desktop-large {
+        margin: 0;
+      }
+    }
+
     &__icon {
       height: 1.5rem;
       margin-right: 0.875rem;
@@ -90,9 +111,12 @@
 
       @include for-desktop-up {
         height: 1.625rem;
-        width: auto;
       }
 
+      @include for-desktop-large {
+        height: 1.875rem;
+        margin-right: 1rem;
+      }
     }
 
     &__text {
@@ -112,6 +136,10 @@
         color: var(--primary-color);
         font-size: var(--font-size-headers-small-tablet);
         font-weight: var(--font-weight-bold);
+      }
+
+      @include for-desktop-large {
+        font-size: var(--font-size-title-tasks-small-desktop);
       }
     }
   }
@@ -138,6 +166,10 @@
       margin: 2.5rem 0 0 0;
       padding: 0 3.25rem;
       row-gap: 0;
+    }
+
+    @include for-desktop-large {
+      margin: 2.5rem 0;
     }
 
     .category {
@@ -220,6 +252,11 @@
           display: block;
         }
 
+        @include for-desktop-large {
+          height: 0.75rem;
+          width: 0.75rem;
+        }
+
         &--orange {
           background-color: var(--category-recreation-color);
         }
@@ -254,6 +291,10 @@
         @include for-desktop-up {
           font-size: var(--font-size-date-small-tablet);
           margin: 0;
+        }
+
+        @include for-desktop-large {
+          font-size: var(--font-size-headers-small-tablet);
         }
       }
 
@@ -291,6 +332,12 @@
           line-height: 1.4;
           margin-left: auto;
           width: 2.55rem;
+        }
+
+        @include for-desktop-large {
+          font-size: var(--font-size-date-small-tablet);
+          height: 1.25rem;
+          width: 3.5rem;
         }
       }
     }
@@ -333,6 +380,10 @@
       @include for-desktop-up {
         font-size: var(--font-size-date-small-tablet);
         margin-bottom: 1rem;
+      }
+
+      @include for-desktop-large {
+        font-size: var(--font-size-headers-small-tablet);
       }
     }
 

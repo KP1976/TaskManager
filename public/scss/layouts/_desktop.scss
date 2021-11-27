@@ -13,17 +13,25 @@
     z-index: 3;
     width: 100%;
 
+    @include for-desktop-large {
+      height: 8rem;
+    }
+
     &__title {
       font-size: var(--font-size-title-small-desktop);
       font-weight: var(--font-weight-bold);
+
+      @include for-desktop-large {
+        font-size: var(--font-size-category-number-large-tablet);
+      }
     }
   }
 
-  //@include for-desktop-large {
-  //  position: absolute;
-  //  left: 0;
-  //  width: 100%;
-  //}
+  @include for-desktop-large {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
 }
 
 .desktop-main {

@@ -23,5 +23,6 @@ body {
 
   @include for-desktop-large {
     padding: 0 calc(50vw - 720px);
+    grid-template-columns: 19rem auto;
   }
 }
