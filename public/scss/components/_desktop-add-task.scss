@@ -59,10 +59,17 @@
       border: none;
       border-radius: 0.5rem;
       color: white;
+      cursor: pointer;
       font-weight: var(--font-weight-bold);
       height: 3.5rem;
       text-transform: uppercase;
       width: 100%;
+
+      &:hover {
+        background-color: transparent;
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
+      }
     }
   }
 }

@@ -1,11 +1,12 @@
 .desktop-task-details, .desktop-add-task {
-  background-image: linear-gradient(to bottom,  var(--primary-color), transparent);
+  background-image: linear-gradient(to bottom, var(--primary-color), transparent);
   border-top-left-radius: 1.25rem;
   border-top-right-radius: 1.25rem;
   height: 45.5rem;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   padding: 1.625rem 2rem;
+  transition: transform 0.25s ease-in-out 0.25s;
 
   &__title {
     color: var(--gray);
@@ -82,4 +83,20 @@
       color: var(--blue-gray);
     }
   }
+}
+
+.desktop-task-details {
+  transform: translateY(150%);
+}
+
+.desktop-add-task {
+  transform: translateX(150%);
+}
+
+.show-details {
+  transform: translateY(0%);
+}
+
+.show-add-task {
+  transform: translateX(0%);
 }
