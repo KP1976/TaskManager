@@ -5,10 +5,18 @@
   height: 25.75rem;
   padding: 1.625rem 2rem;
 
+  @include for-desktop-large {
+    padding: 3rem 3rem 2.5rem;
+  }
+
   &__title {
     color: var(--gray);
     font-size: var(--font-size-title-tasks-small-desktop);
     text-transform: uppercase;
+
+    @include for-desktop-large {
+      font-size: var(--font-size-add-task-title-small-tablet);
+    }
   }
 
   .desktop-tasks-todo-list {

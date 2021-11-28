@@ -8,6 +8,11 @@
   padding: 0.75rem 1rem;
   margin-bottom: 1.5rem;
 
+  @include for-desktop-large {
+    height: 4rem;
+    padding: 0.875rem 1rem;
+  }
+
   &:focus {
     background-color: var(--secondary-color);
   }

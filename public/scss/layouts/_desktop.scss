@@ -58,6 +58,12 @@
         position: relative;
         width: 2rem;
 
+        @include for-desktop-large {
+          height: 2.25rem;
+          margin-right: 1rem;
+          width: 2.25rem;
+        }
+
         &__image {
           //https://codepen.io/sosuke/pen/Pjoqqp
           filter: invert(44%) sepia(10%) saturate(2640%) hue-rotate(156deg) brightness(91%) contrast(89%);
@@ -66,11 +72,19 @@
           top: 50%;
           transform: translate(-50%, -50%);
           width: 0.875rem;
+
+          @include for-desktop-large {
+            width: 1rem;
+          }
         }
       }
 
       .task__title {
         font-size: var(--font-size-add-task-title);
+
+        @include for-desktop-large {
+          font-size: var(--font-size-add-task-title-small-mobile);
+        }
       }
 
       @import '../components/desktop-tasks-todo';
@@ -82,7 +96,8 @@
   }
 
   @include for-desktop-large {
-    padding-right: 0;
+    grid-column-gap: 3rem;
+    padding: 15rem 0 0 0;
   }
 }
 
