@@ -1133,6 +1133,9 @@ ul {
         text-transform: uppercase;
         transition: all 0.2s ease-in-out;
         width: 13rem; } }
+    @media (min-width: 1440px) {
+      .menu .desktop-add-task-button {
+        margin: 7rem auto 0; } }
     .menu .desktop-add-task-button:hover {
       background-color: transparent;
       border: 1px solid var(--blue-gray);
@@ -1602,27 +1605,50 @@ ul {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         padding: 1.625rem 2rem;
-        transition: transform 0.25s ease-in-out 0.25s; }
+        transition: transform 0.25s ease-in-out 0.25s; } }
+    @media (min-width: 1280px) and (min-width: 1440px) {
+      .desktop-main .desktop-task-details, .desktop-main .desktop-add-task {
+        padding: 3rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-task-details__title, .desktop-main .desktop-add-task__title {
           color: var(--gray);
           font-size: var(--font-size-title-tasks-small-desktop);
           font-weight: var(--font-weight-bold);
-          text-decoration: underline; }
+          text-decoration: underline; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-task-details__title, .desktop-main .desktop-add-task__title {
+          font-size: var(--font-size-add-task-title-small-tablet); } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-task-details__subtitle, .desktop-main .desktop-add-task__subtitle {
           color: var(--blue-gray);
           font-size: var(--font-size-add-task-title-small-mobile);
           font-weight: var(--font-weight-bold);
-          margin-top: 2.75rem; }
+          margin-top: 2.75rem; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-task-details__subtitle, .desktop-main .desktop-add-task__subtitle {
+          font-size: var(--font-size-title-tasks-small-desktop);
+          margin-top: 2.5rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-task-details__task-title, .desktop-main .desktop-add-task__task-title {
           font-size: var(--font-size-title2-small-desktop);
           font-weight: var(--font-weight-bold);
-          margin-top: 0.875rem; }
+          margin-top: 0.875rem; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-task-details__task-title, .desktop-main .desktop-add-task__task-title {
+          font-size: var(--font-size-add-button);
+          margin-top: 0.75rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-task-details .dot, .desktop-main .desktop-add-task .dot {
           background-color: var(--category-recreation-color);
           border-radius: 50%;
           grid-row: 2 / 3;
           height: 0.625rem;
-          width: 0.625rem; }
+          width: 0.625rem; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-task-details .dot, .desktop-main .desktop-add-task .dot {
+          height: 0.75rem;
+          width: 0.75rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-task-details .desktop-type-of-task, .desktop-main .desktop-add-task .desktop-type-of-task {
           align-items: center;
           display: grid;
@@ -1632,15 +1658,27 @@ ul {
           grid-row-gap: 0.75rem;
           margin-top: 4.875rem; }
           .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(5), .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(6), .desktop-main .desktop-add-task .desktop-type-of-task:nth-child(5), .desktop-main .desktop-add-task .desktop-type-of-task:nth-child(6) {
-            margin-top: 2.5rem; }
+            margin-top: 2.5rem; } }
+        @media (min-width: 1280px) and (min-width: 1440px) {
+          .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(5), .desktop-main .desktop-task-details .desktop-type-of-task:nth-child(6), .desktop-main .desktop-add-task .desktop-type-of-task:nth-child(5), .desktop-main .desktop-add-task .desktop-type-of-task:nth-child(6) {
+            margin-top: 2rem; } }
+  @media (min-width: 1280px) {
           .desktop-main .desktop-task-details .desktop-type-of-task .desktop-task-details__subtitle, .desktop-main .desktop-add-task .desktop-type-of-task .desktop-task-details__subtitle {
             grid-column: 1 / -1;
             grid-row: 1 / 2;
             margin-top: 0; }
           .desktop-main .desktop-task-details .desktop-type-of-task__text, .desktop-main .desktop-add-task .desktop-type-of-task__text {
-            font-size: var(--font-size-add-task-title); }
+            font-size: var(--font-size-add-task-title); } }
+        @media (min-width: 1280px) and (min-width: 1440px) {
+          .desktop-main .desktop-task-details .desktop-type-of-task__text, .desktop-main .desktop-add-task .desktop-type-of-task__text {
+            font-size: var(--font-size-headers-small-tablet); } }
+  @media (min-width: 1280px) {
           .desktop-main .desktop-task-details .desktop-type-of-task__date, .desktop-main .desktop-task-details .desktop-type-of-task__time, .desktop-main .desktop-add-task .desktop-type-of-task__date, .desktop-main .desktop-add-task .desktop-type-of-task__time {
-            grid-column: 1 / -1; }
+            grid-column: 1 / -1; } }
+        @media (min-width: 1280px) and (min-width: 1440px) {
+          .desktop-main .desktop-task-details .desktop-type-of-task__date, .desktop-main .desktop-task-details .desktop-type-of-task__time, .desktop-main .desktop-add-task .desktop-type-of-task__date, .desktop-main .desktop-add-task .desktop-type-of-task__time {
+            font-size: var(--font-size-headers-small-tablet); } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-task-details__modify-button, .desktop-main .desktop-add-task__modify-button {
           background-color: var(--secondary-color);
           border: none;
@@ -1652,7 +1690,11 @@ ul {
           margin: 9.6875rem auto 0;
           text-transform: uppercase;
           transition: all 0.2s ease-in-out;
-          width: 100%; }
+          width: 100%; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-task-details__modify-button, .desktop-main .desktop-add-task__modify-button {
+          margin: 8.625rem auto 0; } }
+  @media (min-width: 1280px) {
           .desktop-main .desktop-task-details__modify-button:hover, .desktop-main .desktop-add-task__modify-button:hover {
             background-color: transparent;
             border: 1px solid var(--secondary-color);

@@ -8,11 +8,19 @@
   padding: 1.625rem 2rem;
   transition: transform 0.25s ease-in-out 0.25s;
 
+  @include for-desktop-large {
+    padding: 3rem;
+  }
+
   &__title {
     color: var(--gray);
     font-size: var(--font-size-title-tasks-small-desktop);
     font-weight: var(--font-weight-bold);
     text-decoration: underline;
+
+    @include for-desktop-large {
+      font-size: var(--font-size-add-task-title-small-tablet);
+    }
   }
 
   &__subtitle {
@@ -20,12 +28,22 @@
     font-size: var(--font-size-add-task-title-small-mobile);
     font-weight: var(--font-weight-bold);
     margin-top: 2.75rem;
+
+    @include for-desktop-large {
+      font-size: var(--font-size-title-tasks-small-desktop);
+      margin-top: 2.5rem;
+    }
   }
 
   &__task-title {
     font-size: var(--font-size-title2-small-desktop);
     font-weight: var(--font-weight-bold);
     margin-top: 0.875rem;
+
+    @include for-desktop-large {
+      font-size: var(--font-size-add-button);
+      margin-top: 0.75rem;
+    }
   }
 
   .dot {
@@ -34,6 +52,11 @@
     grid-row: 2 / 3;
     height: 0.625rem;
     width: 0.625rem;
+
+    @include for-desktop-large {
+      height: 0.75rem;
+      width: 0.75rem;
+    }
   }
 
   .desktop-type-of-task {
@@ -47,6 +70,10 @@
 
     &:nth-child(5), &:nth-child(6) {
       margin-top: 2.5rem;
+
+      @include for-desktop-large {
+        margin-top: 2rem;
+      }
     }
 
     .desktop-task-details__subtitle {
@@ -57,10 +84,18 @@
 
     &__text {
       font-size: var(--font-size-add-task-title);
+
+      @include for-desktop-large {
+        font-size: var(--font-size-headers-small-tablet);
+      }
     }
 
     &__date, &__time {
       grid-column: 1 / -1;
+
+      @include for-desktop-large {
+        font-size: var(--font-size-headers-small-tablet);
+      }
     }
   }
 
@@ -76,6 +111,10 @@
     text-transform: uppercase;
     transition: all 0.2s ease-in-out;
     width: 100%;
+
+    @include for-desktop-large {
+      margin: 8.625rem auto 0;
+    }
 
     &:hover {
       background-color: transparent;

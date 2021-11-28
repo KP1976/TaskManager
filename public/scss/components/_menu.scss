@@ -411,6 +411,10 @@
       width: 13rem;
     }
 
+    @include for-desktop-large {
+      margin: 7rem auto 0;
+    }
+
     &:hover {
       background-color: transparent;
       border: 1px solid var(--blue-gray);
