@@ -53,11 +53,16 @@
         background-color: var(--secondary-color);
         border-radius: 50%;
         content: '';
-        height: 2.5rem;
+        height: 2rem;
         left: 0.5rem;
         position: absolute;
         top: 0.5rem;
-        width: 2.5rem;
+        width: 2rem;
+
+        @include for-desktop-large {
+          height: 2.5rem;
+          width: 2.5rem;
+        }
       }
     }
 

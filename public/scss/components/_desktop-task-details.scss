@@ -113,6 +113,8 @@
     width: 100%;
 
     @include for-desktop-large {
+      font-size: var(--font-size-title-tasks-small-desktop);
+      height: 4rem;
       margin: 8.625rem auto 0;
     }
 

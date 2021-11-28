@@ -1135,7 +1135,7 @@ ul {
         width: 13rem; } }
     @media (min-width: 1440px) {
       .menu .desktop-add-task-button {
-        margin: 7rem auto 0; } }
+        margin-top: 7rem; } }
     .menu .desktop-add-task-button:hover {
       background-color: transparent;
       border: 1px solid var(--blue-gray);
@@ -1570,11 +1570,16 @@ ul {
                 background-color: var(--secondary-color);
                 border-radius: 50%;
                 content: '';
-                height: 2.5rem;
+                height: 2rem;
                 left: 0.5rem;
                 position: absolute;
                 top: 0.5rem;
-                width: 2.5rem; }
+                width: 2rem; } }
+            @media (min-width: 1280px) and (min-width: 1440px) {
+              .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-percentage-of-done-tasks .desktop-pie-chart::before {
+                height: 2.5rem;
+                width: 2.5rem; } }
+  @media (min-width: 1280px) {
             .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done .desktop-percentage-of-done-tasks__text {
               font-size: var(--font-size-date);
               left: 50%;
@@ -1693,6 +1698,8 @@ ul {
           width: 100%; } }
       @media (min-width: 1280px) and (min-width: 1440px) {
         .desktop-main .desktop-task-details__modify-button, .desktop-main .desktop-add-task__modify-button {
+          font-size: var(--font-size-title-tasks-small-desktop);
+          height: 4rem;
           margin: 8.625rem auto 0; } }
   @media (min-width: 1280px) {
           .desktop-main .desktop-task-details__modify-button:hover, .desktop-main .desktop-add-task__modify-button:hover {
@@ -1710,13 +1717,21 @@ ul {
         transform: translateX(0%);
         transition: transform 0.25s ease-in-out 0.3s; }
       .desktop-main .desktop-add-task .desktop-form {
-        margin: 2.875rem 0 12.25rem; }
+        margin: 2.875rem 0 12.25rem; } }
+    @media (min-width: 1280px) and (min-width: 1440px) {
+      .desktop-main .desktop-add-task .desktop-form {
+        margin: 2.5rem 0 0; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-add-task .desktop-form__label, .desktop-main .desktop-add-task .desktop-form .desktop-form-categories__task-type {
           color: var(--blue-gray);
           display: flex;
           flex-direction: column;
           font-size: var(--font-size-headers-small-tablet);
-          font-weight: var(--font-weight-bold); }
+          font-weight: var(--font-weight-bold); } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-add-task .desktop-form__label, .desktop-main .desktop-add-task .desktop-form .desktop-form-categories__task-type {
+          font-size: var(--font-size-title-tasks-small-desktop); } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-add-task .desktop-form__input {
           background-color: var(--blue-gray);
           border: 0;
@@ -1724,30 +1739,51 @@ ul {
           font-size: var(--font-size-add-task-title);
           height: 3.5rem;
           margin-top: 0.75rem;
-          padding: 0.75rem 1rem; }
+          padding: 0.75rem 1rem; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-add-task .desktop-form__input {
+          height: 4rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-add-task .desktop-form__category-icon {
           border: 2px solid var(--blue-gray);
           border-radius: 50%;
           height: 4rem;
           margin: 2.5rem auto;
           position: relative;
-          width: 4rem; }
+          width: 4rem; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-add-task .desktop-form__category-icon {
+          height: 4.5rem;
+          width: 4.5rem; } }
+  @media (min-width: 1280px) {
           .desktop-main .desktop-add-task .desktop-form__category-icon img {
             left: 50%;
             position: absolute;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 1.75rem; }
+            width: 1.75rem; } }
+        @media (min-width: 1280px) and (min-width: 1440px) {
+          .desktop-main .desktop-add-task .desktop-form__category-icon img {
+            width: 2rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-add-task .desktop-form .desktop-form-categories {
           display: flex;
           flex-direction: column;
-          margin-bottom: 12.25rem; }
+          margin-bottom: 12.25rem; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-add-task .desktop-form .desktop-form-categories {
+          margin-bottom: 10rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-add-task .desktop-form .desktop-form-categories-list {
           display: grid;
           grid-column-gap: 5.875rem;
           grid-row-gap: 0.875rem;
           grid-template-columns: 1fr 1fr;
-          margin-top: 1.5rem; }
+          margin-top: 1.5rem; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-add-task .desktop-form .desktop-form-categories-list {
+          grid-column-gap: 7.75rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-add-task .desktop-form .desktop-form-category {
           align-items: center;
           display: flex; }
@@ -1755,7 +1791,12 @@ ul {
             border-radius: 50%;
             height: 0.625rem;
             margin-right: 0.5rem;
-            width: 0.625rem; }
+            width: 0.625rem; } }
+        @media (min-width: 1280px) and (min-width: 1440px) {
+          .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot {
+            height: 0.75rem;
+            width: 0.75rem; } }
+  @media (min-width: 1280px) {
             .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot--orange {
               background-color: var(--category-recreation-color); }
             .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot--yellow {
@@ -1765,7 +1806,11 @@ ul {
             .desktop-main .desktop-add-task .desktop-form .desktop-form-category__color-dot--green {
               background-color: var(--category-food-color); }
           .desktop-main .desktop-add-task .desktop-form .desktop-form-category__name {
-            font-size: var(--font-size-add-task-title); }
+            font-size: var(--font-size-add-task-title); } }
+        @media (min-width: 1280px) and (min-width: 1440px) {
+          .desktop-main .desktop-add-task .desktop-form .desktop-form-category__name {
+            font-size: var(--font-size-add-task-title-small-mobile); } }
+  @media (min-width: 1280px) {
           .desktop-main .desktop-add-task .desktop-form .desktop-form-category__label {
             line-height: 1.1;
             margin-left: auto; }
@@ -1778,7 +1823,12 @@ ul {
             height: 1.125rem;
             margin: 0;
             place-content: center;
-            width: 1.125rem; }
+            width: 1.125rem; } }
+        @media (min-width: 1280px) and (min-width: 1440px) {
+          .desktop-main .desktop-add-task .desktop-form .desktop-form-category__radio-input {
+            height: 1.25rem;
+            width: 1.25rem; } }
+  @media (min-width: 1280px) {
             .desktop-main .desktop-add-task .desktop-form .desktop-form-category__radio-input:checked::before {
               transform: scale(1); }
             .desktop-main .desktop-add-task .desktop-form .desktop-form-category__radio-input::before {
@@ -1788,7 +1838,12 @@ ul {
               height: 0.5rem;
               transform: scale(0);
               transition: 120ms transform ease-in-out;
-              width: 0.5rem; }
+              width: 0.5rem; } }
+          @media (min-width: 1280px) and (min-width: 1440px) {
+            .desktop-main .desktop-add-task .desktop-form .desktop-form-category__radio-input::before {
+              height: 0.625rem;
+              width: 0.625rem; } }
+  @media (min-width: 1280px) {
         .desktop-main .desktop-add-task .desktop-form__add-task-button {
           background-color: var(--secondary-color);
           border: none;
@@ -1798,7 +1853,12 @@ ul {
           font-weight: var(--font-weight-bold);
           height: 3.5rem;
           text-transform: uppercase;
-          width: 100%; }
+          width: 100%; } }
+      @media (min-width: 1280px) and (min-width: 1440px) {
+        .desktop-main .desktop-add-task .desktop-form__add-task-button {
+          font-size: var(--font-size-title-tasks-small-desktop);
+          height: 4rem; } }
+  @media (min-width: 1280px) {
           .desktop-main .desktop-add-task .desktop-form__add-task-button:hover {
             background-color: transparent;
             border: 2px solid var(--secondary-color);

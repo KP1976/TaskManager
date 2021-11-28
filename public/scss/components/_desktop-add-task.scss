@@ -3,12 +3,20 @@
   .desktop-form {
     margin: 2.875rem 0 12.25rem;
 
+    @include for-desktop-large {
+      margin: 2.5rem 0 0;
+    }
+
     &__label, .desktop-form-categories__task-type {
       color: var(--blue-gray);
       display: flex;
       flex-direction: column;
       font-size: var(--font-size-headers-small-tablet);
       font-weight: var(--font-weight-bold);
+
+      @include for-desktop-large {
+        font-size: var(--font-size-title-tasks-small-desktop);
+      }
     }
 
     &__input {
@@ -19,6 +27,10 @@
       height: 3.5rem;
       margin-top: 0.75rem;
       padding: 0.75rem 1rem;
+
+      @include for-desktop-large {
+        height: 4rem;
+      }
     }
 
     &__category-icon {
@@ -29,12 +41,21 @@
       position: relative;
       width: 4rem;
 
+      @include for-desktop-large {
+        height: 4.5rem;
+        width: 4.5rem;
+      }
+
       img {
         left: 50%;
         position: absolute;
         top: 50%;
         transform: translate(-50%, -50%);
         width: 1.75rem;
+
+        @include for-desktop-large {
+          width: 2rem;
+        }
       }
     }
 
@@ -42,6 +63,10 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 12.25rem;
+
+      @include for-desktop-large {
+        margin-bottom: 10rem;
+      }
     }
 
     .desktop-form-categories-list {
@@ -50,6 +75,10 @@
       grid-row-gap: 0.875rem;
       grid-template-columns: 1fr 1fr;
       margin-top: 1.5rem;
+
+      @include for-desktop-large {
+        grid-column-gap: 7.75rem;
+      }
     }
 
     @import './desktop-category';
@@ -64,6 +93,11 @@
       height: 3.5rem;
       text-transform: uppercase;
       width: 100%;
+
+      @include for-desktop-large {
+        font-size: var(--font-size-title-tasks-small-desktop);
+        height: 4rem;
+      }
 
       &:hover {
         background-color: transparent;
