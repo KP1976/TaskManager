@@ -1,7 +1,9 @@
 .desktop-add-task {
+  display: flex;
+  flex-direction: column;
 
   .desktop-form {
-    margin: 2.875rem 0 12.25rem;
+    margin: 2.875rem 0 0;
 
     @include for-desktop-large {
       margin: 2.5rem 0 0;
@@ -62,7 +64,7 @@
     .desktop-form-categories {
       display: flex;
       flex-direction: column;
-      margin-bottom: 12.25rem;
+      margin-bottom: calc(34.5vh - 11rem);
 
       @include for-desktop-large {
         margin-bottom: 10rem;

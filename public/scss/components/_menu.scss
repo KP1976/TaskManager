@@ -24,10 +24,10 @@
   @include for-desktop-up {
     backdrop-filter: none;
     background-image: linear-gradient(to bottom, var(--primary-color), transparent);
-    display: flex;
-    grid-row: 2 / 4;
+    flex-flow: wrap;
     margin-left: 2.75rem;
-    padding: 0;
+    min-height: auto;
+    padding: 0 0 12.375rem 0;
     position: relative;
     transform: translateX(0);
     width: 17rem;
@@ -166,6 +166,7 @@
       margin: 2.5rem 0 0 0;
       padding: 0 3.25rem;
       row-gap: 0;
+      width: 100%;
     }
 
     @include for-desktop-large {
@@ -405,14 +406,10 @@
       display: block;
       font-weight: var(--font-weight-bold);
       height: 3rem;
-      margin: 8rem auto 0;
+      margin: calc(34vh - 15rem) auto 0;
       text-transform: uppercase;
       transition: all 0.2s ease-in-out;
       width: 13rem;
-    }
-
-    @include for-desktop-large {
-      margin-top: 7rem;
     }
 
     &:hover {
