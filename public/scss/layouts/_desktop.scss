@@ -56,6 +56,7 @@
         height: 2rem;
         margin-right: 0.75rem;
         position: relative;
+        pointer-events: none;
         width: 2rem;
 
         @include for-desktop-large {
@@ -81,6 +82,7 @@
 
       .task__title {
         font-size: var(--font-size-add-task-title);
+        pointer-events: none;
 
         @include for-desktop-large {
           font-size: var(--font-size-add-task-title-small-mobile);

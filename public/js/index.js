@@ -36,10 +36,28 @@ const showDesktopAddTaskPage = () => {
   desktopTodoAndDoneTasks.style.transform = 'translateX(0%)';
   desktopTaskDetails.classList.remove('show-details');
 };
-const showTaskDetails = () => {
+const showTaskDetails = (e) => {
   desktopTaskDetails.classList.add('show-details');
   desktopTodoAndDoneTasks.style.transform = 'translateX(0%)';
   desktopAddTaskComponent.classList.remove('show-add-task');
+
+  let current = e.target;
+  let prevSibling = current.previousElementSibling;
+  let nextSibling = current.nextElementSibling;
+
+  while (nextSibling) {
+    console.log(nextSibling);
+    e.target.classList.add('active');
+    nextSibling.classList.remove('active');
+    nextSibling = nextSibling.nextElementSibling;
+  }
+
+  while (prevSibling) {
+    console.log(prevSibling);
+    e.target.classList.add('active');
+    prevSibling.classList.remove('active');
+    prevSibling = prevSibling.previousElementSibling;
+  }
 };
 
 const hideAddTaskPage = () => addTaskPage.classList.remove('open');
@@ -54,10 +72,12 @@ addTaskBackButton.addEventListener('click', hideAddTaskPage);
 desktopAddTaskButton.addEventListener('click', showDesktopAddTaskPage);
 
 desktopTasksTodo.forEach((task) => {
-  task.addEventListener('focusin', showTaskDetails);
-  task.addEventListener('focusout', () => {
-    desktopTaskDetails.classList.remove('show-details');
-    desktopTodoAndDoneTasks.style.transform =
-      'translateX(calc(50% + 1.125rem))';
-  });
+  // task.addEventListener('focusin', showTaskDetails);
+  // task.addEventListener('focusout', () => {
+  //   desktopTaskDetails.classList.remove('show-details');
+  //   desktopTodoAndDoneTasks.style.transform =
+  //     'translateX(calc(50% + 1.125rem))';
+  // });
+
+  task.addEventListener('click', showTaskDetails);
 });
