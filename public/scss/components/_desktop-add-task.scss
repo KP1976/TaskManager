@@ -67,7 +67,7 @@
       margin-bottom: calc(34.5vh - 11rem);
 
       @include for-desktop-large {
-        margin-bottom: 10rem;
+        margin-bottom: calc(34vh - 12rem);
       }
     }
 

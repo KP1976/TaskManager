@@ -8,6 +8,7 @@
 
   @include for-desktop-large {
     padding: 3rem 3rem 2.5rem;
+    margin-top: calc(24vh - 16rem);
   }
 
   &__title {

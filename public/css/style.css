@@ -1530,7 +1530,8 @@ ul {
           position: relative; } }
       @media (min-width: 1280px) and (min-width: 1440px) {
         .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done {
-          padding: 3rem 3rem 2.5rem; } }
+          padding: 3rem 3rem 2.5rem;
+          margin-top: calc(24vh - 16rem); } }
   @media (min-width: 1280px) {
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-done__title {
             color: var(--gray);
@@ -1773,7 +1774,7 @@ ul {
             margin-bottom: calc(34.5vh - 11rem); } }
         @media (min-width: 1280px) and (min-width: 1440px) {
           .desktop-main .desktop-add-task .desktop-form .desktop-form-categories {
-            margin-bottom: 10rem; } }
+            margin-bottom: calc(34vh - 12rem); } }
   @media (min-width: 1280px) {
           .desktop-main .desktop-add-task .desktop-form .desktop-form-categories-list {
             display: grid;
