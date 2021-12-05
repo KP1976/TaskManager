@@ -624,7 +624,9 @@ ul {
   .main .tasks-list {
     display: flex;
     flex-direction: column;
-    margin: 1.25rem 0 1.75rem; }
+    margin: 1.25rem 0 1.75rem;
+    max-height: 48vh;
+    overflow: auto; }
     @media (min-width: 600px) {
       .main .tasks-list {
         margin: 1.5rem 0 1.5rem; } }
@@ -1141,6 +1143,7 @@ ul {
 
 .add-task {
   background-color: var(--primary-color);
+  display: grid;
   min-height: 100vh;
   padding: 1.5rem 2rem 4rem;
   position: absolute;
@@ -1160,8 +1163,17 @@ ul {
     background-color: transparent;
     border: none;
     height: 1rem;
+    left: 2rem;
     padding: 0;
-    position: absolute; }
+    position: absolute;
+    top: 1.5rem; }
+    @media (min-width: 600px) {
+      .add-task__back-button {
+        left: 1.5rem; } }
+    @media (min-width: 900px) {
+      .add-task__back-button {
+        left: 2rem;
+        top: 2rem; } }
     .add-task__back-button img {
       width: 0.875rem; }
       @media (min-width: 414px) {
@@ -1559,6 +1571,7 @@ ul {
               background: conic-gradient(var(--blue-gray) 0% 63%, rgba(15, 37, 56, 0.5) 63% 100%);
               border-radius: 50%;
               height: 3rem;
+              opacity: 50%;
               position: relative;
               width: 3rem; } }
           @media (min-width: 1280px) and (min-width: 1440px) {

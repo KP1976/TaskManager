@@ -1,5 +1,6 @@
 .add-task {
   background-color: var(--primary-color);
+  display: grid;
   min-height: 100vh;
   padding: 1.5rem 2rem 4rem;
   position: absolute;
@@ -24,8 +25,19 @@
     background-color: transparent;
     border: none;
     height: 1rem;
+    left: 2rem;
     padding: 0;
     position: absolute;
+    top: 1.5rem;
+
+    @include for-tablet-portrait-up {
+      left: 1.5rem;
+    }
+
+    @include for-tablet-landscape-up {
+      left: 2rem;
+      top: 2rem;
+    }
 
     img {
       width: 0.875rem;
