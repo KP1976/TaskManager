@@ -353,6 +353,12 @@ template {
 *, *::before, *::after {
   box-sizing: border-box; }
 
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */ }
+
 body {
   background-color: var(--primary-color);
   color: var(--font-primary-color);
@@ -626,7 +632,8 @@ ul {
     flex-direction: column;
     margin: 1.25rem 0 1.75rem;
     max-height: 48vh;
-    overflow: auto; }
+    overflow: auto;
+    scrollbar-width: none; }
     @media (min-width: 600px) {
       .main .tasks-list {
         margin: 1.5rem 0 1.5rem; } }

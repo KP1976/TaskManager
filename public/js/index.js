@@ -1,4 +1,4 @@
-const mmobileHamburgerMenuButton = document.querySelector(
+const mobileHamburgerMenuButton = document.querySelector(
   '.mobile-hamburger-menu'
 );
 const mobileMenu = document.querySelector('.menu');
@@ -19,6 +19,7 @@ const desktopTodoAndDoneTasks = document.querySelector(
   '.desktop-tasks-todo-and-done'
 );
 const desktopTasksTodo = document.querySelectorAll('.desktop-task-todo');
+// const desktopTasksTodoList = document.querySelector('.desktop-tasks-todo-list');
 const desktopTaskDetails = document.querySelector('.desktop-task-details');
 
 // LISTENERS FUNCTIONS
@@ -46,14 +47,12 @@ const showTaskDetails = (e) => {
   let nextSibling = current.nextElementSibling;
 
   while (nextSibling) {
-    console.log(nextSibling);
     e.target.classList.add('active');
     nextSibling.classList.remove('active');
     nextSibling = nextSibling.nextElementSibling;
   }
 
   while (prevSibling) {
-    console.log(prevSibling);
     e.target.classList.add('active');
     prevSibling.classList.remove('active');
     prevSibling = prevSibling.previousElementSibling;
@@ -64,20 +63,13 @@ const hideAddTaskPage = () => addTaskPage.classList.remove('open');
 
 // LISTENERS
 
-mmobileHamburgerMenuButton.addEventListener('click', toggleMobileMenu);
+mobileHamburgerMenuButton.addEventListener('click', toggleMobileMenu);
 
 if (addTaskButton) addTaskButton.addEventListener('click', showAddTaskPage);
 addTaskBackButton.addEventListener('click', hideAddTaskPage);
 
 desktopAddTaskButton.addEventListener('click', showDesktopAddTaskPage);
 
-desktopTasksTodo.forEach((task) => {
-  // task.addEventListener('focusin', showTaskDetails);
-  // task.addEventListener('focusout', () => {
-  //   desktopTaskDetails.classList.remove('show-details');
-  //   desktopTodoAndDoneTasks.style.transform =
-  //     'translateX(calc(50% + 1.125rem))';
-  // });
-
-  task.addEventListener('click', showTaskDetails);
+desktopTasksTodo.forEach((element) => {
+  element.addEventListener('click', showTaskDetails);
 });
