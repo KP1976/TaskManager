@@ -1,0 +1,54 @@
+<section class='add-task'>
+  <button class='add-task__back-button'><img src='images/arrow-left-solid.svg' alt='left arrow icon'></button>
+  <h2 class='add-task__title'>dodaj nowe zadanie</h2>
+  <div class='add-task__category-icon'>
+    <img src='images/laptop-code-solid.svg' alt='laptop icon'>
+  </div>
+
+  <ul class='categories-list'>
+    <li class='category'>
+      <span class='category__name'>Rekreacja</span>
+      <div class='category__color-dot category__color-dot--orange'></div>
+      <label class='category__label' for='radio-recreation'>
+        <input type='radio' class='category__radio-input'
+          name='task-category' id='radio-recreation'>
+      </label>
+    </li>
+
+    <li class='category'>
+      <span class='category__name'>Technologia</span>
+      <div class='category__color-dot category__color-dot--yellow'></div>
+      <label class='category__label' for='radio-technology'>
+        <input type='radio' class='category__radio-input'
+          name='task-category' id='radio-technology'>
+      </label>
+    </li>
+
+    <li class='category'>
+      <span class='category__name'>Osobiste</span>
+      <div class='category__color-dot category__color-dot--red'></div>
+      <label class='category__label' for='radio-personal'>
+        <input type='radio' class='category__radio-input' name='task-category' id='radio-personal'>
+      </label>
+    </li>
+
+    <li class='category'>
+      <span class='category__name'>Jedzenie</span>
+      <div class='category__color-dot category__color-dot--green'></div>
+      <label class='category__label' for='radio-food'>
+        <input type='radio' class='category__radio-input' name='task-category' id='radio-food'>
+      </label>
+    </li>
+  </ul>
+
+  <form class='form'>
+    <label class='form__label' for='task-name'>Nazwa zadania
+      <input
+        class='form__input'
+        name='task-name'
+        id='task-name'
+        alt='name of the task'>
+    </label>
+    <button class='form__add-task-button' type='submit'>dodaj zadanie</button>
+  </form>
+</section>

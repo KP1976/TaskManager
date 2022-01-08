@@ -1,4 +1,5 @@
 const express = require('express');
+
 const { engine } = require('express-handlebars');
 
 const app = express();
@@ -12,10 +13,12 @@ app.engine(
     extname: '.hbs',
   })
 );
+
 app.set('view engine', '.hbs');
+app.set('views', './views');
 
 app.get('/', (req, res) => {
-  res.render('header');
+  res.render('index');
 });
 
 app.listen(PORT, 'localhost', () => {
