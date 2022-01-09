@@ -5,7 +5,7 @@ const { getAllTasks } = require('../utils/db');
 
 homeRouter.get('/', async (req, res) => {
   const tasks = await getAllTasks();
-  console.log(tasks);
+  // console.log(tasks);
 
   res.render('index', {
     date: getCurrentDate(),

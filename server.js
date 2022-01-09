@@ -2,6 +2,7 @@ const express = require('express');
 const { engine } = require('express-handlebars');
 const { homeRouter } = require('./routers/home');
 const { addTaskRouter } = require('./routers/addTask');
+const { handlebarsHelpers } = require('./helpers/handlebars-helpers');
 
 const app = express();
 const PORT = 3000;
@@ -14,6 +15,7 @@ app.engine(
   '.hbs',
   engine({
     extname: '.hbs',
+    helpers: handlebarsHelpers,
   })
 );
 
