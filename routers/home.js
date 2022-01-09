@@ -9,6 +9,7 @@ homeRouter.get('/', async (req, res) => {
 
   res.render('index', {
     date: getCurrentDate(),
+    tasks,
   });
 });
 

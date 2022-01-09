@@ -52,14 +52,14 @@
 
   <ul class='calendar-category-list'>
     <li class='calendar-category-list__year'>
-      Rok: <span class='year'>2021</span>
+      Rok: <span class='year'>{{ date.year }}</span>
     </li>
     <li class='calendar-category-list__month'>
-      Miesiąc: <span class='month'>listopad</span>
+      Miesiąc: <span class='month'>{{ date.monthDesktop }}</span>
     </li>
     <li class='calendar-category-list__day'>
-      Dzień: <span class='day'>18, </span>
-      <span class='day-of-week'>czwartek</span>
+      Dzień: <span class='day'>{{ date.day }}, </span>
+      <span class='day-of-week'>{{ date.dayOfWeek }}</span>
     </li>
   </ul>
   <button class='desktop-add-task-button' type='submit'>dodaj zadanie</button>

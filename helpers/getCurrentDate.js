@@ -13,12 +13,37 @@ const getCurrentDate = () => {
     'listopada',
     'grudnia',
   ];
+  const monthsDesktop = [
+    'styczeń',
+    'luty',
+    'marzec',
+    'kwiecień',
+    'maj',
+    'czerwiec',
+    'lipiec',
+    'sierpień',
+    'wrzesień',
+    'październik',
+    'listopad',
+    'grudzień',
+  ];
+  const days = [
+    'niedziela',
+    'poniedziałek',
+    'wtorek',
+    'środa',
+    'czwartek',
+    'piątek',
+    'sobota',
+  ];
   const date = new Date();
   const day = date.getDate();
+  const dayOfWeek = days[date.getDay()];
   const month = months[date.getMonth()];
+  const monthDesktop = monthsDesktop[date.getMonth()];
   const year = date.getFullYear();
 
-  return { day, month, year };
+  return { day, dayOfWeek, month, monthDesktop, year };
 };
 
 module.exports = {
