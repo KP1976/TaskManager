@@ -23,8 +23,14 @@ const desktopTasksTodo = document.querySelectorAll('.desktop-task-todo');
 const desktopTaskDetails = document.querySelector('.desktop-task-details');
 
 const radioButtons = document.querySelectorAll('.category__radio-input');
+const radioButtonsDesktop = document.querySelectorAll(
+  '.desktop-form-category__radio-input'
+);
 const addTaskCategoryIcon = document.querySelector(
   '.add-task__category-icon img'
+);
+const addTaskCategoryIconDesktop = document.querySelector(
+  '.desktop-form__category-icon img'
 );
 
 // LISTENERS FUNCTIONS
@@ -80,21 +86,30 @@ desktopTasksTodo.forEach((element) => {
 });
 
 // Wyświetlanie odpowiedniej ikony w zależności od wyboru kategorii
-radioButtons.forEach((radioButton, index) =>
+
+const switchCaseFunction = (radioButton, index, icon) => {
   radioButton.addEventListener('change', () => {
     switch (index) {
       case 0:
-        addTaskCategoryIcon.setAttribute('src', 'images/running-solid.svg');
+        icon.setAttribute('src', 'images/running-solid.svg');
         break;
       case 1:
-        addTaskCategoryIcon.setAttribute('src', 'images/laptop-code-solid.svg');
+        icon.setAttribute('src', 'images/laptop-code-solid.svg');
         break;
       case 2:
-        addTaskCategoryIcon.setAttribute('src', 'images/user-tie-solid.svg');
+        icon.setAttribute('src', 'images/user-tie-solid.svg');
         break;
       case 3:
-        addTaskCategoryIcon.setAttribute('src', 'images/pizza-slice-solid.svg');
+        icon.setAttribute('src', 'images/pizza-slice-solid.svg');
         break;
     }
-  })
-);
+  });
+};
+
+radioButtons.forEach((radioButton, index) => {
+  switchCaseFunction(radioButton, index, addTaskCategoryIcon);
+});
+
+radioButtonsDesktop.forEach((radioButton, index) => {
+  switchCaseFunction(radioButton, index, addTaskCategoryIconDesktop);
+});
