@@ -21,6 +21,8 @@
 
   .desktop-tasks-todo-list {
     margin-top: 2rem;
+    max-height: 16rem;
+    overflow-y: auto;
   }
 
   @import 'desktop-task-todo';

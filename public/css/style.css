@@ -354,10 +354,18 @@ template {
   box-sizing: border-box; }
 
 ::-webkit-scrollbar {
-  width: 0;
-  /* Remove scrollbar space */
-  background: transparent;
-  /* Optional: just make scrollbar invisible */ }
+  width: 8px; }
+
+::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 4px; }
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-gray); }
 
 body {
   background-color: var(--primary-color);
@@ -1523,7 +1531,9 @@ ul {
             font-size: var(--font-size-add-task-title-small-tablet); } }
   @media (min-width: 1280px) {
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-todo .desktop-tasks-todo-list {
-            margin-top: 2rem; }
+            margin-top: 2rem;
+            max-height: 16rem;
+            overflow-y: auto; }
           .desktop-main .desktop-tasks-todo-and-done .desktop-tasks-todo .desktop-task-todo {
             align-items: center;
             border: 1px solid var(--secondary-color);
