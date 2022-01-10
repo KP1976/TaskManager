@@ -8,12 +8,6 @@ const pool = mysql.createPool({
   decimalNumbers: true,
 });
 
-const getAllTasks = async () => {
-  const [tasks] = await pool.execute('SELECT * FROM `tasks`');
-
-  return tasks;
-};
-
 module.exports = {
-  getAllTasks,
+  pool,
 };
