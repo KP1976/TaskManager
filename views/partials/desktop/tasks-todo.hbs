@@ -2,42 +2,15 @@
   <h3 class='desktop-tasks-todo__title'>zadania do zrobienia</h3>
   <ul class='desktop-tasks-todo-list'>
   {{#each tasks}}
-    {{#if (equals this.category 'technologia')}}
+
       <li class='desktop-task-todo' tabindex="0">
         <div class='desktop-task-logo'>
-          <img class='desktop-task-logo__image' src='images/laptop-code-solid.svg'
+          <img class='desktop-task-logo__image' src='{{#if (equals this.category 'technologia')}}images/laptop-code-solid.svg{{else if (equals this.category 'rekreacja')}}images/running-solid.svg{{else if (equals this.category 'jedzenie')}}images/pizza-slice-solid.svg{{else if (equals this.category 'osobiste')}}images/user-tie-solid.svg{{/if}}'
             alt='laptop icon'>
         </div>
         <span class='task__title'>{{ this.title }}</span>
       </li>
-    {{/if}}
-    {{#if (equals this.category 'rekreacja')}}
-      <li class='desktop-task-todo' tabindex="0">
-        <div class='desktop-task-logo'>
-          <img class='desktop-task-logo__image' src='images/running-solid.svg'
-            alt='laptop icon'>
-        </div>
-        <span class='task__title'>{{ this.title }}</span>
-      </li>
-    {{/if}}
-    {{#if (equals this.category 'jedzenie')}}
-      <li class='desktop-task-todo' tabindex="0">
-        <div class='desktop-task-logo'>
-          <img class='desktop-task-logo__image' src='images/pizza-slice-solid.svg'
-            alt='laptop icon'>
-        </div>
-        <span class='task__title'>{{ this.title }}</span>
-      </li>
-    {{/if}}
-    {{#if (equals this.category 'osobiste')}}
-      <li class='desktop-task-todo' tabindex="0">
-        <div class='desktop-task-logo'>
-          <img class='desktop-task-logo__image' src='images/user-tie-solid.svg'
-            alt='laptop icon'>
-        </div>
-        <span class='task__title'>{{ this.title }}</span>
-      </li>
-    {{/if}}
+
   {{/each}}
   </ul>
 </div>
