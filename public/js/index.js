@@ -22,6 +22,11 @@ const desktopTasksTodo = document.querySelectorAll('.desktop-task-todo');
 // const desktopTasksTodoList = document.querySelector('.desktop-tasks-todo-list');
 const desktopTaskDetails = document.querySelector('.desktop-task-details');
 
+const radioButtons = document.querySelectorAll('.category__radio-input');
+const addTaskCategoryIcon = document.querySelector(
+  '.add-task__category-icon img'
+);
+
 // LISTENERS FUNCTIONS
 
 const toggleMobileMenu = () => {
@@ -73,3 +78,23 @@ desktopAddTaskButton.addEventListener('click', showDesktopAddTaskPage);
 desktopTasksTodo.forEach((element) => {
   element.addEventListener('click', showTaskDetails);
 });
+
+// Wyświetlanie odpowiedniej ikony w zależności od wyboru kategorii
+radioButtons.forEach((radioButton, index) =>
+  radioButton.addEventListener('change', () => {
+    switch (index) {
+      case 0:
+        addTaskCategoryIcon.setAttribute('src', 'images/running-solid.svg');
+        break;
+      case 1:
+        addTaskCategoryIcon.setAttribute('src', 'images/laptop-code-solid.svg');
+        break;
+      case 2:
+        addTaskCategoryIcon.setAttribute('src', 'images/user-tie-solid.svg');
+        break;
+      case 3:
+        addTaskCategoryIcon.setAttribute('src', 'images/pizza-slice-solid.svg');
+        break;
+    }
+  })
+);
