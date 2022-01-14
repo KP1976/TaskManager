@@ -1673,11 +1673,18 @@ ul {
           margin-top: 0.75rem; } }
   @media (min-width: 1280px) {
         .desktop-main .desktop-task-details .dot, .desktop-main .desktop-add-task .dot {
-          background-color: var(--category-recreation-color);
           border-radius: 50%;
           grid-row: 2 / 3;
           height: 0.625rem;
-          width: 0.625rem; } }
+          width: 0.625rem; }
+          .desktop-main .desktop-task-details .dot--orange, .desktop-main .desktop-add-task .dot--orange {
+            background-color: var(--category-recreation-color); }
+          .desktop-main .desktop-task-details .dot--yellow, .desktop-main .desktop-add-task .dot--yellow {
+            background-color: var(--category-technology-color); }
+          .desktop-main .desktop-task-details .dot--red, .desktop-main .desktop-add-task .dot--red {
+            background-color: var(--category-personal-color); }
+          .desktop-main .desktop-task-details .dot--green, .desktop-main .desktop-add-task .dot--green {
+            background-color: var(--category-food-color); } }
       @media (min-width: 1280px) and (min-width: 1440px) {
         .desktop-main .desktop-task-details .dot, .desktop-main .desktop-add-task .dot {
           height: 0.75rem;

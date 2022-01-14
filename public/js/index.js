@@ -71,18 +71,47 @@ const showTaskDetails = (e) => {
   }
 
   // wyświetlanie szczegółowych danych wybranego zadania
-  const getTasks = async () => {
+  const displayTasksDetails = async () => {
     const tasks = await tasksFromDataBase();
     const taskId = currentTask.dataset.id;
-    const [filteredTask] = tasks.filter((task) => task.id === taskId);
+    const [{ title, category }] = tasks.filter((task) => task.id === taskId);
     const taskTitleInDetailsElement = document.querySelector(
       '.desktop-task-details__task-title'
     );
+    const taskCategoryInDetailsElement = document.querySelector(
+      '.desktop-type-of-task__text'
+    );
+    const categoryFirstLetterCapitilized = category.charAt(0).toUpperCase();
+    const dotElement = document.querySelector('.dot');
 
-    taskTitleInDetailsElement.textContent = filteredTask.title;
+    // const taskCreateDateInDetailsElement = document.querySelector(
+    //   '.desktop-type-of-task__date'
+    // );
+    // const taskTimeInDetailsElement = document.querySelector(
+    //   '.desktop-type-of-task__time'
+    // );
+
+    taskTitleInDetailsElement.textContent = title;
+    taskCategoryInDetailsElement.textContent =
+      categoryFirstLetterCapitilized + category.slice(1);
+
+    switch (category) {
+      case 'rekreacja':
+        dotElement.className = 'dot dot--orange';
+        break;
+      case 'technologia':
+        dotElement.className = 'dot dot--yellow';
+        break;
+      case 'osobiste':
+        dotElement.className = 'dot dot--red';
+        break;
+      case 'jedzenie':
+        dotElement.className = 'dot dot--green';
+        break;
+    }
   };
 
-  getTasks().catch((error) => console.error(error));
+  displayTasksDetails().catch((error) => console.error(error));
 };
 
 const hideAddTaskPage = () => addTaskPage.classList.remove('open');

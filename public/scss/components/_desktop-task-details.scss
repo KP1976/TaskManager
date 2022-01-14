@@ -47,11 +47,26 @@
   }
 
   .dot {
-    background-color: var(--category-recreation-color);
     border-radius: 50%;
     grid-row: 2 / 3;
     height: 0.625rem;
     width: 0.625rem;
+
+    &--orange {
+      background-color: var(--category-recreation-color);
+    }
+
+    &--yellow {
+      background-color: var(--category-technology-color);
+    }
+
+    &--red {
+      background-color: var(--category-personal-color);
+    }
+
+    &--green {
+      background-color: var(--category-food-color);
+    }
 
     @include for-desktop-large {
       height: 0.75rem;
