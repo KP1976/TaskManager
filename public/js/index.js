@@ -26,6 +26,7 @@ const radioButtons = document.querySelectorAll('.category__radio-input');
 const radioButtonsDesktop = document.querySelectorAll(
   '.desktop-form-category__radio-input'
 );
+
 const addTaskCategoryIcon = document.querySelector(
   '.add-task__category-icon img'
 );
@@ -53,9 +54,9 @@ const showTaskDetails = (e) => {
   desktopTodoAndDoneTasks.style.transform = 'translateX(0%)';
   desktopAddTaskComponent.classList.remove('show-add-task');
 
-  let current = e.target;
-  let prevSibling = current.previousElementSibling;
-  let nextSibling = current.nextElementSibling;
+  let currentTask = e.target;
+  let prevSibling = currentTask.previousElementSibling;
+  let nextSibling = currentTask.nextElementSibling;
 
   while (nextSibling) {
     e.target.classList.add('active');
@@ -68,6 +69,20 @@ const showTaskDetails = (e) => {
     prevSibling.classList.remove('active');
     prevSibling = prevSibling.previousElementSibling;
   }
+
+  // wyświetlanie szczegółowych danych wybranego zadania
+  const getTasks = async () => {
+    const tasks = await tasksFromDataBase();
+    const taskId = currentTask.dataset.id;
+    const [filteredTask] = tasks.filter((task) => task.id === taskId);
+    const taskTitleInDetailsElement = document.querySelector(
+      '.desktop-task-details__task-title'
+    );
+
+    taskTitleInDetailsElement.textContent = filteredTask.title;
+  };
+
+  getTasks().catch((error) => console.error(error));
 };
 
 const hideAddTaskPage = () => addTaskPage.classList.remove('open');
@@ -87,7 +102,7 @@ desktopTasksTodo.forEach((element) => {
 
 // Wyświetlanie odpowiedniej ikony w zależności od wyboru kategorii
 
-const switchCaseFunction = (radioButton, index, icon) => {
+const changeIcon = (radioButton, index, icon) => {
   radioButton.addEventListener('change', () => {
     switch (index) {
       case 0:
@@ -107,9 +122,16 @@ const switchCaseFunction = (radioButton, index, icon) => {
 };
 
 radioButtons.forEach((radioButton, index) => {
-  switchCaseFunction(radioButton, index, addTaskCategoryIcon);
+  changeIcon(radioButton, index, addTaskCategoryIcon);
 });
 
 radioButtonsDesktop.forEach((radioButton, index) => {
-  switchCaseFunction(radioButton, index, addTaskCategoryIconDesktop);
+  changeIcon(radioButton, index, addTaskCategoryIconDesktop);
 });
+
+// Pobranie zadań w formacie json
+
+const tasksFromDataBase = async () => {
+  const fetchingData = await fetch('http://localhost:3000/tasks');
+  return await fetchingData.json();
+};
