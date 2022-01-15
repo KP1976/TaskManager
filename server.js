@@ -23,7 +23,7 @@ app.set('view engine', '.hbs');
 app.set('views', './views');
 
 app.use('/', homeRouter);
-app.use('/addTask', addTaskRouter);
+app.use('/tasks', addTaskRouter);
 
 app.listen(PORT, 'localhost', () => {
   console.log(`Server starts listening at http://localhost:${PORT}`);

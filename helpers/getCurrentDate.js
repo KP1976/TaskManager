@@ -1,5 +1,5 @@
 const getCurrentDate = () => {
-  const months = [
+  const monthsNames = [
     'stycznia',
     'lutego',
     'marca',
@@ -37,13 +37,24 @@ const getCurrentDate = () => {
     'sobota',
   ];
   const date = new Date();
+  const minutes = date.getMinutes();
+  const hours = date.getHours();
   const day = date.getDate();
   const dayOfWeek = days[date.getDay()];
-  const month = months[date.getMonth()];
+  const month = monthsNames[date.getMonth()];
   const monthDesktop = monthsDesktop[date.getMonth()];
   const year = date.getFullYear();
 
-  return { day, dayOfWeek, month, monthDesktop, year };
+  return {
+    minutes,
+    hours,
+    day,
+    dayOfWeek,
+    month,
+    monthDesktop,
+    monthsNames,
+    year,
+  };
 };
 
 module.exports = {
