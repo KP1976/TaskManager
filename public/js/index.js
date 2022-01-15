@@ -74,26 +74,27 @@ const showTaskDetails = (e) => {
   const displayTasksDetails = async () => {
     const tasks = await tasksFromDataBase();
     const taskId = currentTask.dataset.id;
-    const [{ title, category }] = tasks.filter((task) => task.id === taskId);
+    const [{ title, category, createdAt, time }] = tasks.filter(
+      (task) => task.id === taskId
+    );
     const taskTitleInDetailsElement = document.querySelector(
       '.desktop-task-details__task-title'
     );
     const taskCategoryInDetailsElement = document.querySelector(
       '.desktop-type-of-task__text'
     );
-    const categoryFirstLetterCapitilized = category.charAt(0).toUpperCase();
+    const categoryFirstLetterCapitalized = category.charAt(0).toUpperCase();
     const dotElement = document.querySelector('.dot');
-
-    // const taskCreateDateInDetailsElement = document.querySelector(
-    //   '.desktop-type-of-task__date'
-    // );
-    // const taskTimeInDetailsElement = document.querySelector(
-    //   '.desktop-type-of-task__time'
-    // );
+    const taskCreateDateInDetailsElement = document.querySelector(
+      '.desktop-type-of-task__date'
+    );
+    const taskTimeInDetailsElement = document.querySelector(
+      '.desktop-type-of-task__time'
+    );
 
     taskTitleInDetailsElement.textContent = title;
     taskCategoryInDetailsElement.textContent =
-      categoryFirstLetterCapitilized + category.slice(1);
+      categoryFirstLetterCapitalized + category.slice(1);
 
     switch (category) {
       case 'rekreacja':
@@ -109,6 +110,9 @@ const showTaskDetails = (e) => {
         dotElement.className = 'dot dot--green';
         break;
     }
+
+    taskCreateDateInDetailsElement.textContent = createdAt;
+    taskTimeInDetailsElement.textContent = time;
   };
 
   displayTasksDetails().catch((error) => console.error(error));
