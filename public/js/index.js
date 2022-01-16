@@ -34,6 +34,13 @@ const addTaskCategoryIconDesktop = document.querySelector(
   '.desktop-form__category-icon img'
 );
 
+// Pobranie zadań w formacie json
+
+// const tasksFromAPI = async () => {
+//   const fetchingData = await fetch('http://localhost:3000/tasks');
+//   return await fetchingData.json();
+// };
+
 // LISTENERS FUNCTIONS
 
 const toggleMobileMenu = () => {
@@ -72,18 +79,18 @@ const showTaskDetails = (e) => {
 
   // wyświetlanie szczegółowych danych wybranego zadania
   const displayTasksDetails = async () => {
-    const tasks = await tasksFromDataBase();
-    const taskId = currentTask.dataset.id;
-    const [{ title, category, createdAt, time }] = tasks.filter(
-      (task) => task.id === taskId
-    );
+    const taskCategory = currentTask.dataset.category;
+    const taskCreatedAt = currentTask.dataset.date;
+    const taskTime = currentTask.dataset.time;
+    const taskTitle = e.target.firstElementChild.nextElementSibling.textContent;
+
     const taskTitleInDetailsElement = document.querySelector(
       '.desktop-task-details__task-title'
     );
     const taskCategoryInDetailsElement = document.querySelector(
       '.desktop-type-of-task__text'
     );
-    const categoryFirstLetterCapitalized = category.charAt(0).toUpperCase();
+    const categoryFirstLetterCapitalized = taskCategory.charAt(0).toUpperCase();
     const dotElement = document.querySelector('.dot');
     const taskCreateDateInDetailsElement = document.querySelector(
       '.desktop-type-of-task__date'
@@ -92,11 +99,11 @@ const showTaskDetails = (e) => {
       '.desktop-type-of-task__time'
     );
 
-    taskTitleInDetailsElement.textContent = title;
+    taskTitleInDetailsElement.textContent = taskTitle;
     taskCategoryInDetailsElement.textContent =
-      categoryFirstLetterCapitalized + category.slice(1);
+      categoryFirstLetterCapitalized + taskCategory.slice(1);
 
-    switch (category) {
+    switch (taskCategory) {
       case 'rekreacja':
         dotElement.className = 'dot dot--orange';
         break;
@@ -111,8 +118,8 @@ const showTaskDetails = (e) => {
         break;
     }
 
-    taskCreateDateInDetailsElement.textContent = createdAt;
-    taskTimeInDetailsElement.textContent = time;
+    taskCreateDateInDetailsElement.textContent = taskCreatedAt;
+    taskTimeInDetailsElement.textContent = taskTime;
   };
 
   displayTasksDetails().catch((error) => console.error(error));
@@ -161,10 +168,3 @@ radioButtons.forEach((radioButton, index) => {
 radioButtonsDesktop.forEach((radioButton, index) => {
   changeIcon(radioButton, index, addTaskCategoryIconDesktop);
 });
-
-// Pobranie zadań w formacie json
-
-const tasksFromDataBase = async () => {
-  const fetchingData = await fetch('http://localhost:3000/tasks');
-  return await fetchingData.json();
-};
