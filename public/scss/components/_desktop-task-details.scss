@@ -16,7 +16,7 @@
     color: var(--gray);
     font-size: var(--font-size-title-tasks-small-desktop);
     font-weight: var(--font-weight-bold);
-    text-decoration: underline;
+    text-transform: uppercase;
 
     @include for-desktop-large {
       font-size: var(--font-size-add-task-title-small-tablet);
@@ -41,8 +41,7 @@
     margin-top: 0.875rem;
 
     @include for-desktop-large {
-      font-size: var(--font-size-add-button);
-      margin-top: 0.75rem;
+      font-size: var(--font-size-category-number-small-tablet);
     }
   }
 
@@ -130,7 +129,7 @@
     @include for-desktop-large {
       font-size: var(--font-size-title-tasks-small-desktop);
       height: 4rem;
-      margin: 8.625rem auto 0;
+      //margin: 8.625rem auto 0;
     }
 
     &:hover {

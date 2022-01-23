@@ -27,8 +27,6 @@ homeRouter.get('/', async (req, res) => {
     task.time = `${hours}:${minutes}`;
   });
 
-  console.log(tasks);
-
   res.render('index', {
     date: getCurrentDate(),
     newDateFormat,

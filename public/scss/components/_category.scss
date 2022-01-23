@@ -5,9 +5,13 @@
   margin-bottom: calc(1.5rem - 1px);
   padding-bottom: 0.625rem;
 
+  @include for-phone {
+    padding-bottom: 0.875rem;
+    margin-bottom: calc(2rem - 2px);
+  }
+
   @include for-tablet-portrait-up {
     border-bottom: 2px solid var(--blue-gray);
-    margin-bottom: calc(2rem - 2px);
     padding-bottom: 1.125rem;
   }
 

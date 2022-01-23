@@ -1,0 +1,68 @@
+<div class='desktop-add-task'>
+  <h3 class='desktop-add-task__title'>Nowe zadanie</h3>
+
+  <form class='desktop-form' method='POST' action='/tasks'>
+    <label class='desktop-form__label' for='desktop-task-name'>Nazwa zadania
+      <input
+        class='desktop-form__input'
+        name='task-name'
+        id='task-name'
+        alt='name of the task'>
+    </label>
+
+    <div class='desktop-form__category-icon'>
+      <img src='images/laptop-code-solid.svg' alt='laptop icon'>
+    </div>
+
+    <div class='desktop-form-categories'>
+      <h4 class='desktop-form-categories__task-type'>Typ zadania</h4>
+      <ul class='desktop-form-categories-list'>
+        <li class='desktop-form-category'>
+          <div class='desktop-form-category__color-dot desktop-form-category__color-dot--orange'></div>
+          <span class='desktop-form-category__name'>Rekreacja</span>
+          <label class='desktop-form-category__label'
+            for='desktop-radio-recreation'>
+            <input type='radio' class='desktop-form-category__radio-input'
+              name='task-category' id='desktop-radio-recreation' value='rekreacja' checked>
+          </label>
+        </li>
+
+        <li class='desktop-form-category'>
+          <div
+            class='desktop-form-category__color-dot desktop-form-category__color-dot--yellow'></div>
+          <span class='desktop-form-category__name'>Technologia</span>
+          <label class='desktop-form-category__label'
+            for='desktop-radio-technology'>
+            <input type='radio' class='desktop-form-category__radio-input'
+              name='task-category' id='desktop-radio-technology' value='technologia'>
+          </label>
+        </li>
+
+        <li class='desktop-form-category'>
+          <div
+            class='desktop-form-category__color-dot desktop-form-category__color-dot--red'></div>
+          <span class='desktop-form-category__name'>Osobiste</span>
+          <label class='desktop-form-category__label'
+            for='desktop-radio-personal'>
+            <input type='radio' class='desktop-form-category__radio-input'
+              name='task-category' id='desktop-radio-personal' value='osobiste'>
+          </label>
+        </li>
+
+        <li class='desktop-form-category'>
+          <div
+            class='desktop-form-category__color-dot desktop-form-category__color-dot--green'></div>
+          <span class='desktop-form-category__name'>Jedzenie</span>
+          <label class='desktop-form-category__label'
+            for='desktop-radio-food'>
+            <input type='radio' class='desktop-form-category__radio-input'
+              name='task-category' id='desktop-radio-food' value='jedzenie'>
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <button class='desktop-form__add-task-button' type='submit'>zatwierdź
+    </button>
+  </form>
+</div>

@@ -1,19 +1,19 @@
 .form {
   display: grid;
   grid-template-rows: max-content;
-  margin-top: 2rem;
+  margin-top: 4rem;
 
   @include for-phone {
-    margin-top: 4rem;
+    margin-top: 4.5rem;
   }
 
   @include for-tablet-portrait-up {
-    margin-top: 3.5rem;
+    margin-top: 4rem;
     padding: 0 1.5rem;
   }
 
   @include for-tablet-landscape-up {
-    margin-top: 4.5rem;
+    margin-top: 6rem;
     padding: 0 calc(150px - 2rem);
   }
 
@@ -22,13 +22,20 @@
     flex-direction: column;
     font-size: var(--font-size-headers);
     font-weight: var(--font-weight-normal);
+    margin-top: 2rem;
+
+    @include for-phone {
+      margin-top: 4rem;
+    }
 
     @include for-tablet-portrait-up {
       font-size: var(--font-size-headers-small-tablet);
+      margin-top: 3.5rem;
     }
 
     @include for-tablet-landscape-up {
       font-size: var(--font-size-headers-large-tablet);
+      margin-top: 4.5rem;
     }
   }
 
