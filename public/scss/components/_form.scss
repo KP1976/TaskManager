@@ -50,6 +50,10 @@
     margin-top: 0.625rem;
     padding: 0 1rem;
 
+    &:focus {
+      outline: 4px solid var(--secondary-color);
+    }
+
     @include for-tablet-portrait-up {
       font-size: var(--font-size-date-small-tablet);
       height: 3rem;
@@ -61,6 +65,25 @@
       font-size: var(--font-size-headers-small-tablet);
       height: 4rem;
       margin-top: 1.125rem;
+    }
+  }
+
+  &__add-task-info {
+    color: var(--secondary-color);
+    font-size: var(--font-size-date);
+    padding-top: 1rem;
+    text-align: center;
+
+    @include for-phone {
+      font-size: var(--font-size-headers);
+    }
+
+    @include for-tablet-portrait-up {
+      font-size: var(--font-size-date-small-tablet);
+    }
+
+    @include for-tablet-landscape-up {
+      font-size: var(--font-size-date-large-tablet);
     }
   }
 

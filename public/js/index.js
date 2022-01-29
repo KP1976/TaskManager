@@ -33,13 +33,8 @@ const addTaskCategoryIcon = document.querySelector(
 const addTaskCategoryIconDesktop = document.querySelector(
   '.desktop-form__category-icon img'
 );
-
-// Pobranie zadań w formacie json
-
-// const tasksFromAPI = async () => {
-//   const fetchingData = await fetch('http://localhost:3000/tasks');
-//   return await fetchingData.json();
-// };
+const form = document.querySelector('.form');
+const formLabel = document.querySelector('.form__label');
 
 // LISTENERS FUNCTIONS
 
@@ -49,7 +44,6 @@ const toggleMobileMenu = () => {
   hamburgerMenuBars[0].classList.toggle('rotate-right');
   hamburgerMenuBars[2].classList.toggle('rotate-left');
 };
-
 const showAddTaskPage = () => addTaskPage.classList.add('open');
 const showDesktopAddTaskPage = () => {
   desktopAddTaskComponent.classList.add('show-add-task');
@@ -124,21 +118,65 @@ const showTaskDetails = (e) => {
 
   displayTasksDetails().catch((error) => console.error(error));
 };
-
 const hideAddTaskPage = () => addTaskPage.classList.remove('open');
+const addTaskToDataBase = async (event) => {
+  event.preventDefault();
+
+  const categories = document.querySelectorAll(
+    '.categories-list .category__radio-input'
+  );
+  let cat = '';
+
+  categories.forEach((category) => {
+    if (category.checked) {
+      cat = category.value;
+    }
+  });
+
+  const newTask = {
+    title: document.querySelector('#task-name').value,
+    category: cat,
+  };
+
+  try {
+    await fetch('http://localhost:3000/tasks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      redirect: 'manual',
+      body: JSON.stringify(newTask),
+    });
+
+    const paragraph = document.createElement('p');
+
+    paragraph.className = 'form__add-task-info';
+    paragraph.textContent = 'Zadanie zostało dodane do bazy danych.';
+    formLabel.insertAdjacentElement('afterend', paragraph);
+
+    setTimeout(() => {
+      paragraph.remove();
+      window.location.reload();
+    }, 1500);
+
+    // const data = await response.json();
+    // console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 // LISTENERS
 
 mobileHamburgerMenuButton.addEventListener('click', toggleMobileMenu);
-
 if (addTaskButton) addTaskButton.addEventListener('click', showAddTaskPage);
 addTaskBackButton.addEventListener('click', hideAddTaskPage);
-
 desktopAddTaskButton.addEventListener('click', showDesktopAddTaskPage);
-
 desktopTasksTodo.forEach((element) => {
   element.addEventListener('click', showTaskDetails);
 });
+
+form.addEventListener('submit', addTaskToDataBase);
 
 // Wyświetlanie odpowiedniej ikony w zależności od wyboru kategorii
 

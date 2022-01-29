@@ -1402,6 +1402,8 @@ ul {
       height: 2rem;
       margin-top: 0.625rem;
       padding: 0 1rem; }
+      .add-task .form__input:focus {
+        outline: 4px solid var(--secondary-color); }
       @media (min-width: 600px) {
         .add-task .form__input {
           font-size: var(--font-size-date-small-tablet);
@@ -1413,6 +1415,20 @@ ul {
           font-size: var(--font-size-headers-small-tablet);
           height: 4rem;
           margin-top: 1.125rem; } }
+    .add-task .form__add-task-info {
+      color: var(--secondary-color);
+      font-size: var(--font-size-date);
+      padding-top: 1rem;
+      text-align: center; }
+      @media (min-width: 414px) {
+        .add-task .form__add-task-info {
+          font-size: var(--font-size-headers); } }
+      @media (min-width: 600px) {
+        .add-task .form__add-task-info {
+          font-size: var(--font-size-date-small-tablet); } }
+      @media (min-width: 900px) {
+        .add-task .form__add-task-info {
+          font-size: var(--font-size-date-large-tablet); } }
     .add-task .form__add-task-button {
       background-color: var(--secondary-color);
       border: none;
