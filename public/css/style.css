@@ -1785,6 +1785,11 @@ ul {
           .desktop-main .desktop-add-task .desktop-form__label, .desktop-main .desktop-add-task .desktop-form .desktop-form-categories__task-type {
             font-size: var(--font-size-title-tasks-small-desktop); } }
   @media (min-width: 1280px) {
+          .desktop-main .desktop-add-task .desktop-form__add-task-info {
+            color: var(--secondary-color);
+            font-size: var(--font-size-date-small-tablet);
+            padding-top: 1rem;
+            text-align: center; }
           .desktop-main .desktop-add-task .desktop-form__input {
             background-color: var(--blue-gray);
             border: 0;

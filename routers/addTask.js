@@ -3,7 +3,6 @@ const addTaskRouter = express.Router();
 const { getAllTasks } = require('../helpers/getAllTasks');
 const { addTaskIntoDatabase } = require('../helpers/addTaskIntoDatabase');
 const { v4: uuid } = require('uuid');
-const { getCurrentDate } = require('../helpers/getCurrentDate');
 
 addTaskRouter
   .get('/', async (req, res) => {
@@ -13,7 +12,6 @@ addTaskRouter
   })
   .post('/', async (req, res) => {
     const { title, category } = await req.body;
-    // const { 'task-name': title, 'task-category': category } = await req.body;
     const newTask = {
       id: uuid(),
       title,

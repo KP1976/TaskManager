@@ -21,6 +21,13 @@
       }
     }
 
+    &__add-task-info {
+      color: var(--secondary-color);
+      font-size: var(--font-size-date-small-tablet);
+      padding-top: 1rem;
+      text-align: center;
+    }
+
     &__input {
       background-color: var(--blue-gray);
       border: 0;

@@ -35,6 +35,10 @@ const addTaskCategoryIconDesktop = document.querySelector(
 );
 const form = document.querySelector('.form');
 const formLabel = document.querySelector('.form__label');
+const desktopForm = document.querySelector('.desktop-form');
+const desktopFormLabel = document.querySelector('.desktop-form__label');
+
+let desktop = true;
 
 // LISTENERS FUNCTIONS
 
@@ -119,24 +123,37 @@ const showTaskDetails = (e) => {
   displayTasksDetails().catch((error) => console.error(error));
 };
 const hideAddTaskPage = () => addTaskPage.classList.remove('open');
-const addTaskToDataBase = async (event) => {
+const addTaskToDataBase = async (event, desktop) => {
   event.preventDefault();
 
-  const categories = document.querySelectorAll(
-    '.categories-list .category__radio-input'
-  );
+  let categoryMobile = '.categories-list .category__radio-input';
+  let categoryDesktop =
+    '.desktop-form-categories-list .desktop-form-category__radio-input';
+  let categories, newTask;
   let cat = '';
-
-  categories.forEach((category) => {
-    if (category.checked) {
-      cat = category.value;
-    }
-  });
-
-  const newTask = {
-    title: document.querySelector('#task-name').value,
-    category: cat,
+  const loopForCategories = (categories) => {
+    categories.forEach((category) => {
+      if (category.checked) {
+        cat = category.value;
+      }
+    });
   };
+
+  if (!desktop) {
+    categories = document.querySelectorAll(categoryMobile);
+    loopForCategories(categories);
+    newTask = {
+      title: document.querySelector('.form__input').value,
+      category: cat,
+    };
+  } else {
+    categories = document.querySelectorAll(categoryDesktop);
+    loopForCategories(categories);
+    newTask = {
+      title: document.querySelector('.desktop-form__input').value,
+      category: cat,
+    };
+  }
 
   try {
     await fetch('http://localhost:3000/tasks', {
@@ -150,17 +167,21 @@ const addTaskToDataBase = async (event) => {
 
     const paragraph = document.createElement('p');
 
-    paragraph.className = 'form__add-task-info';
+    paragraph.className = !desktop
+      ? 'form__add-task-info'
+      : 'desktop-form__add-task-info';
     paragraph.textContent = 'Zadanie zostało dodane do bazy danych.';
-    formLabel.insertAdjacentElement('afterend', paragraph);
+
+    if (!desktop) {
+      formLabel.insertAdjacentElement('afterend', paragraph);
+    } else {
+      desktopFormLabel.insertAdjacentElement('afterend', paragraph);
+    }
 
     setTimeout(() => {
       paragraph.remove();
       window.location.reload();
     }, 1500);
-
-    // const data = await response.json();
-    // console.log(data);
   } catch (err) {
     console.error(err);
   }
@@ -176,7 +197,12 @@ desktopTasksTodo.forEach((element) => {
   element.addEventListener('click', showTaskDetails);
 });
 
-form.addEventListener('submit', addTaskToDataBase);
+form.addEventListener('submit', (event) =>
+  addTaskToDataBase(event, (desktop = false))
+);
+desktopForm.addEventListener('submit', (event) =>
+  addTaskToDataBase(event, desktop)
+);
 
 // Wyświetlanie odpowiedniej ikony w zależności od wyboru kategorii
 
