@@ -17,15 +17,15 @@ homeRouter.get('/', async (req, res) => {
     const month = `${task.createdAt.getMonth()}`;
     const year = `${task.createdAt.getFullYear()}`;
 
-    task.createdAt = `${day} ${monthsNames[month]}, ${year}`;
-
     if (Number(hours) < 10 || Number(minutes) < 10) {
       hours = '0' + hours;
       minutes = '0' + minutes;
     }
 
-    task.time = `${hours}:${minutes}`;
+    task.createdAt = `${day} ${monthsNames[month]} ${year}, ${hours}:${minutes}`;
   });
+
+  console.log(tasks);
 
   res.render('index', {
     date: getCurrentDate(),
