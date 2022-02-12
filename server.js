@@ -1,7 +1,7 @@
 const express = require('express');
 const { engine } = require('express-handlebars');
 const { homeRouter } = require('./routers/home');
-const { addTaskRouter } = require('./routers/addTask');
+const { taskRouter } = require('./routers/task');
 const { handlebarsHelpers } = require('./helpers/handlebars-helpers');
 
 const app = express();
@@ -23,7 +23,7 @@ app.set('view engine', '.hbs');
 app.set('views', './views');
 
 app.use('/', homeRouter);
-app.use('/tasks', addTaskRouter);
+app.use('/tasks', taskRouter);
 
 app.listen(PORT, 'localhost', () => {
   console.log(`Server starts listening at http://localhost:${PORT}`);

@@ -25,7 +25,7 @@ homeRouter.get('/', async (req, res) => {
     task.createdAt = `${day} ${monthsNames[month]} ${year}, ${hours}:${minutes}`;
   });
 
-  console.log(tasks);
+  console.log(categories);
 
   res.render('index', {
     date: getCurrentDate(),

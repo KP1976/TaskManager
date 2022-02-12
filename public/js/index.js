@@ -19,7 +19,6 @@ const desktopTodoAndDoneTasks = document.querySelector(
   '.desktop-tasks-todo-and-done'
 );
 const desktopTasksTodo = document.querySelectorAll('.desktop-task-todo');
-// const desktopTasksTodoList = document.querySelector('.desktop-tasks-todo-list');
 const desktopTaskDetails = document.querySelector('.desktop-task-details');
 
 const radioButtons = document.querySelectorAll('.category__radio-input');
@@ -37,6 +36,8 @@ const form = document.querySelector('.form');
 const formLabel = document.querySelector('.form__label');
 const desktopForm = document.querySelector('.desktop-form');
 const desktopFormLabel = document.querySelector('.desktop-form__label');
+
+const deleteTaskButtons = document.querySelectorAll('.button-delete__icon');
 
 let desktop = true;
 
@@ -78,8 +79,8 @@ const showTaskDetails = (e) => {
   // wyświetlanie szczegółowych danych wybranego zadania
   const displayTasksDetails = async () => {
     const taskCategory = currentTask.dataset.category;
-    const taskCreatedAt = currentTask.dataset.date;
-    const taskTime = currentTask.dataset.time;
+    const taskCreatedAt = currentTask.dataset.date.split(',')[0];
+    const taskTime = currentTask.dataset.date.split(',')[1];
     const taskTitle = e.target.firstElementChild.nextElementSibling.textContent;
 
     const taskTitleInDetailsElement = document.querySelector(
@@ -161,7 +162,6 @@ const addTaskToDataBase = async (event, desktop) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      redirect: 'manual',
       body: JSON.stringify(newTask),
     });
 
@@ -187,21 +187,33 @@ const addTaskToDataBase = async (event, desktop) => {
   }
 };
 
+const deleteTask = (event) => {
+  event.preventDefault();
+
+  const removedTask = event.target.parentElement.parentElement.parentElement;
+
+  console.log(removedTask, 'Kliknąłeś usuwanie zadania!');
+};
+
 // LISTENERS
 
 mobileHamburgerMenuButton.addEventListener('click', toggleMobileMenu);
 if (addTaskButton) addTaskButton.addEventListener('click', showAddTaskPage);
 addTaskBackButton.addEventListener('click', hideAddTaskPage);
 desktopAddTaskButton.addEventListener('click', showDesktopAddTaskPage);
-desktopTasksTodo.forEach((element) => {
-  element.addEventListener('click', showTaskDetails);
-});
+desktopTasksTodo.forEach((element) =>
+  element.addEventListener('click', showTaskDetails)
+);
 
 form.addEventListener('submit', (event) =>
   addTaskToDataBase(event, (desktop = false))
 );
 desktopForm.addEventListener('submit', (event) =>
   addTaskToDataBase(event, desktop)
+);
+
+deleteTaskButtons.forEach((button) =>
+  button.addEventListener('click', (event) => deleteTask(event))
 );
 
 // Wyświetlanie odpowiedniej ikony w zależności od wyboru kategorii

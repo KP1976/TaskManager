@@ -1,10 +1,10 @@
 const express = require('express');
-const addTaskRouter = express.Router();
+const taskRouter = express.Router();
 const { getAllTasks } = require('../helpers/getAllTasks');
 const { addTaskIntoDatabase } = require('../helpers/addTaskIntoDatabase');
 const { v4: uuid } = require('uuid');
 
-addTaskRouter
+taskRouter
   .get('/', async (req, res) => {
     const [tasks] = await getAllTasks();
 
@@ -19,12 +19,11 @@ addTaskRouter
       category,
     };
 
-    console.log(req.body);
-
     await addTaskIntoDatabase(newTask);
     res.redirect('/');
-  });
+  })
+  .delete('/', async (req, res) => {});
 
 module.exports = {
-  addTaskRouter,
+  taskRouter,
 };

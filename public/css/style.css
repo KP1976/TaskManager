@@ -1833,7 +1833,11 @@ ul {
             font-size: var(--font-size-add-task-title);
             height: 3.5rem;
             margin-top: 0.75rem;
-            padding: 0.75rem 1rem; } }
+            padding: 0.75rem 1rem; }
+            .desktop-main .desktop-add-task .desktop-form__input:-webkit-autofill, .desktop-main .desktop-add-task .desktop-form__input:-webkit-autofill:hover, .desktop-main .desktop-add-task .desktop-form__input:-webkit-autofill:focus {
+              background-color: white; }
+            .desktop-main .desktop-add-task .desktop-form__input:focus {
+              outline: 4px solid var(--secondary-color); } }
         @media (min-width: 1280px) and (min-width: 1440px) {
           .desktop-main .desktop-add-task .desktop-form__input {
             height: 4rem; } }
