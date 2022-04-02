@@ -1,18 +1,19 @@
-import { v4 as uuid } from 'uuid';
 import { pool } from '../utilities/database';
-import { FieldPacket } from 'mysql2';
 import { ValidationError } from '../utilities/errors';
+import { v4 as uuid } from 'uuid';
+import { FieldPacket } from 'mysql2';
+import { TaskEntity } from '../types';
 
-type TaskRecordResults = [TaskRecord[], FieldPacket[]];
+type TaskRecordResults = [TaskEntity[], FieldPacket[]];
 
-export class TaskRecord {
+export class TaskRecord implements TaskEntity {
   public id: string;
   public title: string;
   public createdAt: string | Date;
   public category: string;
   public isDone: boolean;
 
-  constructor(obj: Omit<TaskRecord, 'validate' | 'add' | 'delete' | 'update'>) {
+  constructor(obj: Omit<TaskEntity, 'validate' | 'add' | 'delete' | 'update'>) {
     const { id, title, createdAt, category, isDone } = obj;
 
     this.id = id ?? uuid();
@@ -30,7 +31,7 @@ export class TaskRecord {
     }
   }
 
-  static async listAll(): Promise<TaskRecord[]> {
+  static async listAll(): Promise<TaskEntity[]> {
     const [results] = (await pool.execute(
       'SELECT * FROM `tasks` ORDER BY `createdAt` DESC'
     )) as TaskRecordResults;
@@ -38,7 +39,7 @@ export class TaskRecord {
     return results.map((obj) => new TaskRecord(obj));
   }
 
-  static async getOne(id: string): Promise<TaskRecord | null> {
+  static async getOne(id: string): Promise<TaskEntity | null> {
     const [results] = (await pool.execute(
       'SELECT * FROM `tasks` WHERE `id` = :id',
       {
@@ -68,7 +69,12 @@ export class TaskRecord {
     return id;
   }
 
-  async update(id: string, title: string, category: string, isDone: number): Promise<void> {
+  async update(
+    id: string,
+    title: string,
+    category: string,
+    isDone: number
+  ): Promise<void> {
     await pool.execute(
       'UPDATE `tasks` SET `title` = :title, `category` = :category, `createdAt` = :createdAt, `isDone` = :isDone WHERE `id` = :id',
       {

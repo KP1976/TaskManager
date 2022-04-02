@@ -1,0 +1,1 @@
+export const displayProperDate = (createdAt: Date) => createdAt.toLocaleString();
