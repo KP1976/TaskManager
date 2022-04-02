@@ -1,246 +1,77 @@
-const mobileHamburgerMenuButton = document.querySelector(
-  '.mobile-hamburger-menu'
-);
-const mobileMenu = document.querySelector('.menu');
-const hamburgerMenuBars = document.querySelectorAll(
-  '.mobile-hamburger-menu__bar'
-);
-const hamburgerMenuShortBar = document.querySelector(
-  '.mobile-hamburger-menu__bar--short'
-);
-
-const addTaskPage = document.querySelector('.add-task');
-const addTaskButton = document.querySelector('.add-task-button');
-const addTaskBackButton = document.querySelector('.add-task__back-button');
-
-const desktopAddTaskButton = document.querySelector('.desktop-add-task-button');
-const desktopAddTaskComponent = document.querySelector('.desktop-add-task');
-const desktopTodoAndDoneTasks = document.querySelector(
-  '.desktop-tasks-todo-and-done'
-);
-const desktopTasksTodo = document.querySelectorAll('.desktop-task-todo');
-const desktopTaskDetails = document.querySelector('.desktop-task-details');
-
-const radioButtons = document.querySelectorAll('.category__radio-input');
-const radioButtonsDesktop = document.querySelectorAll(
-  '.desktop-form-category__radio-input'
-);
-
-const addTaskCategoryIcon = document.querySelector(
-  '.add-task__category-icon img'
-);
-const addTaskCategoryIconDesktop = document.querySelector(
-  '.desktop-form__category-icon img'
-);
-const form = document.querySelector('.form');
-const formLabel = document.querySelector('.form__label');
-const desktopForm = document.querySelector('.desktop-form');
-const desktopFormLabel = document.querySelector('.desktop-form__label');
-
-const deleteTaskButtons = document.querySelectorAll('.button-delete__icon');
-
-let desktop = true;
-
-// LISTENERS FUNCTIONS
-
-const toggleMobileMenu = () => {
-  mobileMenu.classList.toggle('menu-open');
-  hamburgerMenuShortBar.classList.toggle('not-visible');
-  hamburgerMenuBars[0].classList.toggle('rotate-right');
-  hamburgerMenuBars[2].classList.toggle('rotate-left');
-};
-const showAddTaskPage = () => addTaskPage.classList.add('open');
-const showDesktopAddTaskPage = () => {
-  desktopAddTaskComponent.classList.add('show-add-task');
-  desktopTodoAndDoneTasks.style.transform = 'translateX(0%)';
-  desktopTaskDetails.classList.remove('show-details');
-};
-const showTaskDetails = (e) => {
-  desktopTaskDetails.classList.add('show-details');
-  desktopTodoAndDoneTasks.style.transform = 'translateX(0%)';
-  desktopAddTaskComponent.classList.remove('show-add-task');
-
-  let currentTask = e.target;
-  let prevSibling = currentTask.previousElementSibling;
-  let nextSibling = currentTask.nextElementSibling;
-
-  while (nextSibling) {
-    e.target.classList.add('active');
-    nextSibling.classList.remove('active');
-    nextSibling = nextSibling.nextElementSibling;
-  }
-
-  while (prevSibling) {
-    e.target.classList.add('active');
-    prevSibling.classList.remove('active');
-    prevSibling = prevSibling.previousElementSibling;
-  }
-
-  // wyświetlanie szczegółowych danych wybranego zadania
-  const displayTasksDetails = async () => {
-    const taskCategory = currentTask.dataset.category;
-    const taskCreatedAt = currentTask.dataset.date.split(',')[0];
-    const taskTime = currentTask.dataset.date.split(',')[1];
-    const taskTitle = e.target.firstElementChild.nextElementSibling.textContent;
-
-    const taskTitleInDetailsElement = document.querySelector(
-      '.desktop-task-details__task-title'
-    );
-    const taskCategoryInDetailsElement = document.querySelector(
-      '.desktop-type-of-task__text'
-    );
-    const categoryFirstLetterCapitalized = taskCategory.charAt(0).toUpperCase();
-    const dotElement = document.querySelector('.dot');
-    const taskCreateDateInDetailsElement = document.querySelector(
-      '.desktop-type-of-task__date'
-    );
-    const taskTimeInDetailsElement = document.querySelector(
-      '.desktop-type-of-task__time'
-    );
-
-    taskTitleInDetailsElement.textContent = taskTitle;
-    taskCategoryInDetailsElement.textContent =
-      categoryFirstLetterCapitalized + taskCategory.slice(1);
-
-    switch (taskCategory) {
-      case 'rekreacja':
-        dotElement.className = 'dot dot--orange';
-        break;
-      case 'technologia':
-        dotElement.className = 'dot dot--yellow';
-        break;
-      case 'osobiste':
-        dotElement.className = 'dot dot--red';
-        break;
-      case 'jedzenie':
-        dotElement.className = 'dot dot--green';
-        break;
-    }
-
-    taskCreateDateInDetailsElement.textContent = taskCreatedAt;
-    taskTimeInDetailsElement.textContent = taskTime;
-  };
-
-  displayTasksDetails().catch((error) => console.error(error));
-};
-const hideAddTaskPage = () => addTaskPage.classList.remove('open');
-const addTaskToDataBase = async (event, desktop) => {
-  event.preventDefault();
-
-  let categoryMobile = '.categories-list .category__radio-input';
-  let categoryDesktop =
-    '.desktop-form-categories-list .desktop-form-category__radio-input';
-  let categories, newTask;
-  let cat = '';
-  const loopForCategories = (categories) => {
-    categories.forEach((category) => {
-      if (category.checked) {
-        cat = category.value;
-      }
+//TODO Uwzględnić jak nie będzie zadań!
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
-  };
-
-  if (!desktop) {
-    categories = document.querySelectorAll(categoryMobile);
-    loopForCategories(categories);
-    newTask = {
-      title: document.querySelector('.form__input').value,
-      category: cat,
+};
+const tasksList = document.querySelector('ul');
+const container = document.querySelector('.container');
+const modalDeleteTask = document.querySelector('.modal-delete-task');
+const modalModifyTask = document.querySelector('.modal-modify-task');
+const modalCard = document.querySelector('.modal__card');
+const switchTask = (task) => __awaiter(this, void 0, void 0, function* () {
+    const { id, title, category, createdAt } = task.dataset;
+    const newTask = {
+        id,
+        title,
+        createdAt,
+        category,
     };
-  } else {
-    categories = document.querySelectorAll(categoryDesktop);
-    loopForCategories(categories);
-    newTask = {
-      title: document.querySelector('.desktop-form__input').value,
-      category: cat,
-    };
-  }
-
-  try {
-    await fetch('http://localhost:3000/tasks', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newTask),
+    console.log(id);
+    task.dataset.isDone = task.dataset.isDone === '0' ? '1' : '0';
+    yield fetch(`http://localhost:3000/api/tasks/${id}?_method=PATCH&isDone=${task.dataset.isDone}`, {
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        method: 'POST',
+        body: JSON.stringify(newTask),
     });
-
-    const paragraph = document.createElement('p');
-
-    paragraph.className = !desktop
-      ? 'form__add-task-info'
-      : 'desktop-form__add-task-info';
-    paragraph.textContent = 'Zadanie zostało dodane do bazy danych.';
-
-    if (!desktop) {
-      formLabel.insertAdjacentElement('afterend', paragraph);
-    } else {
-      desktopFormLabel.insertAdjacentElement('afterend', paragraph);
-    }
-
-    setTimeout(() => {
-      paragraph.remove();
-      window.location.reload();
-    }, 1500);
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-const deleteTask = (event) => {
-  event.preventDefault();
-
-  const removedTask = event.target.parentElement.parentElement.parentElement;
-
-  console.log(removedTask, 'Kliknąłeś usuwanie zadania!');
-};
-
-// LISTENERS
-
-mobileHamburgerMenuButton.addEventListener('click', toggleMobileMenu);
-if (addTaskButton) addTaskButton.addEventListener('click', showAddTaskPage);
-addTaskBackButton.addEventListener('click', hideAddTaskPage);
-desktopAddTaskButton.addEventListener('click', showDesktopAddTaskPage);
-desktopTasksTodo.forEach((element) =>
-  element.addEventListener('click', showTaskDetails)
-);
-
-form.addEventListener('submit', (event) =>
-  addTaskToDataBase(event, (desktop = false))
-);
-desktopForm.addEventListener('submit', (event) =>
-  addTaskToDataBase(event, desktop)
-);
-
-deleteTaskButtons.forEach((button) =>
-  button.addEventListener('click', (event) => deleteTask(event))
-);
-
-// Wyświetlanie odpowiedniej ikony w zależności od wyboru kategorii
-
-const changeIcon = (radioButton, index, icon) => {
-  radioButton.addEventListener('change', () => {
-    switch (index) {
-      case 0:
-        icon.setAttribute('src', 'images/running-solid.svg');
-        break;
-      case 1:
-        icon.setAttribute('src', 'images/laptop-code-solid.svg');
-        break;
-      case 2:
-        icon.setAttribute('src', 'images/user-tie-solid.svg');
-        break;
-      case 3:
-        icon.setAttribute('src', 'images/pizza-slice-solid.svg');
-        break;
-    }
-  });
-};
-
-radioButtons.forEach((radioButton, index) => {
-  changeIcon(radioButton, index, addTaskCategoryIcon);
+    window.location.reload();
 });
-
-radioButtonsDesktop.forEach((radioButton, index) => {
-  changeIcon(radioButton, index, addTaskCategoryIconDesktop);
+const taskOperations = (event) => __awaiter(this, void 0, void 0, function* () {
+    const { className, id, parentElement: task } = event.target;
+    if (id === 'task-done') {
+        yield switchTask(task.parentElement);
+    }
+    if (className === 'delete-task-btn') {
+        showConfirmDeleteTaskModal(task);
+    }
+    if (className === 'update-task-btn') {
+        showModifyTaskModal(task);
+    }
 });
+const showModifyTaskModal = (task) => {
+    const { id, title, category, isDone } = task.dataset;
+    const inputTitle = document.querySelector('.modal input');
+    const inputCategory = document.querySelector('.modal form select');
+    const actionProperty = document.querySelector('.modal-modify-task .modal__card form');
+    inputTitle.value = title;
+    inputCategory.value = category;
+    modalModifyTask.classList.add('is-visible');
+    actionProperty.action = `http://localhost:3000/api/tasks/${id}?_method=PATCH&isDone=${isDone}`;
+};
+const showConfirmDeleteTaskModal = (task) => {
+    const { id } = task.dataset;
+    const actionProperty = document.querySelector('.modal-delete-task .modal__card form');
+    actionProperty.action = `http://localhost:3000/api/tasks/${id}?_method=DELETE`;
+    modalDeleteTask.classList.add('is-visible');
+};
+const closeModals = (event) => {
+    const { className } = event.target;
+    if (className.includes('modal modal-delete-task')) {
+        modalDeleteTask.classList.remove('is-visible');
+    }
+    if (className.includes('modal modal-modify-task')) {
+        modalModifyTask.classList.remove('is-visible');
+    }
+};
+const modalClick = (event) => {
+    event.stopImmediatePropagation();
+};
+tasksList.addEventListener('click', (event) => taskOperations(event));
+container.addEventListener('click', closeModals);
+modalCard.addEventListener('click', modalClick);

@@ -1,0 +1,27 @@
+<h2>Lista zadań</h2>
+<ul>
+  {{#each tasks}}
+    <li
+      data-id='{{this.id}}'
+      data-title='{{this.title}}'
+      data-category='{{this.category}}'
+      data-is-done='{{this.isDone}}'
+      data-date='{{this.createdAt}}'
+    >
+      {{#if this.isDone}}
+        <label for='task-done'>
+          <input type='checkbox' id='task-done' checked>
+        </label>
+      {{else}}
+        <label for='task-done'>
+          <input type='checkbox' id='task-done'>
+        </label>
+      {{/if}}
+      <p><strong>Tytuł:</strong> {{this.title}} </p>
+      <p><strong>Kategoria:</strong> {{this.category}} </p>
+      <p><strong>Utworzono:</strong> {{displayProperDate createdAt}}</p>
+      <button class='delete-task-btn'>Kasuj</button>
+      <button class='update-task-btn'>Modyfikuj</button>
+    </li>
+  {{/each}}
+</ul>

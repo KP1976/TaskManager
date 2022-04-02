@@ -1,30 +1,40 @@
 {
-  "name": "task-manager",
+  "name": "task-manager2",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "task manager",
+  "main": "index.ts",
   "scripts": {
-    "sass:watch": "node-sass --watch public/scss -o public/css",
-    "start": "nodemon server.js"
+    "start": "ts-node index.ts",
+    "start:dev": "tsnd index.ts",
+    "ts-front": "tsc --watch --target es2015 --newLine lf ./public/ts/index.ts --outDir ./public/js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "eslint": "^8.6.0",
+  "dependencies": {
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "node-sass": "^6.0.1",
-    "prettier": "^2.5.1"
-  },
-  "dependencies": {
     "express": "^4.17.2",
+    "express-async-errors": "^3.1.1",
     "express-handlebars": "^6.0.2",
+    "method-override": "^3.0.0",
     "mysql2": "^2.3.3",
-    "uuid": "^3.4.0"
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/method-override": "^0.0.32",
+    "@types/node": "^17.0.16",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "eslint": "^8.9.0",
+    "ts-node": "^10.5.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.5"
   }
 }

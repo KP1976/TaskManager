@@ -1,0 +1,19 @@
+<div class='modal modal-modify-task'>
+  <div class='modal__card'>
+    <h2>Modyfikuj zadanie</h2>
+    <form action="/api/tasks/?_method=PATCH" method="POST">
+      <label>
+        Tytuł:
+        <input type='text' name="title" minlength="3" maxlength='30' required>
+      </label>
+      <label>
+        <select name='category'>
+          {{#each categories}}
+            <option value="{{this}}">{{this}}</option>
+          {{/each}}
+        </select>
+      </label>
+      <button type="submit">Modyfikuj</button>
+    </form>
+  </div>
+</div>
