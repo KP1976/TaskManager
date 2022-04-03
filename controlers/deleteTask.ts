@@ -7,5 +7,5 @@ export const deleteTask = async (req: Request, res: Response) => {
 
   await deletedTask.delete(id);
 
-  res.redirect('/');
+  res.end();
 };

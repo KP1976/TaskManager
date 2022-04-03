@@ -5,8 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
-    "start:dev": "tsnd index.ts",
-    "ts-front": "tsc --watch --target es2015 --newLine lf ./public/ts/index.ts --outDir ./public/js"
+    "start:dev": "tsnd index.ts"
   },
   "keywords": [],
   "author": "",

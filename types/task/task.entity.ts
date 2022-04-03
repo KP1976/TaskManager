@@ -1,7 +1,7 @@
 export interface TaskEntity {
-  id: string;
+  id?: string;
   title: string;
-  createdAt: string | Date;
+  createdAt?: string | Date;
   category: string;
   isDone: boolean;
 }

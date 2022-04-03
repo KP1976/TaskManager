@@ -7,7 +7,7 @@ homeRouter.get('/', async (req: Request, res: Response) => {
   const tasks = await TaskRecord.listAll();
   const categories = ['rekreacja', 'technologia', 'osobiste', 'jedzenie'];
 
-  res.render('home/home', {
+  res.json({
     tasks,
     categories,
   });

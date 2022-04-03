@@ -7,13 +7,13 @@ import { TaskEntity } from '../types';
 type TaskRecordResults = [TaskEntity[], FieldPacket[]];
 
 export class TaskRecord implements TaskEntity {
-  public id: string;
+  public id?: string;
   public title: string;
-  public createdAt: string | Date;
+  public createdAt?: string | Date;
   public category: string;
   public isDone: boolean;
 
-  constructor(obj: Omit<TaskEntity, 'validate' | 'add' | 'delete' | 'update'>) {
+  constructor(obj: TaskEntity) {
     const { id, title, createdAt, category, isDone } = obj;
 
     this.id = id ?? uuid();
@@ -31,7 +31,7 @@ export class TaskRecord implements TaskEntity {
     }
   }
 
-  static async listAll(): Promise<TaskEntity[]> {
+  static async listAll(): Promise<TaskRecord[]> {
     const [results] = (await pool.execute(
       'SELECT * FROM `tasks` ORDER BY `createdAt` DESC'
     )) as TaskRecordResults;
@@ -39,7 +39,7 @@ export class TaskRecord implements TaskEntity {
     return results.map((obj) => new TaskRecord(obj));
   }
 
-  static async getOne(id: string): Promise<TaskEntity | null> {
+  static async getOne(id: string): Promise<TaskRecord | null> {
     const [results] = (await pool.execute(
       'SELECT * FROM `tasks` WHERE `id` = :id',
       {
