@@ -7,11 +7,11 @@ import { TaskEntity } from '../types';
 type TaskRecordResults = [TaskEntity[], FieldPacket[]];
 
 export class TaskRecord implements TaskEntity {
-  public id?: string;
+  public id: string;
   public title: string;
-  public createdAt?: string | Date;
+  public createdAt: string | Date;
   public category: string;
-  public isDone: boolean;
+  public isDone: number;
 
   constructor(obj: TaskEntity) {
     const { id, title, createdAt, category, isDone } = obj;
@@ -72,16 +72,25 @@ export class TaskRecord implements TaskEntity {
   async update(
     id: string,
     title: string,
-    category: string,
-    isDone: number
+    category: string
   ): Promise<void> {
     await pool.execute(
-      'UPDATE `tasks` SET `title` = :title, `category` = :category, `createdAt` = :createdAt, `isDone` = :isDone WHERE `id` = :id',
+      'UPDATE `tasks` SET `title` = :title, `category` = :category, `createdAt` = :createdAt, WHERE `id` = :id',
       {
         id,
         title,
         createdAt: new Date(),
         category,
+      }
+    );
+  }
+
+  async taskIsDone(id: string, isDone: number) {
+    await pool.execute(
+      'UPDATE `tasks` SET `isDone` = :isDone WHERE `id` = :id',
+      {
+        id,
+        createdAt: new Date(),
         isDone,
       }
     );

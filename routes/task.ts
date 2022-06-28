@@ -4,6 +4,7 @@ import { getSingleTask } from '../controlers/getSingleTask';
 import { addTask } from '../controlers/addTask';
 import { deleteTask } from '../controlers/deleteTask';
 import { updateTask } from '../controlers/updateTask';
+import { updateTaskIsDone } from '../controlers/updateTaskIsDone';
 
 export const taskRouter = Router();
 
@@ -12,4 +13,5 @@ taskRouter // /api/tasks
   .get('/:id', getSingleTask)
   .post('/', addTask)
   .delete('/:id', deleteTask)
-  .patch('/:id', updateTask);
+  .patch('/:id', updateTask)
+  .patch('/:id/:isDone', updateTaskIsDone);
