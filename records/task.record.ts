@@ -7,11 +7,11 @@ import { TaskEntity } from '../types';
 type TaskRecordResults = [TaskEntity[], FieldPacket[]];
 
 export class TaskRecord implements TaskEntity {
-  public id: string;
+  public id?: string;
   public title: string;
   public createdAt: Date;
   public category: string;
-  public isDone: number;
+  public isDone: 0 | 1;
 
   constructor(obj: TaskEntity) {
     const { id, title, createdAt, category, isDone } = obj;
@@ -20,7 +20,7 @@ export class TaskRecord implements TaskEntity {
     this.title = title;
     this.createdAt = createdAt ?? new Date();
     this.category = category;
-    this.isDone = isDone;
+    this.isDone = isDone ?? 0;
 
     this.validate();
   }
@@ -52,13 +52,8 @@ export class TaskRecord implements TaskEntity {
 
   async add(): Promise<string> {
     await pool.execute(
-      'INSERT INTO `tasks`(`id`, `title`, `createdAt`, `category`) VALUES(:id, :title, :createdAt, :category)',
-      {
-        id: this.id,
-        title: this.title,
-        createdAt: new Date(),
-        category: this.category,
-      }
+      'INSERT INTO `tasks`(`id`, `title`, `createdAt`, `category`, `isDone`) VALUES(:id, :title, :createdAt, :category, :isDone)',
+      this
     );
 
     return this.id;
@@ -69,11 +64,7 @@ export class TaskRecord implements TaskEntity {
     return id;
   }
 
-  async update(
-    id: string,
-    title: string,
-    category: string
-  ): Promise<void> {
+  async update(id: string, title: string, category: string): Promise<void> {
     await pool.execute(
       'UPDATE `tasks` SET `title` = :title, `category` = :category, `createdAt` = :createdAt, WHERE `id` = :id',
       {
