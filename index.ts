@@ -1,7 +1,7 @@
-import * as express from 'express';
+import express from 'express';
 import 'express-async-errors';
 import { json } from 'express';
-import * as cors from 'cors';
+import cors from 'cors';
 import { handleError } from './utilities/errors';
 import { taskRouter } from './routes/task';
 const PORT = 3001;
@@ -18,6 +18,6 @@ app.use('/api/tasks', taskRouter);
 
 app.use(handleError);
 
-app.listen(PORT, () => {
+app.listen(PORT, '127.0.0.1',() => {
   console.log(`Listening on port ${PORT} on http://localhost:${PORT}`);
 });

@@ -9,7 +9,7 @@ type TaskRecordResults = [TaskEntity[], FieldPacket[]];
 export class TaskRecord implements TaskEntity {
   public id: string;
   public title: string;
-  public createdAt: string | Date;
+  public createdAt: Date;
   public category: string;
   public isDone: number;
 
@@ -18,7 +18,7 @@ export class TaskRecord implements TaskEntity {
 
     this.id = id ?? uuid();
     this.title = title;
-    this.createdAt = createdAt ?? new Date().toLocaleDateString();
+    this.createdAt = createdAt ?? new Date();
     this.category = category;
     this.isDone = isDone;
 
