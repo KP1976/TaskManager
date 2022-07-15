@@ -12,12 +12,17 @@ app.use(
     origin: 'http://localhost:3000',
   })
 );
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 app.use(json());
 app.use('/api/tasks', taskRouter);
 
 app.use(handleError);
 
-app.listen(PORT, '127.0.0.1',() => {
+app.listen(PORT, '127.0.0.1', () => {
   console.log(`Listening on port ${PORT} on http://localhost:${PORT}`);
 });

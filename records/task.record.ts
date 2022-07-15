@@ -7,7 +7,7 @@ import { TaskEntity } from '../types';
 type TaskRecordResults = [TaskEntity[], FieldPacket[]];
 
 export class TaskRecord implements TaskEntity {
-  public id?: string;
+  public id: string;
   public title: string;
   public createdAt: Date;
   public category: string;
@@ -26,8 +26,11 @@ export class TaskRecord implements TaskEntity {
   }
 
   private validate(): void {
-    if (this.title.length < 3 || this.title.length > 30) {
-      throw new ValidationError('Tytuł musi posiadać od 3 do 30 znaków.');
+    if (this.title.length < 3 || this.title.length > 25) {
+      throw new ValidationError('Tytuł musi posiadać od 3 do 25 znaków.');
+    }
+    if (this.category.length === 0) {
+      throw new ValidationError('Nie wybrałeś odpowiedniej kategorii.');
     }
   }
 
@@ -66,7 +69,7 @@ export class TaskRecord implements TaskEntity {
 
   async update(id: string, title: string, category: string): Promise<void> {
     await pool.execute(
-      'UPDATE `tasks` SET `title` = :title, `category` = :category, `createdAt` = :createdAt, WHERE `id` = :id',
+      'UPDATE `tasks` SET `title` = :title, `category` = :category, `createdAt` = :createdAt WHERE `id` = :id',
       {
         id,
         title,

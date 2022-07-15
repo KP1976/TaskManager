@@ -2,12 +2,6 @@ import { Request, Response } from 'express';
 import { TaskRecord } from '../records/task.record';
 import { TaskEntity } from '../types';
 
-// interface TaskTypes {
-//   title: string;
-//   category: string;
-//   isDone: number;
-// }
-
 export const updateTask = async (req: Request, res: Response) => {
   const { title, category }: TaskEntity = req.body;
   const { id } = req.params;
