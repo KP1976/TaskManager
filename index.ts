@@ -4,12 +4,14 @@ import { json } from 'express';
 import cors from 'cors';
 import { handleError } from './utilities/errors';
 import { taskRouter } from './routes/task';
+import { config } from './config/config';
+
 const PORT = 3001;
 const app = express();
 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: config.corsOrigin,
   })
 );
 app.use(
@@ -19,8 +21,8 @@ app.use(
 );
 
 app.use(json());
-app.use('/tasks', taskRouter);
-// app.use('/api/tasks', taskRouter);
+// app.use('/tasks', taskRouter);
+app.use('/api/tasks', taskRouter);
 
 app.use(handleError);
 
