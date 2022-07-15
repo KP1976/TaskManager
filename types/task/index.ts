@@ -1,2 +1,2 @@
 export * from './task.entity';
-export * from './task';
+export * from '../task';
