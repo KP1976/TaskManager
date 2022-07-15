@@ -19,7 +19,8 @@ app.use(
 );
 
 app.use(json());
-app.use('/api/tasks', taskRouter);
+app.use('/tasks', taskRouter);
+// app.use('/api/tasks', taskRouter);
 
 app.use(handleError);
 
