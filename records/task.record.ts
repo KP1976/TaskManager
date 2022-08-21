@@ -11,7 +11,7 @@ export class TaskRecord implements TaskEntity {
   public title: string;
   public createdAt: Date;
   public category: string;
-  public isDone: 0 | 1;
+  public isDone: number;
 
   constructor(obj: TaskEntity) {
     const { id, title, createdAt, category, isDone } = obj;
