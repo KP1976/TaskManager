@@ -26,6 +26,6 @@ app.use('/api/tasks', taskRouter);
 
 app.use(handleError);
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Listening on port ${PORT} on http://localhost:${PORT}`);
 });
