@@ -3,5 +3,5 @@ export interface TaskEntity {
   title: string;
   createdAt: Date;
   category: string;
-  isDone: 0 | 1;
+  isDone: number;
 }
