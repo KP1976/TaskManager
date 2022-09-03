@@ -1,6 +1,5 @@
 {
   "name": "backend",
-  "type": "module",
   "version": "0.1.0",
   "description": "task manager",
   "main": "index.ts",
